@@ -10,5 +10,7 @@
 
 <h1>Welcome to the ThunderDome!!</h1>
 
+<h2>${SMOKETEST}</h2>	<!-- delete later -->
+
 </body>
 </html>
