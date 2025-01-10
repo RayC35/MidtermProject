@@ -1,0 +1,4 @@
+rootProject.name = 'NationalParkCore'
+
+
+includeFlat 'JPANatlParks'
