@@ -7,7 +7,7 @@ public interface UserDAO {
 	User authenticateUser(String username, String password);
 
 	// CREATE
-	
+//	public Park createPark(Park park);
 	
 	// READ
 	
@@ -16,5 +16,5 @@ public interface UserDAO {
 	
 	
 	// DELETE
-	
+
 }

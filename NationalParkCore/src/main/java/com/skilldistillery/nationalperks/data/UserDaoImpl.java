@@ -19,17 +19,13 @@ public class UserDaoImpl implements UserDAO {
 	public User authenticateUser(String username, String password) {
 		String jpql = "SELECT u FROM User u WHERE u.username = :un AND u.password = :pw AND u.enabled = true";
 		User authenticatedUser = null;
-		
 		try {
-			authenticatedUser = em.createQuery(jpql, User.class)
-								  .setParameter("un", username)
-								  .setParameter("pw", password)
-								  .getSingleResult();
+			authenticatedUser = em.createQuery(jpql, User.class).setParameter("un", username)
+					.setParameter("pw", password).getSingleResult();
 		} catch (Exception e) {
 			System.err.println("Invalid User: " + username);
 			e.printStackTrace();
 		}
-		
 		return authenticatedUser;
 	}
 }
