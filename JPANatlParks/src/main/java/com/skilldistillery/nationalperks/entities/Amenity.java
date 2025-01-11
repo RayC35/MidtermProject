@@ -1,6 +1,7 @@
 package com.skilldistillery.nationalperks.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,6 +12,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Amenity {
@@ -46,8 +52,49 @@ public class Amenity {
 	@UpdateTimestamp
 	private LocalDateTime lastUpdate;
 
+	@ManyToOne
+	@JoinColumn(name="park_id")
+	private Park park;
+	
+	@OneToMany(mappedBy="amenity")
+	List<AmenityVisit> amenityVisits;
+	
+	@ManyToMany
+	@JoinTable(name = "amenity_has_category",
+			joinColumns = @JoinColumn(name = "amenity_id"),
+			inverseJoinColumns = @JoinColumn(name="amenity_category_id")
+			)
+	private List<AmenityCategory> amenityCategories;
+	
 	public Amenity() {
 		super();
+	}
+	
+
+	public List<AmenityCategory> getAmenityCategories() {
+		return amenityCategories;
+	}
+
+
+	public void setAmenityCategories(List<AmenityCategory> amenityCategories) {
+		this.amenityCategories = amenityCategories;
+	}
+
+
+	public List<AmenityVisit> getAmenityVisits() {
+		return amenityVisits;
+	}
+
+	public void setAmenityVisits(List<AmenityVisit> amenityVisits) {
+		this.amenityVisits = amenityVisits;
+	}
+
+	public Park getPark() {
+		return park;
+	}
+
+	public void setPark(Park park) {
+		this.park = park;
 	}
 
 	public int getId() {

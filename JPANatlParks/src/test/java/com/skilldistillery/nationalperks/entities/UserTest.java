@@ -75,4 +75,10 @@ class UserTest {
 		assertTrue(user.getFollowing().size() > 0);
 				
 	}
+	@Test
+	void test_User_AmenityVisitComment_OneToMany_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getAmenityVisitComments().size() > 0);
+		
+	}
 }

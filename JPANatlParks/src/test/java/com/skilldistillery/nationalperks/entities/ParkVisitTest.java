@@ -2,6 +2,7 @@ package com.skilldistillery.nationalperks.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -44,6 +45,11 @@ class ParkVisitTest {
 	void test_ParkVisit_entity_mapping() {
 		assertNotNull(visit);
 		assertEquals("test park_visit_remarks", visit.getRemarks());
+	}
+	@Test
+	void test_ParkVisit_AmenityVisit_OneToMany_mapping() {
+		assertNotNull(visit);
+		assertTrue(visit.getAmenityVisits().size() > 0);
 	}
 
 }

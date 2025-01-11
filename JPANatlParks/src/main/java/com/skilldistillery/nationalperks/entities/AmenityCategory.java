@@ -1,5 +1,6 @@
 package com.skilldistillery.nationalperks.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -7,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,9 +25,20 @@ public class AmenityCategory {
 	
 	@Column(name = "image_url")
 	private String imageURL;
+	
+	@ManyToMany(mappedBy="amenityCategories")
+	List<Amenity> amenities;
 
 	public AmenityCategory() {
 		super();
+	}
+
+	public List<Amenity> getAmenities() {
+		return amenities;
+	}
+
+	public void setAmenities(List<Amenity> amenities) {
+		this.amenities = amenities;
 	}
 
 	public int getId() {

@@ -1,6 +1,7 @@
 package com.skilldistillery.nationalperks.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,6 +12,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -31,13 +35,44 @@ public class AmenityVisitComment {
 	@UpdateTimestamp
 	private LocalDateTime lastUpdate;
 	
-	@Column(name = "in_reply_to_id")
-	private Integer inReplyToId;
-	
 	private Boolean enabled;
+	
+	@ManyToOne
+	@JoinColumn(name="amenity_visit_id")
+	private AmenityVisit amenityVisit;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name= "in_reply_to_id")
+	private AmenityVisitComment commentRepliedTo;
+	
+	@OneToMany(mappedBy="commentRepliedTo")
+	private List<AmenityVisitComment> commentReplies;
 
 	public AmenityVisitComment() {
 		super();
+	}
+
+
+	public AmenityVisit getAmenityVisit() {
+		return amenityVisit;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+	public void setAmenityVisit(AmenityVisit amenityVisit) {
+		this.amenityVisit = amenityVisit;
 	}
 
 	public int getId() {
@@ -72,14 +107,6 @@ public class AmenityVisitComment {
 		this.lastUpdate = lastUpdate;
 	}
 
-	public Integer getInReplyToId() {
-		return inReplyToId;
-	}
-
-	public void setInReplyToId(Integer inReplyToId) {
-		this.inReplyToId = inReplyToId;
-	}
-
 	public Boolean getEnabled() {
 		return enabled;
 	}
@@ -87,6 +114,26 @@ public class AmenityVisitComment {
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
+
+	public AmenityVisitComment getCommentRepliedTo() {
+		return commentRepliedTo;
+	}
+
+
+	public void setCommentRepliedTo(AmenityVisitComment commentRepliedTo) {
+		this.commentRepliedTo = commentRepliedTo;
+	}
+
+
+	public List<AmenityVisitComment> getCommentReplies() {
+		return commentReplies;
+	}
+
+
+	public void setCommentReplies(List<AmenityVisitComment> commentReplies) {
+		this.commentReplies = commentReplies;
+	}
+
 
 	@Override
 	public int hashCode() {
@@ -105,10 +152,13 @@ public class AmenityVisitComment {
 		return id == other.id;
 	}
 
+
 	@Override
 	public String toString() {
 		return "AmenityVisitComment [id=" + id + ", comment=" + comment + ", createDate=" + createDate + ", lastUpdate="
-				+ lastUpdate + ", inReplyToId=" + inReplyToId + ", enabled=" + enabled + "]";
+				+ lastUpdate + ", enabled=" + enabled + ", amenityVisit=" + amenityVisit + ", user=" + user
+				+ ", commentRepliedTo=" + commentRepliedTo + ", commentReplies=" + commentReplies + "]";
 	}
-	
+
+
 }

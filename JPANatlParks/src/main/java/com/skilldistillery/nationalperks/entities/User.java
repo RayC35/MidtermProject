@@ -15,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -62,8 +63,24 @@ public class User {
 	@ManyToMany(mappedBy="following")
 	private List<User> followers;
 	
+	@OneToMany(mappedBy="user")
+	private List<AmenityVisitComment> amenityVisitComments;
+	
 	public User() {
 	}
+	
+
+	public List<AmenityVisitComment> getAmenityVisitComments() {
+		return amenityVisitComments;
+	}
+
+
+
+	public void setAmenityVisitComments(List<AmenityVisitComment> amenityVisitComments) {
+		this.amenityVisitComments = amenityVisitComments;
+	}
+
+
 
 	public int getId() {
 		return id;

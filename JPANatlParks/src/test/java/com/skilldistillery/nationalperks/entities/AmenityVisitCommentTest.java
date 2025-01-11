@@ -2,6 +2,7 @@ package com.skilldistillery.nationalperks.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -45,6 +46,23 @@ public class AmenityVisitCommentTest {
 	void test_AmenityVisitComment_entity_mapping() {
 		assertNotNull(amenityVisitComment);
 		assertEquals("test amenity_visit_comment", amenityVisitComment.getComment());
+	}
+	@Test
+	void test_AmenityVisitComment_AmenityVisit_ManyToOne_mapping() {
+		assertNotNull(amenityVisitComment);
+		assertEquals("test amenity_visit", amenityVisitComment.getAmenityVisit().getComment());
+	}
+	
+	@Test
+	void test_AmenityVisitComment_User_ManyToOne_mapping() {
+		assertNotNull(amenityVisitComment);
+		assertEquals("admin", amenityVisitComment.getUser().getUsername());
+	}
+	
+	@Test
+	void test_AmenityVisitComment_CommentReplies_ManyToOne_mapping() {
+		assertNotNull(amenityVisitComment);
+		assertNull(amenityVisitComment.getCommentRepliedTo());
 	}
 
 }
