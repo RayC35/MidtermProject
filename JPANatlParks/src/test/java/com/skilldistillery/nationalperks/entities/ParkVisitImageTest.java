@@ -1,6 +1,7 @@
 package com.skilldistillery.nationalperks.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -12,10 +13,10 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-class UserTest {
+class ParkVisitImageTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user;
+	private ParkVisitImage image;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -30,21 +31,19 @@ class UserTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 1);
+		image = em.find(ParkVisitImage.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		user = null;
+		image = null;
 		em.close();
 	}
 
 	@Test
-	void test_User_entity_mapping() {
-		assertNotNull(user);
-		assertEquals("admin", user.getUsername());
-		assertEquals("test", user.getPassword());
-		assertEquals(2025, user.getCreateDate().getYear());
+	void test_ParkVisitImage_entity_mapping() {
+		assertNotNull(image);
+		assertEquals("test park_visit_image", image.getDescription());
 	}
 
 }
