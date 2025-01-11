@@ -410,7 +410,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `nationalparksdb`;
-INSERT INTO `user` (`id`, `username`, `password`, `enabled`, `role`, `first_name`, `last_name`, `image_url`, `create_date`, `last_update`, `email`, `biography`) VALUES (1, 'admin', 'test', 1, NULL, 'admin', 'admin', NULL, '2025-01-10 14:43', '2025-01-10 14:43', 'admin@admin.com', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `enabled`, `role`, `first_name`, `last_name`, `image_url`, `create_date`, `last_update`, `email`, `biography`) VALUES (1, 'admin', 'test', 1, 'admin', 'admin', 'admin', NULL, '2025-01-10 14:43', '2025-01-10 14:43', 'admin@admin.com', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `enabled`, `role`, `first_name`, `last_name`, `image_url`, `create_date`, `last_update`, `email`, `biography`) VALUES (2, 'parkslover', 'parks', 1, NULL, 'Taylor', 'Swift', NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
@@ -420,7 +421,17 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `nationalparksdb`;
-INSERT INTO `park` (`id`, `name`, `description`, `main_entrance_latitude`, `main_entrance_longitude`, `state_abbreviation`, `opening_time`, `closing_time`, `entry_fee`, `website_url`, `image_url`) VALUES (1, 'Rocky Mountain', 'what a beautiful park!', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `park` (`id`, `name`, `description`, `main_entrance_latitude`, `main_entrance_longitude`, `state_abbreviation`, `opening_time`, `closing_time`, `entry_fee`, `website_url`, `image_url`) VALUES (1, 'Yosemite', 'test park description', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `favorite_park`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `nationalparksdb`;
+INSERT INTO `favorite_park` (`park_id`, `user_id`) VALUES (1, 1);
 
 COMMIT;
 
@@ -430,7 +441,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `nationalparksdb`;
-INSERT INTO `amenity` (`id`, `name`, `park_id`, `description`, `cost_range`, `image_url`, `website_url`, `latitude`, `longitude`, `enabled`, `create_date`, `last_update`) VALUES (1, 'Old Faithful', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `amenity` (`id`, `name`, `park_id`, `description`, `cost_range`, `image_url`, `website_url`, `latitude`, `longitude`, `enabled`, `create_date`, `last_update`) VALUES (1, 'Yosemite Visitor Center', 1, 'test amenity description', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
@@ -440,7 +451,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `nationalparksdb`;
-INSERT INTO `park_visit` (`id`, `title`, `remarks`, `user_id`, `park_id`, `start_date`, `end_date`, `rating`, `create_date`, `last_update`, `image_url`, `published`, `enabled`) VALUES (1, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `park_visit` (`id`, `title`, `remarks`, `user_id`, `park_id`, `start_date`, `end_date`, `rating`, `create_date`, `last_update`, `image_url`, `published`, `enabled`) VALUES (1, NULL, 'test park_visit_remarks', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
@@ -450,7 +461,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `nationalparksdb`;
-INSERT INTO `amenity_visit` (`id`, `rating`, `comment`, `date_visited`, `last_update`, `park_visit_id`, `amenity_id`, `create_date`, `enabled`) VALUES (1, 5, '', NULL, NULL, 1, 1, NULL, NULL);
+INSERT INTO `amenity_visit` (`id`, `rating`, `comment`, `date_visited`, `last_update`, `park_visit_id`, `amenity_id`, `create_date`, `enabled`) VALUES (1, 5, 'test amenity_visit', NULL, NULL, 1, 1, NULL, NULL);
 
 COMMIT;
 
@@ -472,6 +483,78 @@ INSERT INTO `amenity_category` (`id`, `name`, `description`, `image_url`) VALUES
 INSERT INTO `amenity_category` (`id`, `name`, `description`, `image_url`) VALUES (10, 'Guided Tour', NULL, NULL);
 INSERT INTO `amenity_category` (`id`, `name`, `description`, `image_url`) VALUES (11, 'Hiking', NULL, NULL);
 INSERT INTO `amenity_category` (`id`, `name`, `description`, `image_url`) VALUES (12, 'Horseback Riding', NULL, NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `amenity_has_category`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `nationalparksdb`;
+INSERT INTO `amenity_has_category` (`amenity_id`, `amenity_category_id`) VALUES (1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `park_comment`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `nationalparksdb`;
+INSERT INTO `park_comment` (`id`, `comment`, `create_date`, `last_update`, `user_id`, `park_id`, `in_reply_to_id`, `enabled`) VALUES (1, 'first comment', NULL, NULL, 1, 1, NULL, NULL);
+INSERT INTO `park_comment` (`id`, `comment`, `create_date`, `last_update`, `user_id`, `park_id`, `in_reply_to_id`, `enabled`) VALUES (2, 'in reply to comment', NULL, NULL, 2, 1, 1, NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `park_visit_comment`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `nationalparksdb`;
+INSERT INTO `park_visit_comment` (`id`, `comment`, `create_date`, `last_update`, `user_id`, `park_visit_id`, `in_reply_to_id`, `enabled`) VALUES (1, 'test comment', NULL, NULL, 1, 1, NULL, NULL);
+INSERT INTO `park_visit_comment` (`id`, `comment`, `create_date`, `last_update`, `user_id`, `park_visit_id`, `in_reply_to_id`, `enabled`) VALUES (2, 'in reply to ', NULL, NULL, 2, 1, 1, NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `park_visit_image`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `nationalparksdb`;
+INSERT INTO `park_visit_image` (`id`, `image_url`, `description`, `create_date`, `last_update`, `park_visit_id`) VALUES (1, 'https://www.nps.gov/media/photo/gallery.htm?pg=841891&id=66F449BA-1399-4855-806B-D405505677FB', 'test park_visit_image', NULL, NULL, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `wishlist_park`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `nationalparksdb`;
+INSERT INTO `wishlist_park` (`park_id`, `user_id`) VALUES (1, 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `followed_user`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `nationalparksdb`;
+INSERT INTO `followed_user` (`user_id`, `followed_user_id`) VALUES (1, 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `amenity_visit_comment`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `nationalparksdb`;
+INSERT INTO `amenity_visit_comment` (`id`, `comment`, `create_date`, `last_update`, `user_id`, `amenity_visit_id`, `in_reply_to_id`, `enabled`) VALUES (1, 'test amenity_visit_comment', NULL, NULL, 1, 1, NULL, NULL);
 
 COMMIT;
 
