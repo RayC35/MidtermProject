@@ -1,6 +1,7 @@
 package com.skilldistillery.nationalperks.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,6 +12,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -28,6 +32,21 @@ public class ParkVisitComment {
 	@UpdateTimestamp
 	private LocalDateTime lastUpdate;
 	private Boolean enabled;
+
+	@ManyToOne
+	@JoinColumn(name = "park_visit_id")
+	private ParkVisit parkVisit;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	@ManyToOne
+	@JoinColumn(name = "in_reply_to_id")
+	private ParkVisitComment commentRepliedTo;
+
+	@OneToMany(mappedBy = "commentRepliedTo")
+	private List<ParkVisitComment> commentReplies;
 
 	public ParkVisitComment() {
 		super();
@@ -73,6 +92,38 @@ public class ParkVisitComment {
 		this.enabled = enabled;
 	}
 
+	public ParkVisit getParkVisit() {
+		return parkVisit;
+	}
+
+	public void setParkVisit(ParkVisit parkVisit) {
+		this.parkVisit = parkVisit;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public ParkVisitComment getCommentRepliedTo() {
+		return commentRepliedTo;
+	}
+
+	public void setCommentRepliedTo(ParkVisitComment commentRepliedTo) {
+		this.commentRepliedTo = commentRepliedTo;
+	}
+
+	public List<ParkVisitComment> getCommentReplies() {
+		return commentReplies;
+	}
+
+	public void setCommentReplies(List<ParkVisitComment> commentReplies) {
+		this.commentReplies = commentReplies;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -93,7 +144,8 @@ public class ParkVisitComment {
 	@Override
 	public String toString() {
 		return "ParkVisitComment [id=" + id + ", comment=" + comment + ", createDate=" + createDate + ", lastUpdate="
-				+ lastUpdate + ", enabled=" + enabled + "]";
+				+ lastUpdate + ", enabled=" + enabled + ", parkVisit=" + parkVisit + ", user=" + user
+				+ ", commentRepliedTo=" + commentRepliedTo + ", commentReplies=" + commentReplies + "]";
 	}
 
 }

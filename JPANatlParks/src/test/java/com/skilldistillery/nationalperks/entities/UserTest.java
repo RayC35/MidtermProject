@@ -70,15 +70,26 @@ class UserTest {
 	}
 	
 	@Test
-	void test_User_User_ManyToMany_follwing_mapping() {
+	void test_User_User_ManyToMany_following_mapping() {
 		assertNotNull(user);
 		assertTrue(user.getFollowing().size() > 0);
 				
 	}
+
 	@Test
 	void test_User_AmenityVisitComment_OneToMany_mapping() {
 		assertNotNull(user);
 		assertTrue(user.getAmenityVisitComments().size() > 0);
-		
+	}
+	
+	@Test
+	void test_User_ParkVisitComment_OneToMany_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getParkVisitComments().size() > 0);		
+	}
+	@Test
+	void test_User_ParkVisit_OneToMany_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getParkVisits().size() > 0);		
 	}
 }

@@ -39,6 +39,11 @@ public class Park {
 	
 	@OneToMany(mappedBy = "park")
 	private List<Amenity> amenities;
+	@OneToMany(mappedBy="park")
+	private List<ParkComment> parkComments;
+	
+	@OneToMany(mappedBy="park")
+	private List<ParkVisit> parkVisits;
 
 	public Park() {
 	}
@@ -140,6 +145,22 @@ public class Park {
 
 	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
+	}
+
+	public List<ParkComment> getParkComments() {
+		return parkComments;
+	}
+
+	public void setParkComments(List<ParkComment> parkComments) {
+		this.parkComments = parkComments;
+	}
+
+	public List<ParkVisit> getParkVisits() {
+		return parkVisits;
+	}
+
+	public void setParkVisits(List<ParkVisit> parkVisits) {
+		this.parkVisits = parkVisits;
 	}
 
 	@Override

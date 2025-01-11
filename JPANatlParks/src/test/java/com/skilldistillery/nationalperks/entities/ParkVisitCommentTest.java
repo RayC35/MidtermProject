@@ -2,6 +2,7 @@ package com.skilldistillery.nationalperks.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -43,7 +44,34 @@ class ParkVisitCommentTest {
 	@Test
 	void test_Park_entity_mapping() {
 		assertNotNull(comment);
-		assertEquals("in reply to", comment.getComment());
+		assertEquals("in reply to ", comment.getComment());
 	}
+	
+	@Test
+	void test_ParkVisitComment_ParkVisit_ManyToOne_entity_mapping() {
+		assertNotNull(comment);
+		assertEquals(1, comment.getParkVisit().getId());
+	}
+	
+	@Test
+	void test_ParkVisitComment_User_ManyToOne_entity_mapping() {
+		assertNotNull(comment);
+		assertEquals(2, comment.getUser().getId());
+	}
+	
+	@Test
+	void test_ParkVisitComment_CommentRepliedTo_ManyToOne_entity_mapping() {
+		assertNotNull(comment);
+		assertEquals(1, comment.getCommentRepliedTo().getId());
+	}
+	
+	@Test
+	void test_ParkVisitComment_CommentReplies_OneToMany_entity_mapping() {
+		assertNotNull(comment);
+		assertTrue(comment.getCommentReplies().size() == 0);
+		comment = em.find(ParkVisitComment.class, 1);
+		assertTrue(comment.getCommentReplies().size() > 0);
+	}
+
 
 }

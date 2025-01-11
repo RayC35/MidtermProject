@@ -13,6 +13,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -44,6 +46,20 @@ public class ParkVisit {
 	@OneToMany(mappedBy = "parkvisit")
 	List<AmenityVisit> amenityVisits;
 	
+	@ManyToOne
+	@JoinColumn(name = "park_id")
+	private Park park;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	@OneToMany(mappedBy = "parkVisit")
+	private List<ParkVisitComment> parkVisitComments;
+
+	@OneToMany(mappedBy = "parkVisit")
+	private List<ParkVisitImage> parkVisitImages;
+
 	public ParkVisit() {
 		super();
 	}
@@ -144,6 +160,38 @@ public class ParkVisit {
 		this.enabled = enabled;
 	}
 
+	public Park getPark() {
+		return park;
+	}
+
+	public void setPark(Park park) {
+		this.park = park;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public List<ParkVisitComment> getParkVisitComments() {
+		return parkVisitComments;
+	}
+
+	public void setParkVisitComments(List<ParkVisitComment> parkVisitComments) {
+		this.parkVisitComments = parkVisitComments;
+	}
+
+	public List<ParkVisitImage> getParkVisitImages() {
+		return parkVisitImages;
+	}
+
+	public void setParkVisitImages(List<ParkVisitImage> parkVisitImages) {
+		this.parkVisitImages = parkVisitImages;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -165,7 +213,9 @@ public class ParkVisit {
 	public String toString() {
 		return "ParkVisit [id=" + id + ", title=" + title + ", remarks=" + remarks + ", startDate=" + startDate
 				+ ", endDate=" + endDate + ", rating=" + rating + ", createDate=" + createDate + ", lastUpdate="
-				+ lastUpdate + ", imageURL=" + imageURL + ", published=" + published + ", enabled=" + enabled + "]";
+				+ lastUpdate + ", imageURL=" + imageURL + ", published=" + published + ", enabled=" + enabled
+				+ ", park=" + park + ", user=" + user + ", parkVisitComments=" + parkVisitComments
+				+ ", parkVisitImages=" + parkVisitImages + "]";
 	}
 
 }

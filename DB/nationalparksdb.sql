@@ -514,7 +514,7 @@ COMMIT;
 START TRANSACTION;
 USE `nationalparksdb`;
 INSERT INTO `park_visit_comment` (`id`, `comment`, `create_date`, `last_update`, `user_id`, `park_visit_id`, `in_reply_to_id`, `enabled`) VALUES (1, 'test comment', NULL, NULL, 1, 1, NULL, NULL);
-INSERT INTO `park_visit_comment` (`id`, `comment`, `create_date`, `last_update`, `user_id`, `park_visit_id`, `in_reply_to_id`, `enabled`) VALUES (2, 'in reply to ', NULL, NULL, 2, 1, 1, NULL);
+INSERT INTO `park_visit_comment` (`id`, `comment`, `create_date`, `last_update`, `user_id`, `park_visit_id`, `in_reply_to_id`, `enabled`) VALUES (2, 'in reply to', NULL, NULL, 2, 1, 1, NULL);
 
 COMMIT;
 

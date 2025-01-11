@@ -52,4 +52,27 @@ class ParkVisitTest {
 		assertTrue(visit.getAmenityVisits().size() > 0);
 	}
 
+	@Test
+	void test_ParkVisit_Park_ManyToOne_entity_mapping() {
+		assertNotNull(visit);
+		assertEquals(1, visit.getPark().getId());
+	}
+	
+	@Test
+	void test_ParkVisit_User_ManyToOne_entity_mapping() {
+		assertNotNull(visit);
+		assertEquals(1, visit.getUser().getId());
+	}
+	
+	@Test
+	void test_ParkVisit__ParkVisitComment_OneToMany_entity_mapping() {
+		assertNotNull(visit);
+		assertTrue(visit.getParkVisitComments().size() > 0);
+	}
+	
+	@Test
+	void test_ParkVisit__ParkVisitImages_OneToMany_entity_mapping() {
+		assertNotNull(visit);
+		assertTrue(visit.getParkVisitImages().size() > 0);
+	}
 }

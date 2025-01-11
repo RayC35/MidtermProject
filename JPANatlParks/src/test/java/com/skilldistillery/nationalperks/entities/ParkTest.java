@@ -52,5 +52,17 @@ class ParkTest {
 		assertTrue(park.getAmenities().size() > 0);
 	}
 	
+	
+	@Test
+	void test_Park_ParkComments_OneToMany_entity_mapping() {
+		assertNotNull(park);
+		assertTrue(park.getParkComments().size() > 0);
+	}
+	
+	@Test
+	void test_Park_ParkVisits_OneToMany_entity_mapping() {
+		assertNotNull(park);
+		assertTrue(park.getParkVisits().size() > 0);
+	}
 
 }
