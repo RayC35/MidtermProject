@@ -29,7 +29,7 @@ html body {
 	padding: 10px;
 	font-family: sans-serif;
 	color: #fff;
-	background: #333333;
+	background: #333366;
 	border-radius: 10px;
 }
 
@@ -38,28 +38,49 @@ footer {
 }
 </style>
 </head>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="#">Logo</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-			data-bs-target="#navbarNav" aria-controls="navbarNav"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="#">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Parks</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Activities</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Create
-						Account</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
-
+<div class="container" style="justify: center;">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#"> <img
+			src="images/national-parkcore-logo.png" width="60" height="80"
+			class="d-inline-block align-top" alt=""> National ParkCore
+		</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> Dropdown </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Parks</a> <a
+							class="dropdown-item" href="#">California</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Colorado</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Utah</a>
+					</div>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Activities</a> <a
+							class="dropdown-item" href="#">Fishing</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Fishing</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Rock Climbing</a>
+					</div></li>
 			</ul>
+			<div class="text-right">
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search"
+						placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
 		</div>
-	</div>
-</nav>
+	</nav>
+</div>
 <br>
 <br>
 <body>
@@ -123,10 +144,10 @@ footer {
 		</div>
 	</div>
 	<br>
-	</div>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-		crossorigin="anonymous"></script>
+</div>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
 </body>
 </html>
