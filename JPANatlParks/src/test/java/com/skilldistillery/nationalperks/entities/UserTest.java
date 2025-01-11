@@ -1,6 +1,8 @@
 package com.skilldistillery.nationalperks.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -46,5 +48,31 @@ class UserTest {
 		assertEquals("test", user.getPassword());
 		assertEquals(2025, user.getCreateDate().getYear());
 	}
+	
+	@Test
+	void test_User_Park_ManyToMany_favorite_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getFavoriteParks().size() >0);
+	}
 
+	@Test
+	void test_User_Park_ManyToMany_wishlist_mapping() {
+		assertNotNull(user);
+		user = em.find(User.class, 2);
+		assertTrue(user.getWishlistParks().size() >0);
+	}
+	
+	@Test
+	void test_User_User_ManyToMany_follwers_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getFollowers().size() == 0);
+				
+	}
+	
+	@Test
+	void test_User_User_ManyToMany_follwing_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getFollowing().size() > 0);
+				
+	}
 }

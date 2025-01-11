@@ -1,6 +1,7 @@
 package com.skilldistillery.nationalperks.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,6 +12,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class User {
@@ -36,7 +40,28 @@ public class User {
 	private LocalDateTime lastUpdate;
 	private String email;
 	private String biography;
+	
+	@ManyToMany
+	@JoinTable(name="wishlist_park",
+	joinColumns =@JoinColumn(name="user_id"),
+	inverseJoinColumns=@JoinColumn(name="park_id"))
+	private List<Park> wishlistParks;
+	
+	@ManyToMany
+	@JoinTable(name="favorite_park",
+	joinColumns =@JoinColumn(name="user_id"),
+	inverseJoinColumns=@JoinColumn(name="park_id"))
+	private List<Park> favoriteParks;
 
+	@ManyToMany
+	@JoinTable(name="followed_user",
+	joinColumns=@JoinColumn(name="user_id"),
+	inverseJoinColumns=@JoinColumn(name="followed_user_id"))
+	private List<User> following;
+	
+	@ManyToMany(mappedBy="following")
+	private List<User> followers;
+	
 	public User() {
 	}
 
@@ -134,6 +159,39 @@ public class User {
 
 	public void setBiography(String biography) {
 		this.biography = biography;
+	}
+	
+	public List<Park> getWishlistParks() {
+		return wishlistParks;
+	}
+
+	public void setWishlistParks(List<Park> wishlistParks) {
+		this.wishlistParks = wishlistParks;
+	}
+
+	public List<Park> getFavoriteParks() {
+		return favoriteParks;
+	}
+
+	public void setFavoriteParks(List<Park> favoriteParks) {
+		this.favoriteParks = favoriteParks;
+	}
+	
+
+	public List<User> getFollowers() {
+		return followers;
+	}
+
+	public void setFollowers(List<User> followers) {
+		this.followers = followers;
+	}
+
+	public List<User> getFollowing() {
+		return following;
+	}
+
+	public void setFollowing(List<User> following) {
+		this.following = following;
 	}
 
 	@Override
