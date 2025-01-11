@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+<persistence version="3.0"
+	xmlns="https://jakarta.ee/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 	<persistence-unit name="JPANatlParks">
-	
-	 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-	<class>com.skilldistillery.nationalperks.entities.User</class>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-    <properties>
-      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nationalparksdb" />
-      <property name="jakarta.persistence.jdbc.user" value="parksuser"/>
-      <property name="jakarta.persistence.jdbc.password" value="parks" />
-      <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+		<class>com.skilldistillery.nationalperks.entities.Amenity</class>
+		<class>com.skilldistillery.nationalperks.entities.AmenityCategory</class>
+		<class>com.skilldistillery.nationalperks.entities.AmenityVisit</class>
+		<class>com.skilldistillery.nationalperks.entities.AmenityVisitComment</class>
+		<class>com.skilldistillery.nationalperks.entities.Park</class>
+		<class>com.skilldistillery.nationalperks.entities.ParkComment</class>
+		<class>com.skilldistillery.nationalperks.entities.ParkVisit</class>
+		<class>com.skilldistillery.nationalperks.entities.ParkVisitComment</class>
+		<class>com.skilldistillery.nationalperks.entities.ParkVisitImage</class>
+		<class>com.skilldistillery.nationalperks.entities.User</class>
 
-      <property name="hibernate.show_sql" value="false" />
-      <property name="hibernate.format_sql" value="false" />
+		<properties>
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/nationalparksdb" />
+			<property name="jakarta.persistence.jdbc.user"
+				value="parksuser" />
+			<property name="jakarta.persistence.jdbc.password"
+				value="parks" />
+			<property name="jakarta.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
 
-      <property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider" />
-      <property name="hibernate.c3p0.max_size" value="5" />
-      <property name="hibernate.c3p0.min_size" value="0" />
-      <property name="hibernate.c3p0.acquire_increment" value="1" />
-      <property name="hibernate.c3p0.idle_test_period" value="300"/>
-      <property name="hibernate.c3p0.max_statements" value="0" />
-      <property name="hibernate.c3p0.timeout" value="60" />
-    </properties>
-	
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+
+			<property name="hibernate.connection.provider_class"
+				value="org.hibernate.connection.C3P0ConnectionProvider" />
+			<property name="hibernate.c3p0.max_size" value="5" />
+			<property name="hibernate.c3p0.min_size" value="0" />
+			<property name="hibernate.c3p0.acquire_increment" value="1" />
+			<property name="hibernate.c3p0.idle_test_period" value="300" />
+			<property name="hibernate.c3p0.max_statements" value="0" />
+			<property name="hibernate.c3p0.timeout" value="60" />
+		</properties>
+
 	</persistence-unit>
 </persistence>
