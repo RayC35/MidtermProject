@@ -6,4 +6,15 @@ public interface UserDAO {
 	
 	User authenticateUser(String username, String password);
 
+	// CREATE
+
+	
+	// READ
+	
+	
+	// UPDATE
+	
+	
+	// DELETE
+
 }
