@@ -11,6 +11,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -29,6 +31,10 @@ public class ParkVisitImage {
 	@Column(name = "last_update")
 	@UpdateTimestamp
 	private LocalDateTime lastUpdate;
+	
+	@ManyToOne
+	@JoinColumn(name="park_visit_id")
+	private ParkVisit parkVisit;
 
 	public ParkVisitImage() {
 		super();
@@ -74,6 +80,14 @@ public class ParkVisitImage {
 		this.lastUpdate = lastUpdate;
 	}
 
+	public ParkVisit getParkVisit() {
+		return parkVisit;
+	}
+
+	public void setParkVisit(ParkVisit parkVisit) {
+		this.parkVisit = parkVisit;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -94,7 +108,7 @@ public class ParkVisitImage {
 	@Override
 	public String toString() {
 		return "ParkVisitImage [id=" + id + ", imageURL=" + imageURL + ", description=" + description + ", createDate="
-				+ createDate + ", lastUpdate=" + lastUpdate + "]";
+				+ createDate + ", lastUpdate=" + lastUpdate + ", parkVisit=" + parkVisit + "]";
 	}
 
 }

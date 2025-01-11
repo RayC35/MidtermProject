@@ -1,6 +1,7 @@
 package com.skilldistillery.nationalperks.entities;
 
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -8,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Park {
@@ -34,6 +36,12 @@ public class Park {
 	private String websiteURL;
 	@Column(name = "image_url")
 	private String imageURL;
+	
+	@OneToMany(mappedBy="park")
+	private List<ParkComment> parkComments;
+	
+	@OneToMany(mappedBy="park")
+	private List<ParkVisit> parkVisits;
 
 	public Park() {
 	}
@@ -124,6 +132,22 @@ public class Park {
 
 	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
+	}
+
+	public List<ParkComment> getParkComments() {
+		return parkComments;
+	}
+
+	public void setParkComments(List<ParkComment> parkComments) {
+		this.parkComments = parkComments;
+	}
+
+	public List<ParkVisit> getParkVisits() {
+		return parkVisits;
+	}
+
+	public void setParkVisits(List<ParkVisit> parkVisits) {
+		this.parkVisits = parkVisits;
 	}
 
 	@Override

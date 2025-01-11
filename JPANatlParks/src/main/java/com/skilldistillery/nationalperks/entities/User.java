@@ -15,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -40,28 +41,34 @@ public class User {
 	private LocalDateTime lastUpdate;
 	private String email;
 	private String biography;
-	
+
 	@ManyToMany
-	@JoinTable(name="wishlist_park",
-	joinColumns =@JoinColumn(name="user_id"),
-	inverseJoinColumns=@JoinColumn(name="park_id"))
+	@JoinTable(name = "wishlist_park", 
+		joinColumns = @JoinColumn(name = "user_id"), 
+		inverseJoinColumns = @JoinColumn(name = "park_id"))
 	private List<Park> wishlistParks;
-	
+
 	@ManyToMany
-	@JoinTable(name="favorite_park",
-	joinColumns =@JoinColumn(name="user_id"),
-	inverseJoinColumns=@JoinColumn(name="park_id"))
+	@JoinTable(name = "favorite_park", 
+		joinColumns = @JoinColumn(name = "user_id"), 
+		inverseJoinColumns = @JoinColumn(name = "park_id"))
 	private List<Park> favoriteParks;
 
 	@ManyToMany
-	@JoinTable(name="followed_user",
-	joinColumns=@JoinColumn(name="user_id"),
-	inverseJoinColumns=@JoinColumn(name="followed_user_id"))
+	@JoinTable(name = "followed_user", 
+		joinColumns = @JoinColumn(name = "user_id"), 
+		inverseJoinColumns = @JoinColumn(name = "followed_user_id"))
 	private List<User> following;
-	
-	@ManyToMany(mappedBy="following")
+
+	@ManyToMany(mappedBy = "following")
 	private List<User> followers;
-	
+
+	@OneToMany(mappedBy = "user")
+	private List<ParkVisitComment> parkVisitComments;
+
+	@OneToMany(mappedBy = "user")
+	private List<ParkVisit> parkVisits;
+
 	public User() {
 	}
 
@@ -137,12 +144,12 @@ public class User {
 		this.createDate = createDate;
 	}
 
-	public LocalDateTime getLastUpate() {
+	public LocalDateTime getLastUpdate() {
 		return lastUpdate;
 	}
 
-	public void setLastUpate(LocalDateTime lastUpate) {
-		this.lastUpdate = lastUpate;
+	public void setLastUpdate(LocalDateTime lastUpdate) {
+		this.lastUpdate = lastUpdate;
 	}
 
 	public String getEmail() {
@@ -160,7 +167,7 @@ public class User {
 	public void setBiography(String biography) {
 		this.biography = biography;
 	}
-	
+
 	public List<Park> getWishlistParks() {
 		return wishlistParks;
 	}
@@ -176,7 +183,6 @@ public class User {
 	public void setFavoriteParks(List<Park> favoriteParks) {
 		this.favoriteParks = favoriteParks;
 	}
-	
 
 	public List<User> getFollowers() {
 		return followers;
@@ -192,6 +198,22 @@ public class User {
 
 	public void setFollowing(List<User> following) {
 		this.following = following;
+	}
+
+	public List<ParkVisitComment> getParkVisitComments() {
+		return parkVisitComments;
+	}
+
+	public void setParkVisitComments(List<ParkVisitComment> parkVisitComments) {
+		this.parkVisitComments = parkVisitComments;
+	}
+
+	public List<ParkVisit> getParkVisits() {
+		return parkVisits;
+	}
+
+	public void setParkVisits(List<ParkVisit> parkVisits) {
+		this.parkVisits = parkVisits;
 	}
 
 	@Override

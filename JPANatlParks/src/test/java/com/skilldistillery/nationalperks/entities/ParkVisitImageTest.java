@@ -45,5 +45,11 @@ class ParkVisitImageTest {
 		assertNotNull(image);
 		assertEquals("test park_visit_image", image.getDescription());
 	}
+	
+	@Test
+	void test_ParkVisitImage__ParkVisit_ManyToOne_entity_mapping() {
+		assertNotNull(image);
+		assertEquals(1, image.getParkVisit().getId());
+	}
 
 }
