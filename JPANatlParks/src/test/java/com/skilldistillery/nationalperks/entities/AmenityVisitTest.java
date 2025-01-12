@@ -2,6 +2,7 @@ package com.skilldistillery.nationalperks.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -44,6 +45,21 @@ public class AmenityVisitTest {
 	void test_AmenityVisit_entity_mapping() {
 		assertNotNull(amenityVisit);
 		assertEquals(5, amenityVisit.getRating());
+	}
+	@Test
+	void test_AmenityVisit_Amenity_ManyToOne_mapping() {
+		assertNotNull(amenityVisit);
+		assertEquals("Yosemite Visitor Center", amenityVisit.getAmenity().getName());
+	}
+	@Test
+	void test_AmenityVisit_ParkVisit_ManyToOne_mapping() {
+		assertNotNull(amenityVisit);
+		assertEquals("test park_visit_remarks", amenityVisit.getParkvisit().getRemarks());
+	}
+	@Test
+	void test_AmenityVisit_AmenityVisitComment_OneToMany_mapping() {
+		assertNotNull(amenityVisit);
+		assertTrue(amenityVisit.getAmenityVisitComments().size() > 0);
 	}
 
 }

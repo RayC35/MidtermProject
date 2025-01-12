@@ -62,6 +62,9 @@ public class User {
 
 	@ManyToMany(mappedBy = "following")
 	private List<User> followers;
+	
+	@OneToMany(mappedBy="user")
+	private List<AmenityVisitComment> amenityVisitComments;
 
 	@OneToMany(mappedBy = "user")
 	private List<ParkVisitComment> parkVisitComments;
@@ -71,6 +74,19 @@ public class User {
 
 	public User() {
 	}
+	
+
+	public List<AmenityVisitComment> getAmenityVisitComments() {
+		return amenityVisitComments;
+	}
+
+
+
+	public void setAmenityVisitComments(List<AmenityVisitComment> amenityVisitComments) {
+		this.amenityVisitComments = amenityVisitComments;
+	}
+
+
 
 	public int getId() {
 		return id;

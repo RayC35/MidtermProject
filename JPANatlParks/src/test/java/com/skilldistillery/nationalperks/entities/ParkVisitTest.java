@@ -46,7 +46,12 @@ class ParkVisitTest {
 		assertNotNull(visit);
 		assertEquals("test park_visit_remarks", visit.getRemarks());
 	}
-	
+	@Test
+	void test_ParkVisit_AmenityVisit_OneToMany_mapping() {
+		assertNotNull(visit);
+		assertTrue(visit.getAmenityVisits().size() > 0);
+	}
+
 	@Test
 	void test_ParkVisit_Park_ManyToOne_entity_mapping() {
 		assertNotNull(visit);

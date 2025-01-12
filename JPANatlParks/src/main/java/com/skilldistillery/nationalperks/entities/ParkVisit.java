@@ -43,6 +43,9 @@ public class ParkVisit {
 	private Boolean published;
 	private Boolean enabled;
 
+	@OneToMany(mappedBy = "parkvisit")
+	List<AmenityVisit> amenityVisits;
+	
 	@ManyToOne
 	@JoinColumn(name = "park_id")
 	private Park park;
@@ -59,6 +62,14 @@ public class ParkVisit {
 
 	public ParkVisit() {
 		super();
+	}
+
+	public List<AmenityVisit> getAmenityVisits() {
+		return amenityVisits;
+	}
+
+	public void setAmenityVisits(List<AmenityVisit> amenityVisits) {
+		this.amenityVisits = amenityVisits;
 	}
 
 	public int getId() {

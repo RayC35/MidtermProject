@@ -37,6 +37,8 @@ public class Park {
 	@Column(name = "image_url")
 	private String imageURL;
 	
+	@OneToMany(mappedBy = "park")
+	private List<Amenity> amenities;
 	@OneToMany(mappedBy="park")
 	private List<ParkComment> parkComments;
 	
@@ -45,6 +47,17 @@ public class Park {
 
 	public Park() {
 	}
+
+	
+	public List<Amenity> getAmenities() {
+		return amenities;
+	}
+
+
+	public void setAmenities(List<Amenity> amenities) {
+		this.amenities = amenities;
+	}
+
 
 	public int getId() {
 		return id;

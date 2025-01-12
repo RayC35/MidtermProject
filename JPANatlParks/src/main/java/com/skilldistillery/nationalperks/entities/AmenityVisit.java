@@ -2,6 +2,7 @@ package com.skilldistillery.nationalperks.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,6 +13,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -38,9 +42,44 @@ public class AmenityVisit {
 	private LocalDateTime lastUpdate;
 	
 	private Boolean enabled;
+	
+	@ManyToOne
+	@JoinColumn(name = "amenity_id")
+	private Amenity amenity;
+	
+	@ManyToOne
+	@JoinColumn(name = "park_visit_id")
+	private ParkVisit parkvisit;
+	
+	@OneToMany(mappedBy = "amenityVisit")
+	List<AmenityVisitComment> amenityVisitComments;
 
 	public AmenityVisit() {
 		super();
+	}
+
+	public List<AmenityVisitComment> getAmenityVisitComments() {
+		return amenityVisitComments;
+	}
+
+	public void setAmenityVisitComments(List<AmenityVisitComment> amenityVisitComments) {
+		this.amenityVisitComments = amenityVisitComments;
+	}
+
+	public ParkVisit getParkvisit() {
+		return parkvisit;
+	}
+
+	public void setParkvisit(ParkVisit parkvisit) {
+		this.parkvisit = parkvisit;
+	}
+
+	public Amenity getAmenity() {
+		return amenity;
+	}
+
+	public void setAmenity(Amenity amenity) {
+		this.amenity = amenity;
 	}
 
 	public int getId() {
