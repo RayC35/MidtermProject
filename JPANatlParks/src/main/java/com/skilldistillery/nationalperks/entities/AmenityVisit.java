@@ -28,7 +28,7 @@ public class AmenityVisit {
 	
 	private Integer rating;
 	
-	private String comment;
+	private String remarks;
 	
 	@Column(name = "date_visited")
 	private LocalDate dateVisited;
@@ -98,12 +98,12 @@ public class AmenityVisit {
 		this.rating = rating;
 	}
 
-	public String getComment() {
-		return comment;
+	public String getRemarks() {
+		return remarks;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setRemarks(String comment) {
+		this.remarks = comment;
 	}
 
 	public LocalDate getDateVisited() {
@@ -157,7 +157,7 @@ public class AmenityVisit {
 
 	@Override
 	public String toString() {
-		return "Amenity_Visit [id=" + id + ", rating=" + rating + ", comment=" + comment + ", dateVisited="
+		return "Amenity_Visit [id=" + id + ", rating=" + rating + ", comment=" + remarks + ", dateVisited="
 				+ dateVisited + ", createDate=" + createDate + ", lastUpdate=" + lastUpdate + ", enabled=" + enabled
 				+ "]";
 	}

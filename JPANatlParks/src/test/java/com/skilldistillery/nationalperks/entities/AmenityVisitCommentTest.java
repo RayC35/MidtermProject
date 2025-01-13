@@ -50,7 +50,7 @@ public class AmenityVisitCommentTest {
 	@Test
 	void test_AmenityVisitComment_AmenityVisit_ManyToOne_mapping() {
 		assertNotNull(amenityVisitComment);
-		assertEquals("test amenity_visit", amenityVisitComment.getAmenityVisit().getComment());
+		assertEquals("test amenity_visit", amenityVisitComment.getAmenityVisit().getRemarks());
 	}
 	
 	@Test

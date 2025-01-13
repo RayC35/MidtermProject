@@ -49,12 +49,12 @@ public class AmenityVisitTest {
 	@Test
 	void test_AmenityVisit_Amenity_ManyToOne_mapping() {
 		assertNotNull(amenityVisit);
-		assertEquals("Yosemite Visitor Center", amenityVisit.getAmenity().getName());
+		assertEquals("Beaver Meadows Visitor Center", amenityVisit.getAmenity().getName());
 	}
 	@Test
 	void test_AmenityVisit_ParkVisit_ManyToOne_mapping() {
 		assertNotNull(amenityVisit);
-		assertEquals("test park_visit_remarks", amenityVisit.getParkvisit().getRemarks());
+		assertEquals("fall getaway with my boo", amenityVisit.getParkvisit().getRemarks());
 	}
 	@Test
 	void test_AmenityVisit_AmenityVisitComment_OneToMany_mapping() {
