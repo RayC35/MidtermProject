@@ -7,12 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="nav.jsp" />
-
+<jsp:include page="nav.jsp" />
+ 
 ${loggedInUser }
 
-<button>
-<a href="logout.do">Log Out</a>
-</button>
+<form action="logout.do" method="GET">
+	<input class="submit-button" type="submit" value="Log Out"
+		title="Log Out" />
+</form>
 </body>
 </html>

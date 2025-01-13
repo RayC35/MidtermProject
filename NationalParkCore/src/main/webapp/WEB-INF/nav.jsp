@@ -35,7 +35,7 @@
 				</div></li>
 		</ul>
 		<c:choose>
-			<c:when test="${loggedInUser.Id > 0}">
+			<c:when test="${not empty loggedInUser}">
 				<a href="userProfile.do">My Profile <i class="bi bi-tree-fill"></i></a>
 				<a href="logout.do">Log Out <i class="bi bi-signpost-2-fill"></i></a>
 			</c:when>

@@ -7,6 +7,8 @@
 <title>User Registration</title>
 </head>
 <body>
+	<jsp:include page="nav.jsp" />
+
 <form action="register.do" method = "POST">
 <input type = "text" name = "username" required>Username
 <input type = "password" name = "password" required>Password
