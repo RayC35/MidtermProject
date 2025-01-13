@@ -52,6 +52,7 @@ footer {
 </style>
 </head>
 <body>
+
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
 		<a class="navbar-brand ml-4" href="#"><img
 			src="images/national-parkcore-logo.png" width="120" height="150"
