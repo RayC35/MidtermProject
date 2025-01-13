@@ -29,4 +29,11 @@ public class UserDaoImpl implements UserDAO {
 		return authenticatedUser;
 	}
 
+	@Override
+	public User registerUser(User user) {
+		user.setEnabled(true);
+		user.setRole("user");
+		em.persist(user);
+		return user;
+	}
 }
