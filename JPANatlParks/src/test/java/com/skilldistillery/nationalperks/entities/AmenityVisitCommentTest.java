@@ -45,18 +45,18 @@ public class AmenityVisitCommentTest {
 	@Test
 	void test_AmenityVisitComment_entity_mapping() {
 		assertNotNull(amenityVisitComment);
-		assertEquals("test amenity_visit_comment", amenityVisitComment.getComment());
+		assertEquals("Thanks for this great review, Lisa!", amenityVisitComment.getComment());
 	}
 	@Test
 	void test_AmenityVisitComment_AmenityVisit_ManyToOne_mapping() {
 		assertNotNull(amenityVisitComment);
-		assertEquals("test amenity_visit", amenityVisitComment.getAmenityVisit().getRemarks());
+		assertEquals(2, amenityVisitComment.getAmenityVisit().getId());
 	}
 	
 	@Test
 	void test_AmenityVisitComment_User_ManyToOne_mapping() {
 		assertNotNull(amenityVisitComment);
-		assertEquals("admin", amenityVisitComment.getUser().getUsername());
+		assertEquals("parksKingKong", amenityVisitComment.getUser().getUsername());
 	}
 	
 	@Test

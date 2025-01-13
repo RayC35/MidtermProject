@@ -44,12 +44,12 @@ public class AmenityTest {
 	@Test
 	void test_Amenity_entity_mapping() {
 		assertNotNull(amenity);
-		assertEquals("Yosemite Visitor Center", amenity.getName());
+		assertEquals("Beaver Meadows Visitor Center", amenity.getName());
 	}
 	@Test
 	void test_Amenity_Park_ManyToOne_mapping() {
 		assertNotNull(amenity);
-		assertEquals("Yosemite", amenity.getPark().getName());
+		assertEquals("Rocky Mountain", amenity.getPark().getName());
 	}
 	@Test
 	void test_Amenity_AmenityVisits_OneToMany_mapping() {
