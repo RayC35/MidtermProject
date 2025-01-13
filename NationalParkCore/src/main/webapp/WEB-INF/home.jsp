@@ -53,7 +53,7 @@ footer {
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-		<a class="navbar-brand" href="#"><img
+		<a class="navbar-brand ml-4" href="#"><img
 			src="images/national-parkcore-logo.png" width="120" height="150"
 			class="d-inline-block align-top" alt=""> </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -63,48 +63,41 @@ footer {
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<ul class="navbar-nav w-100 mt-2 mt-lg-0">
 				<li class="nav-item active"><a class="nav-link" href="#">Home
-						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> Parks </a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Parks</a> <a
-							class="dropdown-item" href="#">California</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Colorado</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Utah</a>
+					class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> Parks </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="#">Action</a> <a
+							class="dropdown-item" href="#">Another action</a> <a
+							class="dropdown-item" href="#">Something else here</a>
 					</div></li>
 				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> Activities </a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Parks</a> <a
-							class="dropdown-item" href="#">California</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Colorado</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Utah</a>
-					</div>
-				<li class="nav-item"><a class="nav-link"
-					href="goCreateAccount.do"><button class="btn btn-success"
-							type="button">
-							Create Account <i class="bi bi-tree"></i>
-						</button></a></li>
-				<li class="nav-item"><a class="nav-link" href="goLogIn.do"><button
-							class="btn btn-success" type="button">
-							Log In <i class="bi bi-signpost-2"></i>
-						</button></a></li>
+					class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> Activities </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="#">Action</a> <a
+							class="dropdown-item" href="#">Another action</a> <a
+							class="dropdown-item" href="#">Something else here</a>
+					</div></li>
 			</ul>
-			<form class="form-inline my-2 my-lg-0">
+			<button class="btn btn-success text-nowrap mx-2"
+				formaction="goCreateAccount.do" type="button">
+				Create Account <i class="bi bi-tree"></i>
+			</button>
+			<button class="btn btn-success text-nowrap mx-2"
+				formaction="goLogIn.do" type="button">
+				Log In <i class="bi bi-signpost-2"></i>
+			</button>
+			<form
+				class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto">
 				<input class="form-control mr-sm-2 form-inline" type="search"
 					placeholder="Search">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<button class="btn btn-outline-success mr-4" type="submit">Search</button>
 			</form>
 		</div>
 	</nav>
