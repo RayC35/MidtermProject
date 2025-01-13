@@ -1,10 +1,7 @@
 package com.skilldistillery.nationalperks.data;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
-import com.skilldistillery.nationalperks.entities.Park;
 import com.skilldistillery.nationalperks.entities.User;
 
 import jakarta.persistence.EntityManager;
@@ -32,27 +29,4 @@ public class UserDaoImpl implements UserDAO {
 		return authenticatedUser;
 	}
 
-	@Override
-	public Park readCookieById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Park> readAllParks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Park> readParksByKeyword(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Park updatePark(Park park, int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
