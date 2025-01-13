@@ -35,9 +35,21 @@
 				</div></li>
 		</ul>
 		<c:choose>
-			<c:when test="${loggedInUser.Id > 0}">
-				<a href="userProfile.do">My Profile <i class="bi bi-tree-fill"></i></a>
-				<a href="logout.do">Log Out <i class="bi bi-signpost-2-fill"></i></a>
+			<c:when test="${loggedInUser.id > 0}">
+				<button class="btn btn-success text-nowrap mx-2" type="submit"
+					onclick="window.location.href='userProfile'">
+					My Account <i class="bi bi-tree-fill"></i>
+				</button>
+				<button class="btn btn-success text-nowrap mx-2" type="submit"
+					onclick="window.location.href='goLogout.do'">
+					Log Out <i class="bi bi-signpost-2-fill"></i>
+				</button>
+				<form
+					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto">
+					<input class="form-control mr-sm-2 form-inline" type="search"
+						placeholder="Search">
+					<button class="btn btn-outline-success mr-4" type="submit">Search</button>
+				</form>
 			</c:when>
 			<c:otherwise>
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
