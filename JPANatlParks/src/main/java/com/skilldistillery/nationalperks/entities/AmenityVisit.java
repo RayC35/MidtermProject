@@ -52,18 +52,18 @@ public class AmenityVisit {
 	private ParkVisit parkvisit;
 	
 	@OneToMany(mappedBy = "amenityVisit")
-	List<AmenityVisitComment> amenityVisitComments;
+	List<AmenityVisitComment> amenityVisitRemarks;
 
 	public AmenityVisit() {
 		super();
 	}
 
 	public List<AmenityVisitComment> getAmenityVisitComments() {
-		return amenityVisitComments;
+		return amenityVisitRemarks;
 	}
 
 	public void setAmenityVisitComments(List<AmenityVisitComment> amenityVisitComments) {
-		this.amenityVisitComments = amenityVisitComments;
+		this.amenityVisitRemarks = amenityVisitComments;
 	}
 
 	public ParkVisit getParkvisit() {
