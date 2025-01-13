@@ -43,27 +43,21 @@ public class User {
 	private String biography;
 
 	@ManyToMany
-	@JoinTable(name = "wishlist_park", 
-		joinColumns = @JoinColumn(name = "user_id"), 
-		inverseJoinColumns = @JoinColumn(name = "park_id"))
+	@JoinTable(name = "wishlist_park", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "park_id"))
 	private List<Park> wishlistParks;
 
 	@ManyToMany
-	@JoinTable(name = "favorite_park", 
-		joinColumns = @JoinColumn(name = "user_id"), 
-		inverseJoinColumns = @JoinColumn(name = "park_id"))
+	@JoinTable(name = "favorite_park", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "park_id"))
 	private List<Park> favoriteParks;
 
 	@ManyToMany
-	@JoinTable(name = "followed_user", 
-		joinColumns = @JoinColumn(name = "user_id"), 
-		inverseJoinColumns = @JoinColumn(name = "followed_user_id"))
+	@JoinTable(name = "followed_user", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "followed_user_id"))
 	private List<User> following;
 
 	@ManyToMany(mappedBy = "following")
 	private List<User> followers;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<AmenityVisitComment> amenityVisitComments;
 
 	@OneToMany(mappedBy = "user")
@@ -74,19 +68,14 @@ public class User {
 
 	public User() {
 	}
-	
 
 	public List<AmenityVisitComment> getAmenityVisitComments() {
 		return amenityVisitComments;
 	}
 
-
-
 	public void setAmenityVisitComments(List<AmenityVisitComment> amenityVisitComments) {
 		this.amenityVisitComments = amenityVisitComments;
 	}
-
-
 
 	public int getId() {
 		return id;
