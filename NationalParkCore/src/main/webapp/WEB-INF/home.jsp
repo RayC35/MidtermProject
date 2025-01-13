@@ -51,8 +51,7 @@ footer {
 </style>
 </head>
 <div>
-	<nav
-		class="navbar navbar-expand-lg navbar-expand-lg sticky-top navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
 		<a class="navbar-brand" href="#"><img
 			src="images/national-parkcore-logo.png" width="120" height="150"
 			class="d-inline-block align-top" alt=""> </a>
@@ -111,7 +110,7 @@ footer {
 						<h1 style="text-align: center">Welcome to National ParkCore!</h1>
 
 						<img class="image" style="text-align: center"
-							src="https://i.imgflip.com/5m1zbn.gif">
+							src="https://i.makeagif.com/media/5-12-2015/cL5D-2.gif">
 					</div>
 				</div>
 			</div>
