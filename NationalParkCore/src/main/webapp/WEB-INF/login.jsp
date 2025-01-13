@@ -7,6 +7,7 @@
 <title>Log In Screen</title>
 </head>
 <body>
+	<jsp:include page="nav.jsp" />
 <h2>Log In</h2>
 <form action="login.do" method="POST">
 	<input type="text" name="username">
