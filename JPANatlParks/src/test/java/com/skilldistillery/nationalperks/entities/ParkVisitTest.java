@@ -44,7 +44,7 @@ class ParkVisitTest {
 	@Test
 	void test_ParkVisit_entity_mapping() {
 		assertNotNull(visit);
-		assertEquals("test park_visit_remarks", visit.getRemarks());
+		assertEquals(5, visit.getRating());
 	}
 	@Test
 	void test_ParkVisit_AmenityVisit_OneToMany_mapping() {
@@ -61,7 +61,7 @@ class ParkVisitTest {
 	@Test
 	void test_ParkVisit_User_ManyToOne_entity_mapping() {
 		assertNotNull(visit);
-		assertEquals(1, visit.getUser().getId());
+		assertEquals(4, visit.getUser().getId());
 	}
 	
 	@Test

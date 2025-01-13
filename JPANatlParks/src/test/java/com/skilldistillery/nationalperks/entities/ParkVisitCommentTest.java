@@ -44,7 +44,7 @@ class ParkVisitCommentTest {
 	@Test
 	void test_Park_entity_mapping() {
 		assertNotNull(comment);
-		assertEquals("in reply to ", comment.getComment());
+		assertEquals("Hi Lisa, yes we did - they were incredible (photos uploaded)!", comment.getComment());
 	}
 	
 	@Test
@@ -56,7 +56,7 @@ class ParkVisitCommentTest {
 	@Test
 	void test_ParkVisitComment_User_ManyToOne_entity_mapping() {
 		assertNotNull(comment);
-		assertEquals(2, comment.getUser().getId());
+		assertEquals(4, comment.getUser().getId());
 	}
 	
 	@Test
@@ -68,8 +68,6 @@ class ParkVisitCommentTest {
 	@Test
 	void test_ParkVisitComment_CommentReplies_OneToMany_entity_mapping() {
 		assertNotNull(comment);
-		assertTrue(comment.getCommentReplies().size() == 0);
-		comment = em.find(ParkVisitComment.class, 1);
 		assertTrue(comment.getCommentReplies().size() > 0);
 	}
 

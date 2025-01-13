@@ -49,7 +49,7 @@ public class AmenityVisit {
 	
 	@ManyToOne
 	@JoinColumn(name = "park_visit_id")
-	private ParkVisit parkvisit;
+	private ParkVisit parkVisit;
 	
 	@OneToMany(mappedBy = "amenityVisit")
 	List<AmenityVisitComment> amenityVisitComments;
@@ -66,12 +66,12 @@ public class AmenityVisit {
 		this.amenityVisitComments = amenityVisitComments;
 	}
 
-	public ParkVisit getParkvisit() {
-		return parkvisit;
+	public ParkVisit getParkVisit() {
+		return parkVisit;
 	}
 
-	public void setParkvisit(ParkVisit parkvisit) {
-		this.parkvisit = parkvisit;
+	public void setParkvisit(ParkVisit parkVisit) {
+		this.parkVisit = parkVisit;
 	}
 
 	public Amenity getAmenity() {

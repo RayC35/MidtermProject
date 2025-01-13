@@ -44,8 +44,8 @@ class UserTest {
 	@Test
 	void test_User_entity_mapping() {
 		assertNotNull(user);
-		assertEquals("admin", user.getUsername());
-		assertEquals("test", user.getPassword());
+		assertEquals("parksKingKong", user.getUsername());
+		assertEquals("larry", user.getPassword());
 		assertEquals(2025, user.getCreateDate().getYear());
 	}
 	
@@ -56,21 +56,21 @@ class UserTest {
 	}
 
 	@Test
-	void test_User_Park_ManyToMany_wishlist_mapping() {
+	void test_User_Park_ManyToMany_Wishlist_mapping() {
 		assertNotNull(user);
-		user = em.find(User.class, 2);
-		assertTrue(user.getWishlistParks().size() >0);
+		user = em.find(User.class, 3);
+		assertTrue(user.getWishlistParks().size() > 0);
 	}
 	
 	@Test
-	void test_User_User_ManyToMany_follwers_mapping() {
+	void test_User_User_ManyToMany_Followers_mapping() {
 		assertNotNull(user);
-		assertTrue(user.getFollowers().size() == 0);
+		assertTrue(user.getFollowers().size() > 0);
 				
 	}
 	
 	@Test
-	void test_User_User_ManyToMany_following_mapping() {
+	void test_User_User_ManyToMany_Following_mapping() {
 		assertNotNull(user);
 		assertTrue(user.getFollowing().size() > 0);
 				
@@ -85,7 +85,7 @@ class UserTest {
 	@Test
 	void test_User_ParkVisitComment_OneToMany_mapping() {
 		assertNotNull(user);
-		assertTrue(user.getParkVisitComments().size() > 0);		
+		assertTrue(user.getParkVisitComments().size() == 0);		
 	}
 	@Test
 	void test_User_ParkVisit_OneToMany_mapping() {

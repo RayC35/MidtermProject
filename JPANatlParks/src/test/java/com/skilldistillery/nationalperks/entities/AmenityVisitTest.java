@@ -32,7 +32,7 @@ public class AmenityVisitTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		amenityVisit = em.find(AmenityVisit.class, 1);
+		amenityVisit = em.find(AmenityVisit.class, 2);
 	}
 
 	@AfterEach
@@ -44,17 +44,17 @@ public class AmenityVisitTest {
 	@Test
 	void test_AmenityVisit_entity_mapping() {
 		assertNotNull(amenityVisit);
-		assertEquals(5, amenityVisit.getRating());
+		assertEquals(4, amenityVisit.getRating());
 	}
 	@Test
 	void test_AmenityVisit_Amenity_ManyToOne_mapping() {
 		assertNotNull(amenityVisit);
-		assertEquals("Beaver Meadows Visitor Center", amenityVisit.getAmenity().getName());
+		assertEquals("Fruita Campground", amenityVisit.getAmenity().getName());
 	}
 	@Test
 	void test_AmenityVisit_ParkVisit_ManyToOne_mapping() {
 		assertNotNull(amenityVisit);
-		assertEquals("fall getaway with my boo", amenityVisit.getParkvisit().getRemarks());
+		assertEquals(4, amenityVisit.getParkVisit().getRating());
 	}
 	@Test
 	void test_AmenityVisit_AmenityVisitComment_OneToMany_mapping() {
