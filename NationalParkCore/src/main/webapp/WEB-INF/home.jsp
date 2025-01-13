@@ -86,7 +86,7 @@ footer {
 					</div></li>
 			</ul>
 			<button class="btn btn-success text-nowrap mx-2"
-				formaction="goCreateAccount.do" type="button">
+				formaction="goRegister.do" type="button">
 				Create Account <i class="bi bi-tree"></i>
 			</button>
 			<button class="btn btn-success text-nowrap mx-2"
