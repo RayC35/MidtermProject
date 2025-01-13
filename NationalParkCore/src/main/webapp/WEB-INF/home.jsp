@@ -85,12 +85,12 @@ footer {
 							class="dropdown-item" href="#">Something else here</a>
 					</div></li>
 			</ul>
-			<button class="btn btn-success text-nowrap mx-2"
-				formaction="goRegister.do" type="button">
-				Create Account <i class="bi bi-tree"></i>
+			<button class="btn btn-success text-nowrap mx-2" type="submit"
+				onclick="window.location.href='goRegister.do'">
+				Register Account <i class="bi bi-tree"></i>
 			</button>
-			<button class="btn btn-success text-nowrap mx-2"
-				formaction="goLogIn.do" type="button">
+			<button class="btn btn-success text-nowrap mx-2" type="submit"
+				onclick="window.location.href='goLogIn.do'">
 				Log In <i class="bi bi-signpost-2"></i>
 			</button>
 			<form
@@ -152,7 +152,6 @@ footer {
 											.getFullYear(), text = "All Rights Reserved &#xA9; "
 											+ year + " - National ParkCore", html = '<div class="text-align-center">'
 											+ text + '</div>';
-
 									document.write(html);
 								</script>
 							</p>
@@ -163,7 +162,6 @@ footer {
 		</div>
 	</div>
 	<br>
-	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
