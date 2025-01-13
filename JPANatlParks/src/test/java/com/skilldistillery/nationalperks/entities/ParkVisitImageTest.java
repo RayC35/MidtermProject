@@ -43,7 +43,7 @@ class ParkVisitImageTest {
 	@Test
 	void test_ParkVisitImage_entity_mapping() {
 		assertNotNull(image);
-		assertEquals("test park_visit_image", image.getDescription());
+		assertEquals("Hiking around Bear Lake", image.getDescription());
 	}
 	
 	@Test

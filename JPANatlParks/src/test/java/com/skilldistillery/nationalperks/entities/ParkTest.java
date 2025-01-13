@@ -44,7 +44,7 @@ class ParkTest {
 	@Test
 	void test_Park_entity_mapping() {
 		assertNotNull(park);
-		assertEquals("Yosemite", park.getName());
+		assertEquals("Rocky Mountain", park.getName());
 	}
 	@Test
 	void test_Park_Amenity_OneToMany_mapping() {

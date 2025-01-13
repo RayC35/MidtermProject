@@ -14,7 +14,8 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="icon" type="image/png" href="images/cooki-jar.ico" />
+<link rel="icon" type="image/png"
+	href="images/national-parkcore-favicon.ico" />
 <style>
 .navbar {
 	left: 100px;
@@ -50,13 +51,19 @@ footer {
 }
 </style>
 </head>
-<div>
+<body>
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
 		<a class="navbar-brand" href="#"><img
 			src="images/national-parkcore-logo.png" width="120" height="150"
 			class="d-inline-block align-top" alt=""> </a>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav nav-fill w-100 mr-100">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarTogglerDemo02"
+			aria-controls="navbarTogglerDemo02" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item active"><a class="nav-link" href="#">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
@@ -84,24 +91,25 @@ footer {
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#">Utah</a>
 					</div>
-				<li class="nav-item"><a class="nav-link" href="#">Create
-						Account</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="goCreateAccount.do"><button class="btn btn-success"
+							type="button">
+							Create Account <i class="bi bi-tree"></i>
+						</button></a></li>
+				<li class="nav-item"><a class="nav-link" href="goLogIn.do"><button
+							class="btn btn-success" type="button">
+							Log In <i class="bi bi-signpost-2"></i>
+						</button></a></li>
 			</ul>
-			<div class="text-right">
-				<form
-					class="d-flex align-items-center flex-nowrap form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search"
-						placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
-			</div>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2 form-inline" type="search"
+					placeholder="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
 		</div>
 	</nav>
-</div>
-<br>
-<br>
-<body>
+	<br>
+	<br>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7 mx-auto">

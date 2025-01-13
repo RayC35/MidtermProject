@@ -43,7 +43,7 @@ public class ParkVisit {
 	private Boolean published;
 	private Boolean enabled;
 
-	@OneToMany(mappedBy = "parkvisit")
+	@OneToMany(mappedBy = "parkVisit")
 	List<AmenityVisit> amenityVisits;
 	
 	@ManyToOne
