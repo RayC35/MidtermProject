@@ -11,8 +11,5 @@
 
 ${loggedInUser }
 
-<button>
-<a href="logout.do">Log Out</a>
-</button>
 </body>
 </html>

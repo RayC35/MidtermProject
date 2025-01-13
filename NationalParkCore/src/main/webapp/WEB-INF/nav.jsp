@@ -41,7 +41,7 @@
 					My Account <i class="bi bi-tree-fill"></i>
 				</button>
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
-					onclick="window.location.href='goLogout.do'">
+					onclick="window.location.href='logout.do'">
 					Log Out <i class="bi bi-signpost-2-fill"></i>
 				</button>
 				<form
