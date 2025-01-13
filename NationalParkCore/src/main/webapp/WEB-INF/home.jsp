@@ -90,7 +90,7 @@ footer {
 				Register Account <i class="bi bi-tree"></i>
 			</button>
 			<button class="btn btn-success text-nowrap mx-2" type="submit"
-				onclick="window.location.href='goLogIn.do'">
+				onclick="window.location.href='goLogin.do'">
 				Log In <i class="bi bi-signpost-2"></i>
 			</button>
 			<form
