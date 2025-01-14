@@ -49,12 +49,26 @@ footer {
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							<h2>${loggedInUser.username}</h2>
-							${loggedInUser.firstName} 
-							${loggedInUser.lastName}
-							${loggedInUser.email} 
-							${loggedInUser.biography}
-							${loggedInUser.imageURL} <!-- put in image tag -->
+							<br> <br>
+							<h2>${loggedInUser.firstName}&nbsp;${loggedInUser.lastName}</h2>
+							<img src="${loggedInUser.imageURL}"> <br> <br>
+							<h4>Username:</h4>
+							<p>${loggedInUser.username}</p>
+							<h4>Email Address:</h4>
+							<p>${loggedInUser.email}</p>
+							<h4>Bio:</h4>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-11 mx-auto">
+										<div class="card mt-1">
+											<br>
+											<p>${loggedInUser.biography}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br>
+							<br>
 						</div>
 					</div>
 				</div>

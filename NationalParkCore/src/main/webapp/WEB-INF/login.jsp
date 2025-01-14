@@ -54,11 +54,10 @@ footer {
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							<br>
-							<br>
+							<br> <br>
 							<h2>Sign In To Your Profile</h2>
 							<br>
-							<form>
+							<form action="login.do" method="POST">
 								<p>
 									<label>Username:</label> <input type="text" name="username"
 										id="username">
@@ -71,8 +70,7 @@ footer {
 								<button class="btn btn-success text-nowrap" type="submit"
 									id="submit">Log In</button>
 							</form>
-							<br>
-							<br>
+							<br> <br>
 						</div>
 					</div>
 				</div>
