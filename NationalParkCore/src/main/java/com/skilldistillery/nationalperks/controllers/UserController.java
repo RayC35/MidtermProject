@@ -66,4 +66,13 @@ public class UserController {
 		session.removeAttribute("loggedInUser");
 		return "home";
 	}
+	
+	@GetMapping("goUserProfile.do")
+	public String goUserProfile(HttpSession session) {
+		if (session.getAttribute("loggedInUser") != null) {
+			return "userProfile";
+		} else {
+			return "login";
+		}
+	}
 }
