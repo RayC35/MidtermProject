@@ -49,12 +49,13 @@ footer {
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							${loggedInUser.username}
+							<h2>${loggedInUser.username}</h2>
 							${loggedInUser.firstName} 
 							${loggedInUser.lastName}
 							${loggedInUser.email} 
 							${loggedInUser.biography}
-							${loggedInUser.imageURL}</div>
+							${loggedInUser.imageURL} <!-- put in image tag -->
+						</div>
 					</div>
 				</div>
 			</div>
