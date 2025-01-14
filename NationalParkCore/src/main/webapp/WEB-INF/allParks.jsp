@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>My Account</title>
+<title>Park Details</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -45,35 +45,43 @@ footer {
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 mx-auto">
+			<div class="col-md-8 mx-auto">
 				<div class="card mt-4">
-					<div>
-						<div class="card-body text-center bg-light">
-							<br> <br>
-							<h2>${loggedInUser.firstName}&nbsp;${loggedInUser.lastName}</h2>
-							<img src="${loggedInUser.imageURL}"> <br> <br>
-							<h4>Username:</h4>
-							<p>${loggedInUser.username}</p>
-							<h4>Email Address:</h4>
-							<p>${loggedInUser.email}</p>
-							<h4>Bio:</h4>
-							<div class="container">
-								<div class="row">
-									<div class="col-md-11 mx-auto">
-										<div class="card mt-1">
-											<br>
-											<p>${loggedInUser.biography}</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<br>
-							<button class="btn btn-warning" type="submit"
-								onclick="window.location.href='goEditUserProfile.do'">
-								Edit My Profile <i class="bi bi-signpost-2"></i>
-							</button>
-							<br> <br>
-						</div>
+					<div class="card-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>State</th>
+									<th>Website</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="c" items="${parkList}">
+									<c:if test="${empty name}">
+										<tr>
+									</c:if>
+									<c:if test="${! empty name}">
+										<c:if test="${park.name == name}">
+											<tr class="found">
+										</c:if>
+										<c:if test="${park.name != name}">
+											<tr>
+										</c:if>
+									</c:if>
+									<tr>
+										<td>${park.id}</td>
+										<td><a
+											href="<c:url value='parkDetails.do'><c:param name='parkId' value='${park.id}'/></c:url>">
+												${park.name}</a></td>
+										<td>${park.stateAbbreviation}</td>
+										<td>${park.websiteUrl}</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+						<br> <br>
 					</div>
 				</div>
 			</div>
@@ -82,5 +90,10 @@ footer {
 	<br>
 	<br>
 	<jsp:include page="footer.jsp" />
+	<br>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
 </body>
 </html>
