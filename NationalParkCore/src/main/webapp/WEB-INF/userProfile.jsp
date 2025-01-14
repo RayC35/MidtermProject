@@ -16,28 +16,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" type="image/png"
 	href="images/national-parkcore-favicon.ico" />
-<style>
-html body {
-	background-image: url('images/national-parkcore-background.jpg');
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.top {
-	margin-top: calc(100vh + var(--offset));
-	text-decoration: none;
-	padding: 10px;
-	font-family: sans-serif;
-	color: #fff;
-	background: #333366;
-	border-radius: 10px;
-}
-
-footer {
-	text-align: center;
-}
-</style>
 </head>
 <body>
 	<jsp:include page="nav.jsp" />

@@ -16,28 +16,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" type="image/png"
 	href="images/national-parkcore-favicon.ico" />
-<style>
-html body {
-	background-image: url('images/national-parkcore-background.jpg');
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.top {
-	margin-top: calc(100vh + var(--offset));
-	text-decoration: none;
-	padding: 10px;
-	font-family: sans-serif;
-	color: #fff;
-	background: #333366;
-	border-radius: 10px;
-}
-
-footer {
-	text-align: center;
-}
-</style>
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
@@ -48,6 +26,9 @@ footer {
 			<div class="col-md-8 mx-auto">
 				<div class="card mt-4">
 					<div class="card-body">
+						<br> <br>
+						<h2 style="text-align: center;">All National Parks</h2>
+						<br>
 						<table class="table table-hover">
 							<thead>
 								<tr>
@@ -76,7 +57,8 @@ footer {
 											href="<c:url value='parkDetails.do'><c:param name='parkId' value='${park.id}'/></c:url>">
 												${park.name}</a></td>
 										<td>${park.stateAbbreviation}</td>
-										<td>${park.websiteURL}</td>
+										<td><a href="${park.websiteURL}" target="_blank">View
+												Website</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

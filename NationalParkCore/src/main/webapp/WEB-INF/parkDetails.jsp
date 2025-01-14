@@ -16,35 +16,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" type="image/png"
 	href="images/national-parkcore-favicon.ico" />
-<style>
-html body {
-	background-image: url('images/national-parkcore-background.jpg');
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.image {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-}
-
-.top {
-	margin-top: calc(100vh + var(--offset));
-	text-decoration: none;
-	padding: 10px;
-	font-family: sans-serif;
-	color: #fff;
-	background: #333366;
-	border-radius: 10px;
-}
-
-footer {
-	text-align: center;
-}
-</style>
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
@@ -52,24 +23,31 @@ footer {
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 mx-auto">
+			<div class="col-md-9 mx-auto">
 				<div class="card mt-2">
-					<div class="card-body">
-						<h1 style="text-align: center">Welcome to National ParkCore!</h1>
-						<h2>${park.name}</h2>
-						<img src="${park.imageURL}"> <br> <br>
-						<h4>Description:</h4>
-						<p>${park.description}</p>
-						<h4>Location:</h4>
-						<h2>${park.mainEntranceLatitude}&nbsp;${park.mainEntranceLongitude}</h2>
-						<p>${park.stateAbbreviation}</p>
-						<h4>Open hours:</h4>
-						<h2>${park.openingTime}-${park.closingTime}</h2>
-						<h4>Entry Fee:</h4>
-						<p>${park.entryFee}</p>
-						<h4>Park Website:</h4>
-						<p>${park.websiteURL}</p>
+					<div class="card-body" style="text-align: center">
 						<br> <br>
+						<h1>Welcome to ${park.name} National Park!</h1>
+						<br> <img src="${park.imageURL}"> <br> <br>
+						<h2>${park.name}&nbsp;-&nbsp;${park.stateAbbreviation}</h2>
+						<p>${park.description}</p>
+						<h4>Location (Click to Open In Maps):</h4>
+						<h2>
+							<a
+								href="https://www.google.com/maps/place/${park.mainEntranceLatitude},${park.mainEntranceLongitude}"
+								target="_blank">${park.mainEntranceLatitude},
+								${park.mainEntranceLongitude}</a>
+						</h2>
+						<h4>Open hours:</h4>
+						<p>${park.openingTime}-${park.closingTime}</p>
+						<h4>Entry Fee:</h4>
+						<p>$${park.entryFee}0</p>
+						<h4>Park Website:</h4>
+						<p>
+							<a href="${park.websiteURL}" target="_blank">${park.name}
+								Website</a>
+						</p>
+						<br>
 					</div>
 				</div>
 			</div>

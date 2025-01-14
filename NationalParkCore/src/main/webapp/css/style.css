@@ -4,6 +4,7 @@ html body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
 .image {
 	display: block;
 	margin-left: auto;
@@ -23,4 +24,9 @@ html body {
 
 footer {
 	text-align: center;
+}
+
+form i {
+	margin-left: -25px;
+	cursor: pointer;
 }

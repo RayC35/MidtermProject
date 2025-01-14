@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
 	<a class="navbar-brand ml-4" href="home.do"><img
 		src="images/national-parkcore-logo.png" width="120" height="150"
