@@ -58,13 +58,5 @@ footer {
 	<br>
 	<br>
 	<jsp:include page="footer.jsp" />
-<jsp:include page="nav.jsp" />
- 
-${loggedInUser }
-
-<form action="logout.do" method="GET">
-	<input class="submit-button" type="submit" value="Log Out"
-		title="Log Out" />
-</form>
 </body>
 </html>
