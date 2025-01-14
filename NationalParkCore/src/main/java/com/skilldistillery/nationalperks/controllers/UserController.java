@@ -1,10 +1,13 @@
 package com.skilldistillery.nationalperks.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.nationalperks.data.UserDAO;
 import com.skilldistillery.nationalperks.entities.User;
@@ -73,29 +76,48 @@ public class UserController {
 			return "login";
 		}
 	}
-	
+
 	@GetMapping("goEditUserProfile.do")
 	public String goEditProfile(HttpSession session) {
 		if (session.getAttribute("loggedInUser") != null) {
 			return "editUserProfile";
-		}
-		else {
+		} else {
 			return "login";
 		}
 	}
-		
-	@PostMapping("editUserProfile.do")	
+
+	@PostMapping("editUserProfile.do")
 	public String doEdit(HttpSession session, User updatedUser) {
-		User loggedInUser = (User)session.getAttribute("loggedInUser");
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
 		if (loggedInUser != null) {
 			updatedUser = userDao.editUserProfile(updatedUser, loggedInUser.getId());
 			session.setAttribute("loggedInUser", updatedUser);
 			return "userProfile";
-		}
-		else {
+		} else {
 			return "login";
 		}
 	}
-	
-	
+
+	@GetMapping("listAllUsers.do")
+	public String listAllUsers(Model model) {
+		List<User> allUsers = userDao.listAllUsers();
+		model.addAttribute("userList", allUsers);
+		return "allUsers";
+	}
+
+	private boolean isAdmin(User user) {
+		return user.getRole().equals("admin");
+	}
+
+	@GetMapping("adminGoUserProfile.do")
+	public String adminGoUserProfile(HttpSession session, @RequestParam("userId") int userId) {
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
+		if (isAdmin(loggedInUser)) {
+			User foundUser = userDao.findUserProfileById(userId);
+			session.setAttribute("adminFoundUser", foundUser);
+			return "userProfile";
+		} else {
+			return "login";
+		}
+	}
 }

@@ -1,7 +1,10 @@
 package com.skilldistillery.nationalperks.data;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.nationalperks.entities.Park;
 import com.skilldistillery.nationalperks.entities.User;
 
 import jakarta.persistence.EntityManager;
@@ -48,6 +51,24 @@ public class UserDaoImpl implements UserDAO {
 		managedUser.setImageURL(user.getImageURL());
 		em.persist(managedUser);
 		return managedUser;
+	}
+
+	@Override
+	public List<User> listAllUsers() {
+		String jpql = "SELECT u FROM User u";
+		List<User> allUsers = em.createQuery(jpql, User.class).getResultList();
+		return allUsers;
+	}
+
+	@Override
+	public User findUserProfileById(int userId) {
+		User foundUser = null;
+		try {
+			foundUser = em.find(User.class, userId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return foundUser;
 	}
 
 }
