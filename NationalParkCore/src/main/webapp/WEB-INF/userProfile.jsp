@@ -69,7 +69,7 @@ footer {
 							</div>
 							<br>
 							<button class="btn btn-warning" type="submit"
-								onclick="window.location.href='editUserProfile.do?id=${loggedInUser.id}'">
+								onclick="window.location.href='goEditUserProfile.do'">
 								Edit My Profile <i class="bi bi-signpost-2"></i>
 							</button>
 							<br> <br>

@@ -8,4 +8,6 @@ public interface UserDAO {
 	
 	public User registerUser(User user);
 	
+	public User editUserProfile(User user, int userId);
+	
 }
