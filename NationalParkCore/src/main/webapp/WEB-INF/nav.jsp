@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-	<a class="navbar-brand ml-4" href="#"><img
+	<a class="navbar-brand ml-4" href="home.do"><img
 		src="images/national-parkcore-logo.png" width="120" height="150"
 		class="d-inline-block align-top" alt=""> </a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -13,7 +13,7 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		<ul class="navbar-nav w-100 mt-2 mt-lg-0">
-			<li class="nav-item active"><a class="nav-link" href="#">Home
+			<li class="nav-item active"><a class="nav-link" href="home.do">Home
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"
@@ -37,7 +37,7 @@
 		<c:choose>
 			<c:when test="${loggedInUser.id > 0}">
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
-					onclick="window.location.href='userProfile'">
+					onclick="window.location.href='goUserProfile.do'">
 					My Account <i class="bi bi-tree-fill"></i>
 				</button>
 				<button class="btn btn-success text-nowrap mx-2" type="submit"

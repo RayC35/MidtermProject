@@ -49,21 +49,30 @@ public class UserController {
 			return "login";
 		}
 	}
-	
+
 	@PostMapping("login.do")
 	public String doLogin(User user, HttpSession session) {
 		user = userDao.authenticateUser(user.getUsername(), user.getPassword());
-		if(user != null) {
+		if (user != null) {
 			session.setAttribute("loggedInUser", user);
 			return "userProfile";
 		} else {
 			return "login";
 		}
 	}
-	
+
 	@GetMapping("logout.do")
 	public String logout(HttpSession session) {
 		session.removeAttribute("loggedInUser");
 		return "home";
+	}
+
+	@GetMapping("goUserProfile.do")
+	public String goUserProfile(HttpSession session) {
+		if (session.getAttribute("loggedInUser") != null) {
+			return "userProfile";
+		} else {
+			return "login";
+		}
 	}
 }

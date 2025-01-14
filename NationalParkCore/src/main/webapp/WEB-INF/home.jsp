@@ -17,11 +17,6 @@
 <link rel="icon" type="image/png"
 	href="images/national-parkcore-favicon.ico" />
 <style>
-.navbar {
-	left: 100px;
-	right: 100px;
-}
-
 html body {
 	background-image: url('images/national-parkcore-background.jpg');
 	background-attachment: fixed;
@@ -71,48 +66,7 @@ footer {
 	</div>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-7 mx-auto">
-				<div class="card mt-2">
-					<div class="card-body">
-						<footer>
-							<br> <a href="#" class="top">Go To Top <i
-								class="bi bi-tree"></i></a> <br> <br>
-							<p>
-								<script type="text/javascript">
-									var date = new Date(), year = date
-											.getFullYear(), text = "All Rights Reserved &#xA9; "
-											+ year + " - National ParkCore", html = '<div class="text-align-center">'
-											+ text + '</div>';
-									document.write(html);
-								</script>
-							</p>
-						</footer>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<jsp:include page="footer.jsp" />
 	<br>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
