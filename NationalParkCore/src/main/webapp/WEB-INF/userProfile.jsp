@@ -40,19 +40,6 @@ footer {
 </style>
 </head>
 <body>
-<jsp:include page="nav.jsp" />
- 
-${loggedInUser.username}
-${loggedInUser.firstName}
-${loggedInUser.lastName}
-${loggedInUser.email}
-${loggedInUser.biography}
-${loggedInUser.imageURL}
-
-<form action="logout.do" method="GET">
-	<input class="submit-button" type="submit" value="Log Out"
-		title="Log Out" />
-</form>
 	<jsp:include page="nav.jsp" />
 	<br>
 	<br>
@@ -61,8 +48,13 @@ ${loggedInUser.imageURL}
 			<div class="col-md-7 mx-auto">
 				<div class="card mt-4">
 					<div>
-						<div class="card-body text-center bg-light">${loggedInUser }
-						</div>
+						<div class="card-body text-center bg-light">
+							${loggedInUser.username}
+							${loggedInUser.firstName} 
+							${loggedInUser.lastName}
+							${loggedInUser.email} 
+							${loggedInUser.biography}
+							${loggedInUser.imageURL}</div>
 					</div>
 				</div>
 			</div>
