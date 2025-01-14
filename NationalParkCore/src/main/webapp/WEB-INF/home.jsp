@@ -16,35 +16,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" type="image/png"
 	href="images/national-parkcore-favicon.ico" />
-<style>
-html body {
-	background-image: url('images/national-parkcore-background.jpg');
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.image {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-}
-
-.top {
-	margin-top: calc(100vh + var(--offset));
-	text-decoration: none;
-	padding: 10px;
-	font-family: sans-serif;
-	color: #fff;
-	background: #333366;
-	border-radius: 10px;
-}
-
-footer {
-	text-align: center;
-}
-</style>
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
@@ -56,6 +27,7 @@ footer {
 				<div class="card mt-2">
 					<div class="card-body">
 						<h1 style="text-align: center">Welcome to National ParkCore!</h1>
+
 						<img class="image" style="text-align: center"
 							src="https://i.makeagif.com/media/5-12-2015/cL5D-2.gif">
 					</div>

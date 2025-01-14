@@ -1,6 +1,26 @@
 html body {
-	background-image: url('images/national-parkcore-background.jpg');
+	background-image: url('../images/national-parkcore-background.jpg');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.top {
+	margin-top: calc(100vh + var(--offset));
+	text-decoration: none;
+	padding: 10px;
+	font-family: sans-serif;
+	color: #fff;
+	background: #333366;
+	border-radius: 10px;
+}
+
+footer {
+	text-align: center;
 }
