@@ -49,34 +49,40 @@ footer {
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							<br> <br>
+							<br>
+							<h2>Edit Your Profile</h2>
+							<br>
 							<form action="editUserProfile.do" method="POST"
-							onsubmit="return window.confirm('Confirm Edits?');">
-							<h3>Full Name</h3>
-							<input type="text" name="name" value="${loggedInUser.firstName}"
-								style="text-align: center" /> <br> <br> <input
-								type="text" name="name" value="${loggedInUser.lastName}"
-								style="text-align: center" /> <br> <br>
-							<input type="email" name="email" value="${loggedInUser.email}"
-								style="text-align: center" /> <br> <br> <textarea></textarea><input
-								type="text" name="name" value="${loggedInUser.biography}"
-								style="text-align: center" /> <br> <br>
+								onsubmit="return window.confirm('Confirm Edits?');">
+								<h3>First Name</h3>
+								<input type="text" name="name" value="${loggedInUser.firstName}"
+									style="text-align: center" /> <br> <br>
+								<h3>Last Name</h3>
+								<input type="text" name="name" value="${loggedInUser.lastName}"
+									style="text-align: center" /> <br> <br>
+								<h4>Email Address</h4>
+								<input type="email" name="email" value="${loggedInUser.email}"
+									style="text-align: center" /> <br> <br>
+								<h4>Bio</h4>
+								<textarea cols="70" rows="8">${loggedInUser.biography}</textarea>
+								<br> <br>
 								<button type="submit" class="btn btn-success">
-								Submit Changes <i class="bi bi-signpost-2"></i>
-							</button>
-								</form>
-								</div>
-							</div>
+									Submit Changes <i class="bi bi-signpost-2"></i>
+								</button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
-			<br> <br>
-			<jsp:include page="footer.jsp" />
-			<br>
-			<script
-				src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-				integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-				crossorigin="anonymous"></script>
+		</div>
+	</div>
+	<br>
+	<br>
+	<jsp:include page="footer.jsp" />
+	<br>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
 </body>
 </html>
