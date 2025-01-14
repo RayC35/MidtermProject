@@ -57,7 +57,7 @@ footer {
 								<img src="${loggedInUser.imageURL}"> <br> <br>
 								<h3>Profile Image</h3>
 								<input type="text" name="imageURL"
-									value="${loggedInUser.imageURL}" size="40"
+									value="${loggedInUser.imageURL}" size="60"
 									style="text-align: center" /> <br> <br>
 								<h3>First Name</h3>
 								<input type="text" name="firstName"
@@ -69,7 +69,7 @@ footer {
 								<br> <br>
 								<h4>Email Address</h4>
 								<input type="email" name="email" value="${loggedInUser.email}"
-									style="text-align: center" /> <br> <br>
+									size="30" style="text-align: center" /> <br> <br>
 								<h4>Password</h4>
 								<input type="password" name="password"
 									value="${loggedInUser.password}" style="text-align: center" />
