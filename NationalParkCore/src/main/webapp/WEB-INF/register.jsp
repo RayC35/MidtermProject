@@ -51,14 +51,28 @@ footer {
 						<div class="card-body text-center bg-light">
 							<br> <br> <br>
 							<form action="register.do" method="POST">
-								<input type="text" name="username" required>Username <input
-									type="password" name="password" required>Password <input
-									type="text" name="firstName" required>First Name <input
-									type="text" name="lastName" required>Last Name <input
-									type="email" name="email">Email
-								<textarea name="biography">Biography</textarea>
-								<input type="text" name="imageURL">Profile Image URL <input
-									type="submit" name="Register">
+								<h3>Username</h3>
+								<input type="text" name="username" required
+									style="text-align: center"><br> <br>
+								<h3>Password</h3>
+								<input type="text" name="password" required
+									style="text-align: center"><br> <br>
+								<h3>First Name</h3>
+								<input type="text" name="firstName" required
+									style="text-align: center"><br> <br>
+								<h3>Last Name</h3>
+								<input type="text" name="lastName" required
+									style="text-align: center"><br> <br>
+								<h3>Email</h3>
+								<input type="email" name="email" required
+									style="text-align: center"><br> <br>
+								<textarea>Biography</textarea>
+								<h3>Profile Image URL</h3>
+								<input type="text" name="imageURL" style="text-align: center"><br>
+								<br>
+								<button type="submit" class="btn btn-success">
+									Create Account <i class="bi bi-tree"></i>
+								</button>
 							</form>
 							<br> <br> <br>
 						</div>
