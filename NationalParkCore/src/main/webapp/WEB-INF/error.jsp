@@ -16,16 +16,14 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" type="image/png"
 	href="images/national-parkcore-favicon.ico" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="icon" type="image/png" href="images/cooki-jar.ico" />
 <style>
+html body {
+	background-image: url('images/national-parkcore-background.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .top {
 	margin-top: calc(100vh + var(--offset));
 	text-decoration: none;
@@ -40,27 +38,24 @@ footer {
 	text-align: center;
 }
 </style>
-
 </head>
 <body>
-	<br>
-	<br>
-	<br>
+	<jsp:include page="nav.jsp" />
 	<br>
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 mx-auto">
+			<div class="col-md-7 mx-auto">
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
 							<h1>Error</h1>
-							<button class="btn btn-warning" type="button"
+							<button class="btn btn-success" type="button"
 								onclick="history.back()">
 								Go Back <i class="bi bi-tree"></i>
 							</button>
 							<hr>
-							<button class="btn btn-primary" type="submit"
+							<button class="btn btn-success" type="submit"
 								onclick="window.location.href='home.do'">
 								Return To Home <i class="bi bi-tree"></i>
 							</button>
@@ -72,45 +67,7 @@ footer {
 	</div>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-7 mx-auto">
-				<div class="card mt-2">
-					<div class="card-body">
-						<footer>
-							<br> <a href="#" class="top">Go To Top <i
-								class="bi bi-tree"></i></a> <br> <br>
-							<p>
-								<script type="text/javascript">
-									var date = new Date(), year = date
-											.getFullYear(), text = "All Rights Reserved &#xA9; "
-											+ year + " - National ParkCore", html = '<div class="text-align-center">'
-											+ text + '</div>';
-									document.write(html);
-								</script>
-							</p>
-						</footer>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<jsp:include page="footer.jsp" />
 	<br>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
