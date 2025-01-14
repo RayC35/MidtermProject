@@ -15,7 +15,7 @@
 		<ul class="navbar-nav w-100 mt-2 mt-lg-0">
 			<li class="nav-item active"><a class="nav-link" href="home.do">Home
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="viewAllParks.do">Parks</a>
+			<li class="nav-item"><a class="nav-link" href="listAllParks.do">Parks</a>
 			</li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#"

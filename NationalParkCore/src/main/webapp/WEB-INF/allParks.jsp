@@ -58,7 +58,7 @@ footer {
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="c" items="${parkList}">
+								<c:forEach var="park" items="${parkList}">
 									<c:if test="${empty name}">
 										<tr>
 									</c:if>
@@ -73,10 +73,10 @@ footer {
 									<tr>
 										<td>${park.id}</td>
 										<td><a
-											href="<c:url value='goParkDetails.do'><c:param name='parkId' value='${park.id}'/></c:url>">
+											href="<c:url value='parkDetails.do'><c:param name='parkId' value='${park.id}'/></c:url>">
 												${park.name}</a></td>
 										<td>${park.stateAbbreviation}</td>
-										<td>${park.websiteUrl}</td>
+										<td>${park.websiteURL}</td>
 									</tr>
 								</c:forEach>
 							</tbody>
