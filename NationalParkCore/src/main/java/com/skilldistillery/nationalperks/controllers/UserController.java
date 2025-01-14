@@ -73,4 +73,29 @@ public class UserController {
 			return "login";
 		}
 	}
+	
+	@GetMapping("goEditUserProfile.do")
+	public String goEditProfile(HttpSession session) {
+		if (session.getAttribute("loggedInUser") != null) {
+			return "editUserProfile";
+		}
+		else {
+			return "login";
+		}
+	}
+		
+	@PostMapping("editUserProfile.do")	
+	public String doEdit(HttpSession session, User updatedUser) {
+		User loggedInUser = (User)session.getAttribute("loggedInUser");
+		if (loggedInUser != null) {
+			updatedUser = userDao.editUserProfile(updatedUser, loggedInUser.getId());
+			session.setAttribute("loggedInUser", updatedUser);
+			return "userProfile";
+		}
+		else {
+			return "login";
+		}
+	}
+	
+	
 }
