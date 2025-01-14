@@ -48,8 +48,13 @@ footer {
 			<div class="col-md-7 mx-auto">
 				<div class="card mt-4">
 					<div>
-						<div class="card-body text-center bg-light">${loggedInUser }
-						</div>
+						<div class="card-body text-center bg-light">
+							${loggedInUser.username}
+							${loggedInUser.firstName} 
+							${loggedInUser.lastName}
+							${loggedInUser.email} 
+							${loggedInUser.biography}
+							${loggedInUser.imageURL}</div>
 					</div>
 				</div>
 			</div>
