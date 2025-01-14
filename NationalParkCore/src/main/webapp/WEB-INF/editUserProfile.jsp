@@ -54,17 +54,25 @@ footer {
 							<br>
 							<form action="editUserProfile.do" method="POST"
 								onsubmit="return window.confirm('Confirm Edits?');">
+								<img src="${loggedInUser.imageURL}"> <br> <br>
+								<h3>Profile Image</h3>
+								<input type="text" name="imageURL"
+									value="${loggedInUser.imageURL}" style="text-align: center" />
+								<br> <br>
 								<h3>First Name</h3>
-								<input type="text" name="name" value="${loggedInUser.firstName}"
+								<input type="text" name="firstName" value="${loggedInUser.firstName}"
 									style="text-align: center" /> <br> <br>
 								<h3>Last Name</h3>
-								<input type="text" name="name" value="${loggedInUser.lastName}"
+								<input type="text" name="lastName" value="${loggedInUser.lastName}"
 									style="text-align: center" /> <br> <br>
 								<h4>Email Address</h4>
 								<input type="email" name="email" value="${loggedInUser.email}"
 									style="text-align: center" /> <br> <br>
+								<h4>Password</h4>
+								<input type="hidden" name="password" value="${loggedInUser.password}"
+									style="text-align: center" /> <br> <br>
 								<h4>Bio</h4>
-								<textarea cols="70" rows="8">${loggedInUser.biography}</textarea>
+								<textarea cols="70" rows="8" name="biography">${loggedInUser.biography}</textarea>
 								<br> <br>
 								<button type="submit" class="btn btn-success">
 									Submit Changes <i class="bi bi-signpost-2"></i>
