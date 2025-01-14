@@ -57,7 +57,7 @@ footer {
 					<div class="card-body">
 						<h1 style="text-align: center">Welcome to National ParkCore!</h1>
 						<h2>${park.name}</h2>
-						<img src="${park.imageUrl}"> <br> <br>
+						<img src="${park.imageURL}"> <br> <br>
 						<h4>Description:</h4>
 						<p>${park.description}</p>
 						<h4>Location:</h4>
@@ -68,7 +68,7 @@ footer {
 						<h4>Entry Fee:</h4>
 						<p>${park.entryFee}</p>
 						<h4>Park Website:</h4>
-						<p>${park.websiteUrl}</p>
+						<p>${park.websiteURL}</p>
 						<br> <br>
 					</div>
 				</div>
