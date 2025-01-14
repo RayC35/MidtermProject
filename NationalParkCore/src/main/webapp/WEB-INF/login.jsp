@@ -24,6 +24,11 @@ html body {
 	background-size: cover;
 }
 
+form i {
+	margin-left: -25px;
+	cursor: pointer;
+}
+
 .top {
 	margin-top: calc(100vh + var(--offset));
 	text-decoration: none;
@@ -49,12 +54,25 @@ footer {
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							<h2>Log In</h2>
-							<form action="login.do" method="POST">
-								<input type="text" name="username"> <input
-									type="password" name="password" /> <input type="submit"
-									value="Log In">
+							<br>
+							<br>
+							<h2>Sign In To Your Profile</h2>
+							<br>
+							<form>
+								<p>
+									<label>Username:</label> <input type="text" name="username"
+										id="username">
+								</p>
+								<p>
+									<label>Password:</label> <input type="password" name="password"
+										id="password" /> <i class="bi bi-eye-slash"
+										id="togglePassword"></i>
+								</p>
+								<button class="btn btn-success text-nowrap" type="submit"
+									id="submit">Log In</button>
 							</form>
+							<br>
+							<br>
 						</div>
 					</div>
 				</div>
@@ -64,5 +82,20 @@ footer {
 	<br>
 	<br>
 	<jsp:include page="footer.jsp" />
+	<script>
+        const togglePassword = document
+            .querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        togglePassword.addEventListener('click', () => {
+            // Toggle the type attribute using
+            // getAttribure() method
+            const type = password
+                .getAttribute('type') === 'password' ?
+                'text' : 'password';
+            password.setAttribute('type', type);
+            // Toggle the eye and bi-eye icon
+            this.classList.toggle('bi-eye');
+        });
+    </script>
 </body>
 </html>

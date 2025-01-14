@@ -5,8 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.nationalperks.data.UserDAO;
 import com.skilldistillery.nationalperks.entities.User;
@@ -19,7 +17,7 @@ public class UserController {
 	@Autowired
 	private UserDAO userDao;
 
-	@RequestMapping(path = { "/", "home.do" })
+	@GetMapping({ "/", "home.do" })
 	public String home(Model model) {
 		return "home";
 	}
@@ -29,7 +27,7 @@ public class UserController {
 		return "register";
 	}
 
-	@RequestMapping(path = "register.do", method = RequestMethod.POST)
+	@PostMapping("register.do")
 	public String doRegister(HttpSession session, User user) {
 		try {
 			user = userDao.registerUser(user);

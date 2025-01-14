@@ -49,33 +49,36 @@ footer {
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							<br> <br> <br>
+							<br> <br>
 							<form action="register.do" method="POST">
-								<h3>Username</h3>
+								<h2>Register a New Account</h2>
+								<br>
+								<h4>Username</h4>
 								<input type="text" name="username" required
 									style="text-align: center"><br> <br>
-								<h3>Password</h3>
+								<h4>Password</h4>
 								<input type="text" name="password" required
 									style="text-align: center"><br> <br>
-								<h3>First Name</h3>
+								<h4>First Name</h4>
 								<input type="text" name="firstName" required
 									style="text-align: center"><br> <br>
-								<h3>Last Name</h3>
+								<h4>Last Name</h4>
 								<input type="text" name="lastName" required
 									style="text-align: center"><br> <br>
-								<h3>Email</h3>
-								<input type="email" name="email" required
+								<h4>Email Address</h4>
+								<input type="email" name="email" required size="30"
 									style="text-align: center"><br> <br>
-								<h3>Biography</h3>
+								<h4>Biography</h4>
 								<textarea></textarea>
-								<h3>Profile Image URL</h3>
-								<input type="text" name="imageURL" style="text-align: center"><br>
-								<br>
+								<br> <br>
+								<h4>Profile Image URL</h4>
+								<input type="text" name="imageURL" size="40"
+									style="text-align: center"><br> <br>
 								<button type="submit" class="btn btn-success">
 									Create Account <i class="bi bi-tree"></i>
 								</button>
 							</form>
-							<br> <br> <br>
+							<br> <br>
 						</div>
 					</div>
 				</div>
@@ -90,15 +93,5 @@ footer {
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-	<form action="register.do" method="POST">
-		<input type="text" name="username" required>Username <input
-			type="password" name="password" required>Password <input
-			type="text" name="firstName" required>First Name <input
-			type="text" name="lastName" required>Last Name <input
-			type="email" name="email">Email
-		<textarea name="biography">Biography</textarea>
-		<input type="text" name="imageURL">Profile Image URL <input
-			type="submit" name="Register">
-	</form>
 </body>
 </html>

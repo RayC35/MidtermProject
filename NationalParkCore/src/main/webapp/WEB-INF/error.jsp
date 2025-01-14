@@ -24,6 +24,13 @@ html body {
 	background-size: cover;
 }
 
+.image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
 .top {
 	margin-top: calc(100vh + var(--offset));
 	text-decoration: none;
@@ -49,16 +56,15 @@ footer {
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
+							<br>
 							<h1>Error</h1>
+							<br> <img class="image" style="text-align: center"
+								src="images/404.jpg"><br> <br>
 							<button class="btn btn-success" type="button"
 								onclick="history.back()">
 								Go Back <i class="bi bi-tree"></i>
 							</button>
-							<hr>
-							<button class="btn btn-success" type="submit"
-								onclick="window.location.href='home.do'">
-								Return To Home <i class="bi bi-tree"></i>
-							</button>
+							<br> <br> <br>
 						</div>
 					</div>
 				</div>

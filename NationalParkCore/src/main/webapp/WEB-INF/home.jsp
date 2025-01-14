@@ -56,7 +56,6 @@ footer {
 				<div class="card mt-2">
 					<div class="card-body">
 						<h1 style="text-align: center">Welcome to National ParkCore!</h1>
-
 						<img class="image" style="text-align: center"
 							src="https://i.makeagif.com/media/5-12-2015/cL5D-2.gif">
 					</div>
