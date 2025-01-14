@@ -66,7 +66,8 @@ footer {
 								<h3>Email</h3>
 								<input type="email" name="email" required
 									style="text-align: center"><br> <br>
-								<textarea>Biography</textarea>
+								<h3>Biography</h3>
+								<textarea></textarea>
 								<h3>Profile Image URL</h3>
 								<input type="text" name="imageURL" style="text-align: center"><br>
 								<br>
@@ -89,15 +90,15 @@ footer {
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-<form action="register.do" method = "POST">
-<input type = "text" name = "username" required>Username
-<input type = "password" name = "password" required>Password
-<input type = "text" name = "firstName" required>First Name
-<input type = "text" name = "lastName" required>Last Name
-<input type = "email" name = "email">Email
-<textarea name = "biography" >Biography</textarea>
-<input type = "text" name = "imageURL">Profile Image URL
-<input type = "submit" name = "Register">
-</form>
+	<form action="register.do" method="POST">
+		<input type="text" name="username" required>Username <input
+			type="password" name="password" required>Password <input
+			type="text" name="firstName" required>First Name <input
+			type="text" name="lastName" required>Last Name <input
+			type="email" name="email">Email
+		<textarea name="biography">Biography</textarea>
+		<input type="text" name="imageURL">Profile Image URL <input
+			type="submit" name="Register">
+	</form>
 </body>
 </html>
