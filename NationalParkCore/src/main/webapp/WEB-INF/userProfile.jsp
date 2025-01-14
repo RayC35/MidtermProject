@@ -9,7 +9,12 @@
 <body>
 <jsp:include page="nav.jsp" />
  
-${loggedInUser }
+${loggedInUser.username}
+${loggedInUser.firstName}
+${loggedInUser.lastName}
+${loggedInUser.email}
+${loggedInUser.biography}
+${loggedInUser.imageURL}
 
 <form action="logout.do" method="GET">
 	<input class="submit-button" type="submit" value="Log Out"
