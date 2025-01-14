@@ -36,4 +36,5 @@ public class UserDaoImpl implements UserDAO {
 		em.persist(user);
 		return user;
 	}
+
 }
