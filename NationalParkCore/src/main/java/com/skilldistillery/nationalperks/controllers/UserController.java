@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.skilldistillery.nationalperks.data.AmenityVisitDAO;
 import com.skilldistillery.nationalperks.data.ParkVisitDAO;
 import com.skilldistillery.nationalperks.data.UserDAO;
 import com.skilldistillery.nationalperks.entities.User;
@@ -23,6 +24,9 @@ public class UserController {
 	
 	@Autowired
 	private ParkVisitDAO parkVisitDao;
+	
+	@Autowired
+	private AmenityVisitDAO amenityVisitDao;
 
 	@GetMapping({ "/", "home.do" })
 	public String home(Model model) {
@@ -61,6 +65,7 @@ public class UserController {
 		if (user != null) {
 			session.setAttribute("loggedInUser", user);
 			model.addAttribute("parkVisitList", parkVisitDao.listUserParkVisits(user.getId()));
+			model.addAttribute("amenityVisitList", amenityVisitDao.listAllAmenityVisitsByUserId(user.getId()));
 			return "userProfile";
 		} else {
 			return "login";

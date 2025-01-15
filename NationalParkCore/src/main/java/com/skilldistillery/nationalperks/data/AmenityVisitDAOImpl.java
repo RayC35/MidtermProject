@@ -36,12 +36,19 @@ public class AmenityVisitDAOImpl implements AmenityVisitDAO {
 		return amenityVisitsByAmenity;
 	}
 
-//	@Override
-//	public List<AmenityVisit> listAllAmenityVisitsByUserId(int userId) {
-//		String jpql = "SELECT a FROM AmenityVisit a WHERE a.user.id = :id";
-//		List<AmenityVisit> amenityVisitsByAmenity = em.createQuery(jpql, AmenityVisit.class)
-//													  .setParameter("id", amenityId).getResultList();
-//		return amenityVisitsByAmenity;
-//	}
+	@Override
+	public List<AmenityVisit> listAllAmenityVisitsByUserId(int userId) {
+		String jpql = "SELECT a FROM AmenityVisit a WHERE a.user.id = :id";
+		List<AmenityVisit> amenityVisitByUser = em.createQuery(jpql, AmenityVisit.class)
+													  .setParameter("id", userId).getResultList();
+		return amenityVisitByUser;
+	}
+
+	@Override
+	public AmenityVisit createAmenityVisit(AmenityVisit amenityVisit) {
+		amenityVisit.setEnabled(true);
+		em.persist(amenityVisit);
+		return amenityVisit;
+	}
 
 }
