@@ -8,4 +8,5 @@ public interface AmenityDAO {
 
 	public List<Amenity> listAllAmenitiesByParkId(int parkId);
 	public Amenity findAmenityById(int amenityId);
+	
 }
