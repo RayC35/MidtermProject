@@ -69,17 +69,14 @@ public class Amenity {
 	public Amenity() {
 		super();
 	}
-	
 
 	public List<AmenityCategory> getAmenityCategories() {
 		return amenityCategories;
 	}
 
-
 	public void setAmenityCategories(List<AmenityCategory> amenityCategories) {
 		this.amenityCategories = amenityCategories;
 	}
-
 
 	public List<AmenityVisit> getAmenityVisits() {
 		return amenityVisits;
@@ -210,6 +207,4 @@ public class Amenity {
 				+ "]";
 	}
 	
-	
-
 }
