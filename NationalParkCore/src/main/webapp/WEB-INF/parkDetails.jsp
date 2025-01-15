@@ -47,7 +47,11 @@
 							<a href="${park.websiteURL}" target="_blank">${park.name}
 								Website</a>
 						</p>
-
+						<br>
+						<hr>
+						<br>
+						<jsp:include page="listAllAmenitiesByPark.jsp" />
+						<br>
 						<hr>
 						<c:if test="${loggedInUser.role == 'admin'}">
 							<button class="btn btn-warning text-nowrap" type="submit"
