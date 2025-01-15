@@ -8,4 +8,6 @@ public interface ParkDAO {
 
 	public List<Park> listAllParks();
 	public Park findParkById(int parkId);
+	public Park adminEditParkDetails(Park park, int parkId);
+	
 }

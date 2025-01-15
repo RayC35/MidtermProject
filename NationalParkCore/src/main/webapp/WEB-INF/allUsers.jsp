@@ -71,9 +71,10 @@
 										<td>${user.lastUpdate}</td>
 										<td>${user.email}</td>
 										<td><button class="btn btn-warning" type="submit"
-											onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
+												onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
 												Edit</button></td>
-										<td><c:if test="${user.role == 'user'}">
+										<td><c:if
+												test="${user.role == 'user' && user.enabled == 'true'}">
 												<form action="adminDisableUser.do" method="POST"
 													onsubmit="return window.confirm('Confirm Disable?');">
 													<div class="form-group">
@@ -82,6 +83,10 @@
 													</div>
 													<button type="submit" class="btn btn-danger">Disable</button>
 												</form>
+											</c:if> <c:if test="${user.enabled == 'false'}">
+												<p class="unable">
+													Disabled <i class="bi bi-exclamation-octagon text-nowrap"></i>
+												</p>
 											</c:if> <c:if test="${user.role == 'admin'}">
 												<p class="unable">
 													<i class="bi bi-exclamation-octagon"></i>

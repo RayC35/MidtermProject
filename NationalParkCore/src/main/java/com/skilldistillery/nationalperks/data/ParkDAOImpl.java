@@ -35,4 +35,21 @@ public class ParkDAOImpl implements ParkDAO {
 		return foundPark;
 	}
 
+	@Override
+	public Park adminEditParkDetails(Park park, int parkId) {
+		Park foundPark = em.find(Park.class, parkId);	
+		foundPark.setClosingTime(park.getClosingTime());
+		foundPark.setOpeningTime(park.getOpeningTime());
+		foundPark.setName(park.getName());
+		foundPark.setDescription(park.getDescription());
+		foundPark.setMainEntranceLatitude(park.getMainEntranceLatitude());
+		foundPark.setMainEntranceLongitude(park.getMainEntranceLongitude());
+		foundPark.setStateAbbreviation(park.getStateAbbreviation());
+		foundPark.setEntryFee(park.getEntryFee());
+		foundPark.setWebsiteURL(park.getWebsiteURL());
+		foundPark.setImageURL(park.getImageURL());
+		em.persist(foundPark);
+		return foundPark;
+	}
+	
 }

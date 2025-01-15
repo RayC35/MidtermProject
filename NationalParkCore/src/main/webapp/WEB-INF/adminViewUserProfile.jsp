@@ -56,9 +56,10 @@
 								</div>
 							</div>
 							<br>
-							<button class="btn btn-warning" type="submit"
+							<button class="btn btn-warning text-nowrap" type="submit"
 								onclick="window.location.href='goAdminEditUserProfile.do?userId=${adminFoundUser.id}'">
-								Edit ${adminFoundUser.username}'s Profile <i class="bi bi-signpost-2"></i>
+								Edit ${adminFoundUser.username}'s Profile <i
+									class="bi bi-signpost-2"></i>
 							</button>
 							<br> <br>
 						</div>

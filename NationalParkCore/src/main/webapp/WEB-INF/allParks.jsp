@@ -36,9 +36,9 @@
 									<th>Name</th>
 									<th>State</th>
 									<th>Website</th>
+									<th><c:if test="${loggedInUser.role == 'admin'}">Edit</c:if></th>
 								</tr>
-							</thead>
-							<tbody>
+							</thead><tbody>
 								<c:forEach var="park" items="${parkList}">
 									<c:if test="${empty name}">
 										<tr>
@@ -59,6 +59,11 @@
 										<td>${park.stateAbbreviation}</td>
 										<td><a href="${park.websiteURL}" target="_blank">View
 												Website</a></td>
+										<td><c:if test="${loggedInUser.role == 'admin'}">
+												<button class="btn btn-warning" type="submit"
+													onclick="window.location.href='goAdminEditParkDetails.do?parkId=${park.id}'">
+													Edit</button>
+											</c:if></td>
 									</tr>
 								</c:forEach>
 							</tbody>

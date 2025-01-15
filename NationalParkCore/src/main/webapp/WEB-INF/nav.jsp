@@ -31,7 +31,7 @@
 				test="${not empty loggedInUser && loggedInUser.role == 'admin'}">
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
 					onclick="window.location.href='listAllUsers.do'">
-					User Admin <i class="bi bi-signpost-2-fill"></i>
+					User Admin <i class="bi bi-person-lines-fill"></i>
 				</button>
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
 					onclick="window.location.href='goUserProfile.do'">
