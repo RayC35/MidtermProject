@@ -59,7 +59,25 @@
 										<td>${park.stateAbbreviation}</td>
 										<td><a href="${park.websiteURL}" target="_blank">View
 												Website</a></td>
+												<td><button class="btn btn-warning" type="submit"
+											onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
+												Edit</button></td>
+										<td><c:if test="${user.role == 'user'}">
+												<form action="adminDisableUser.do" method="POST"
+													onsubmit="return window.confirm('Confirm Disable?');">
+													<div class="form-group">
+														<input type="hidden" class="form-control" id="id"
+															name="id" value="<c:out value='${user.id}' />">
+													</div>
+													<button type="submit" class="btn btn-danger">Disable</button>
+												</form>
+											</c:if> <c:if test="${user.role == 'admin'}">
+												<p class="unable">
+													<i class="bi bi-exclamation-octagon"></i>
+												</p>
+											</c:if></td>
 									</tr>
+									
 								</c:forEach>
 							</tbody>
 						</table>

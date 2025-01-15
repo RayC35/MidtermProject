@@ -54,9 +54,11 @@ public class ParkController {
 	@PostMapping("adminEditParkDetails.do")
 	public String doAdminEditParkDetails(HttpSession session, Park adminUpdatedPark) {
 		Park adminFoundPark = (Park) session.getAttribute("adminFoundPark");
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
 		if (adminFoundPark != null) {
 			adminUpdatedPark = parkDao.adminEditParkDetails(adminUpdatedPark, adminFoundPark.getId());
 			session.setAttribute("park", adminUpdatedPark);
+			session.setAttribute("user", loggedInUser);
 			return "parkDetails";
 		} else {
 			return "adminEditParkDetails";
