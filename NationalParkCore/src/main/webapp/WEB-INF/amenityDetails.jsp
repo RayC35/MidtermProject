@@ -7,6 +7,6 @@
 <title>Amenity Details Page</title>
 </head>
 <body>
-
+	<h2>${amenity.name}</h2>
 </body>
 </html>
