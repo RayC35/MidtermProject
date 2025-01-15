@@ -20,14 +20,14 @@
 						</thead>
 						<tbody>
 							<c:forEach var="parkVisit" items="${parkVisitList}">
-								<c:if test="${empty title}">
+								<c:if test="${empty id}">
 									<tr>
 								</c:if>
-								<c:if test="${! empty title}">
-									<c:if test="${parkVisit.title == title}">
+								<c:if test="${! empty id}">
+									<c:if test="${parkVisit.id == id}">
 										<tr class="found">
 									</c:if>
-									<c:if test="${parkVisit.title != title}">
+									<c:if test="${parkVisit.id != id}">
 										<tr>
 									</c:if>
 								</c:if>

@@ -214,8 +214,7 @@ public class ParkVisit {
 		return "ParkVisit [id=" + id + ", title=" + title + ", remarks=" + remarks + ", startDate=" + startDate
 				+ ", endDate=" + endDate + ", rating=" + rating + ", createDate=" + createDate + ", lastUpdate="
 				+ lastUpdate + ", imageURL=" + imageURL + ", published=" + published + ", enabled=" + enabled
-				+ ", park=" + park + ", user=" + user + ", parkVisitComments=" + parkVisitComments
-				+ ", parkVisitImages=" + parkVisitImages + "]";
+				+ ", park=" + park + ", user=" + user + "]";
 	}
 
 }

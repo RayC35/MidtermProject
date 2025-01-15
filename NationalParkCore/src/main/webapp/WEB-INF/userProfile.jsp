@@ -58,7 +58,7 @@
 								Add A Park Visit <i class="bi bi-person-walking"></i>
 							</button>
 							<button class="btn btn-success mx-2" type="submit"
-								onclick="window.location.href='listAllUserParkVisits.do?userId=${loggedInUser.id}'">
+								onclick="window.location.href='listAllUserParkVisits.do?user=${loggedInUser.id}'">
 								View Detailed Park Visits <i class="bi bi-tree"></i>
 							</button>
 							<br> <br>

@@ -47,17 +47,14 @@ public class Park {
 
 	public Park() {
 	}
-
 	
 	public List<Amenity> getAmenities() {
 		return amenities;
 	}
 
-
 	public void setAmenities(List<Amenity> amenities) {
 		this.amenities = amenities;
 	}
-
 
 	public int getId() {
 		return id;
