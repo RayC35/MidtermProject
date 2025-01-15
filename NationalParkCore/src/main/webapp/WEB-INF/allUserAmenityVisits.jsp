@@ -65,7 +65,7 @@
 										<td>${amenityVisit.lastUpdate}</td>
 										<td>${amenityVisit.dateVisited}</td>
 										<td>${amenityVisit.rating}</td>
-										<td>${amenity.websiteUrl}</td>
+										<td>${amenity.websiteURL}</td>
 										<%-- <td><button class="btn btn-warning" type="submit"
 												onclick="window.location.href='goEditParkVisit.do?parkVisitId=${parkVisit.id}'">
 												Edit</button></td> --%>

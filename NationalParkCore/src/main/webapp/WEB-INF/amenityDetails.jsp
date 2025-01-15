@@ -28,11 +28,11 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-sm">
-									<h2>${amenity.name}</h2>
-									<h3>${ }</h3>
-									<h3>${ }</h3>
-									<h3>${ }</h3>
-									<h3>${ }</h3>
+									<h2 style="text-align: centered">${amenity.name}</h2>
+									<p>${amenity.id}</p>
+									<p>Description: ${amenity.description}</p>
+									<p>${amenity.costRange}</p>
+									<p><a href="url" target="_blank">${amenity.websiteURL}</a></p>
 								</div>
 							</div>
 						</div>
