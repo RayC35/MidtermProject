@@ -10,6 +10,8 @@ public interface AmenityVisitDAO {
 	
 	public List<AmenityVisit> listAllAmenityVisitsByAmenityId(int amenityId);
 	
-//	public List<AmenityVisit> listAllAmenityVisitsByUserId(int userId);
+	public List<AmenityVisit> listAllAmenityVisitsByUserId(int userId);
+	
+	public AmenityVisit createAmenityVisit(AmenityVisit amenityVisit);
 
 }
