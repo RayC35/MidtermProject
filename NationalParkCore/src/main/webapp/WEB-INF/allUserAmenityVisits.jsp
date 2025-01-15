@@ -59,13 +59,12 @@
 										<td><a
 											href="<c:url value='parkVisitDetails.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
 												${amenityVisit.name}</a></td>
-										<td>${parkVisit.startDate}</td>
-										<td>${parkVisit.endDate}</td>
-										<td>${parkVisit.rating}</td>
-										<td>${parkVisit.createDate}</td>
-										<td>${parkVisit.lastUpdate}</td>
-										<td>${parkVisit.published}</td>
-										<td>${parkVisit.enabled}</td>
+										<td>${amenityVisit.costRange}</td>
+										<td>${amenityVisit.createDate}</td>
+										<td>${amenityVisit.lastUpdate}</td>
+										<td>${amenityVisit.dateVisited}</td>
+										<td>${amenityVisit.rating}</td>
+										<td>${amenity.websiteUrl}</td>
 										<td><button class="btn btn-warning" type="submit"
 												onclick="window.location.href='goEditParkVisit.do?parkVisitId=${parkVisit.id}'">
 												Edit</button></td>
