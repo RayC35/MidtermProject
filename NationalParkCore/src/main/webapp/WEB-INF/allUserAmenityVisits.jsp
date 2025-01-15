@@ -40,10 +40,11 @@
 									<th>Website</th>
 									<!-- <th>Edit</th>
 									<th>Disable</th>
- -->								</tr>
+ -->
+								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="amenityVisit" items="${amenityVisitList}">
+								<c:forEach var="amenityList" items="${amenityList}">
 									<c:if test="${empty name}">
 										<tr>
 									</c:if>
