@@ -36,6 +36,4 @@ public class AmenityController {
 		return "amenityDetails";
 	}
 	
-	
-	
 }
