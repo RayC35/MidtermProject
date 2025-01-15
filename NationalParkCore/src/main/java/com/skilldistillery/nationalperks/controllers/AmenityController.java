@@ -25,7 +25,7 @@ public class AmenityController {
 	}
 	
 	@GetMapping("amenityDetails.do")
-	public String findAmenityById(Model model, int amenityId) {
+	public String findAmenityById(Model model, @RequestParam("amenityId") int amenityId) {
 		Amenity foundAmenity = null;
 		try {
 			foundAmenity = amenityDao.findAmenityById(amenityId);

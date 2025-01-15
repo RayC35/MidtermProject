@@ -6,14 +6,15 @@
 	<div class="accordion-item">
 		<h2 class="accordion-header">
 			<button class="accordion-button" type="button"
-				data-bs-toggle="collapse" data-bs-target="#collapseOne${amenityEntry.key }"
+				data-bs-toggle="collapse" data-bs-target="#collapseOne${amenityEntry.key}"
 				aria-expanded="true" aria-controls="collapseOne">${amenityEntry.key }</button>
 		</h2>
 		<c:forEach var="amenity" items="${amenityEntry.value}">
-		<div id="collapseOne${amenityEntry.key }" class="accordion-collapse collapse"
+		<div id="collapseOne${amenityEntry.key}" class="accordion-collapse collapse"
 			data-bs-parent="#accordionExample">
 			<div class="accordion-body">
-				<p>${amenity.name }</p>
+				<p><a href="<c:url value='amenityDetails.do'><c:param name='amenityId' 
+				      value='${amenity.id}'/></c:url>">${amenity.name}</a></p>
 			</div>
 		</div>
 		</c:forEach>
