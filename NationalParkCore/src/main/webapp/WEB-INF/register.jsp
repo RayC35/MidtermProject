@@ -47,16 +47,15 @@
 								<input type="email" name="email" required size="30"
 									style="text-align: center"><br> <br>
 								<h4>Biography</h4>
-								<textarea></textarea>
+								<textarea cols="70" rows="8"></textarea>
 								<br> <br>
 								<h4>Profile Image URL</h4>
 								<input type="text" name="imageURL" size="40"
-									style="text-align: center"><br> <br>
-								<button type="submit" class="btn btn-success">
-									Create Account <i class="bi bi-tree"></i>
-								</button>
+									style="text-align: center"><br> <br> <br>
+								<button type="submit" class="btn btn-success">Create
+									Account</button>
 							</form>
-							<br> <br>
+							<br>
 						</div>
 					</div>
 				</div>

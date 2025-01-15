@@ -29,10 +29,10 @@
 							<div class="row">
 								<div class="col-sm">
 									<div class="col-sm" style="text-align: center">
-										<h5 style="text-align: center">Check Out Zion's
-											Activities</h5>
-										<br> <img class="image" src="images/zion-square.jpg">
-										<br>
+										<h5 style="text-align: center">
+											<strong>Check Out Zion's Activities</strong>
+										</h5>
+										<img class="image" src="images/zion-square.jpg"> <br>
 										<button class="btn btn-success text-nowrap mx-2" type="submit"
 											onclick="window.location.href='goParkDetails.do?parkId=9'">
 											Check Them Out!</button>
@@ -40,18 +40,21 @@
 									</div>
 								</div>
 								<div class="col-sm" style="text-align: center">
-									<h5 style="text-align: center">Food at Rocky Mountain</h5>
-									<br> <img class="image"
-										src="images/rocky-mountain-square.jpg"> <br>
+									<h5 style="text-align: center">
+										<strong>Food at Rocky Mountain</strong>
+									</h5>
+									<img class="image" src="images/rocky-mountain-square.jpg">
+									<br>
 									<button class="btn btn-success text-nowrap mx-2" type="submit"
 										onclick="window.location.href='goParkDetails.do?parkId=1'">
 										Show Me!</button>
 									<br>
 								</div>
 								<div class="col-sm" style="text-align: center">
-									<h5 style="text-align: center">View Lodging at Mesa Verde</h5>
-									<br> <img class="image" src="images/mesa-verde-square.jpg">
-									<br>
+									<h5 style="text-align: center">
+										<strong>View Lodging at Mesa Verde</strong>
+									</h5>
+									<img class="image" src="images/mesa-verde-square.jpg"> <br>
 									<button class="btn btn-success text-nowrap mx-2" type="submit"
 										onclick="window.location.href='goParkDetails.do?parkId=2'">
 										Take Me There!</button>

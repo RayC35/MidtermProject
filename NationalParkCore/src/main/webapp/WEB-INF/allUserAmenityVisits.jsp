@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>User Park Visits</title>
+<title>User Amenity Visits</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -26,40 +26,39 @@
 			<div class="col-md-13 mx-auto">
 				<div class="card mt-4">
 					<div class="card-body">
-						<h2 style="text-align: center;">All Park Visits</h2>
+						<h2 style="text-align: center;">All Amenity Visits</h2>
 						<br>
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th>Title</th>
-									<th>Start Date</th>
-									<th>End Date</th>
-									<th>Rating</th>
+									<th>Name</th>
+									<th>Cost Range</th>
 									<th>Create Date</th>
 									<th>Last Update</th>
-									<th>Published</th>
-									<th>Enabled</th>
+									<th>Date Visited</th>
+									<th>Rating</th>
+									<th>Website</th>
 									<th>Edit</th>
 									<th>Disable</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="parkVisit" items="${parkVisitList}">
-									<c:if test="${empty title}">
+								<c:forEach var="amenityVisit" items="${amenityVisitList}">
+									<c:if test="${empty name}">
 										<tr>
 									</c:if>
-									<c:if test="${! empty title}">
-										<c:if test="${parkVisit.title == title}">
+									<c:if test="${! empty name}">
+										<c:if test="${amenityVisit.name == name}">
 											<tr class="found">
 										</c:if>
-										<c:if test="${parkVisit.title != title}">
+										<c:if test="${amenityVisit.name != name}">
 											<tr>
 										</c:if>
 									</c:if>
 									<tr>
 										<td><a
 											href="<c:url value='parkVisitDetails.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
-												${parkVisit.title}</a></td>
+												${amenityVisit.name}</a></td>
 										<td>${parkVisit.startDate}</td>
 										<td>${parkVisit.endDate}</td>
 										<td>${parkVisit.rating}</td>

@@ -19,7 +19,6 @@
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
-	<jsp:include page="listAllAmenitiesByPark.jsp" />
 	<br>
 	<br>
 	<div class="container">
@@ -46,7 +45,7 @@
 						<h4>Park Website:</h4>
 						<p>
 							<a href="${park.websiteURL}" target="_blank">${park.name}
-								Website</a>
+								National Park Website</a>
 						</p>
 						<br>
 						<hr>
