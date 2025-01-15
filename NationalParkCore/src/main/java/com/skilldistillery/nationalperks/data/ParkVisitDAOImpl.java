@@ -22,7 +22,7 @@ public class ParkVisitDAOImpl implements ParkVisitDAO {
 
 	@Override
 	public List<ParkVisit> listUserParkVisits(int userId) {
-		String jpql = "SELECT p FROM ParkVisit p WHERE p.userId = :id";
+		String jpql = "SELECT p FROM ParkVisit p WHERE p.user.id = :id";
 		List<ParkVisit> userParkVisits = em.createQuery(jpql, ParkVisit.class).setParameter("id", userId).getResultList();
 		return userParkVisits;	
 		}

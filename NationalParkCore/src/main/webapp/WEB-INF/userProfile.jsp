@@ -56,7 +56,7 @@
 								Edit My Profile <i class="bi bi-signpost-2"></i>
 							</button>
 							<button class="btn btn-primary" type="submit"
-								onclick="window.location.href='listAllUserParkVisits.do'">
+								onclick="window.location.href='listAllUserParkVisits.do?user=${loggedInUser.id}'">
 								View Detailed Park Visits <i class="bi bi-tree"></i>
 							</button>
 							<br> <br>

@@ -46,7 +46,7 @@
 							</div>
 							<h4>${parkVisit.lastUpdate}</h4>
 							<br>
-							<c:if test="${loggedInUser.userId == parkVisit.userId}">
+							<c:if test="${loggedInUser.id == parkVisit.user.id}">
 								<button class="btn btn-warning mr-4" type="submit"
 									onclick="window.location.href='goEditParkVisit.do'">
 									Edit Visit <i class="bi bi-signpost-2"></i>

@@ -20,20 +20,20 @@
 						</thead>
 						<tbody>
 							<c:forEach var="parkVisit" items="${parkVisitList}">
-								<c:if test="${empty title}">
+								<%-- <c:if test="${empty id}">
 									<tr>
 								</c:if>
-								<c:if test="${! empty title}">
-									<c:if test="${parkVisit.title == title}">
+								<c:if test="${! empty id}">
+									<c:if test="${parkVisit.id == id}">
 										<tr class="found">
 									</c:if>
-									<c:if test="${parkVisit.title != title}">
+									<c:if test="${parkVisit.id != id}">
 										<tr>
 									</c:if>
-								</c:if>
+								</c:if> --%>
 								<tr>
 									<td><a
-										href="<c:url value='goParkVisit.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
+										href="<c:url value='parkVisitDetails.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
 											${parkVisit.title}</a></td>
 									<td>${parkVisit.startDate}</td>
 									<td>${parkVisit.endDate}</td>

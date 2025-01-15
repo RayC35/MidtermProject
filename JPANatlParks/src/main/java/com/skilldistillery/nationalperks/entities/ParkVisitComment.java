@@ -145,7 +145,7 @@ public class ParkVisitComment {
 	public String toString() {
 		return "ParkVisitComment [id=" + id + ", comment=" + comment + ", createDate=" + createDate + ", lastUpdate="
 				+ lastUpdate + ", enabled=" + enabled + ", parkVisit=" + parkVisit + ", user=" + user
-				+ ", commentRepliedTo=" + commentRepliedTo + ", commentReplies=" + commentReplies + "]";
+				+ ", commentRepliedTo=" + commentRepliedTo + "]";
 	}
 
 }
