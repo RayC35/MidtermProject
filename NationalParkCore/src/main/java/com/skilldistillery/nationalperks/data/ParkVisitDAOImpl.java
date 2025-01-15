@@ -46,6 +46,4 @@ public class ParkVisitDAOImpl implements ParkVisitDAO {
 		return parkVisit;
 	}
 	
-	
-
 }
