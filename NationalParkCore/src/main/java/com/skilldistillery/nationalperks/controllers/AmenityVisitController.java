@@ -33,6 +33,6 @@ public class AmenityVisitController {
 	public String listAllAmenityVisitsByAmenity(Model model, @RequestParam("amenityId") int amenityId) {
 		List<AmenityVisit> allAmenityVisits = amenityVisitDao.listAllAmenityVisitsByAmenityId(amenityId);
 		model.addAttribute("amenityList", allAmenityVisits);
-		return "listAllAmenityVisitsByAmenityId";
+		return "amenityDetails";
 	}
 }

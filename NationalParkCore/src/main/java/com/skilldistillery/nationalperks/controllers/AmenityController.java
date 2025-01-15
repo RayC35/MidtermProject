@@ -9,13 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.nationalperks.data.AmenityDAO;
+import com.skilldistillery.nationalperks.data.AmenityVisitDAO;
 import com.skilldistillery.nationalperks.entities.Amenity;
+import com.skilldistillery.nationalperks.entities.AmenityVisit;
 
 @Controller
 public class AmenityController {
 
 	@Autowired
 	private AmenityDAO amenityDao; 
+	
+	@Autowired
+	private AmenityVisitDAO amenityVisitDao;
 	
 	@GetMapping("listAllAmenitiesByParkId.do")
 	public String listAllAmenitiesByParkId(Model model, @RequestParam("parkId") int parkId) {
@@ -29,6 +34,8 @@ public class AmenityController {
 		Amenity foundAmenity = null;
 		try {
 			foundAmenity = amenityDao.findAmenityById(amenityId);
+			List<AmenityVisit> amenityVisits = amenityVisitDao.listAllAmenityVisitsByAmenityId(amenityId);
+			model.addAttribute("amenityVisits", amenityVisits);
 			model.addAttribute("amenity", foundAmenity);
 		} catch (Exception e) {
 			e.printStackTrace();
