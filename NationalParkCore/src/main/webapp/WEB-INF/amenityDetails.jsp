@@ -29,7 +29,10 @@
 							<div class="row">
 								<div class="col-sm">
 									<h2>${amenity.name}</h2>
-
+									<h3>${ }</h3>
+									<h3>${ }</h3>
+									<h3>${ }</h3>
+									<h3>${ }</h3>
 								</div>
 							</div>
 						</div>
