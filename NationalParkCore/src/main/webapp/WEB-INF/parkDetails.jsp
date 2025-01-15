@@ -47,6 +47,10 @@
 							<a href="${park.websiteURL}" target="_blank">${park.name}
 								Website</a>
 						</p>
+						<hr>
+						<button class="btn btn-warning" type="submit" 
+						onclick="window.location.href='goAdminEditParkDetails.do?parkId=${park.id}'">Edit Park</button>						
+						
 						<br>
 					</div>
 				</div>
