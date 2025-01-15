@@ -1,6 +1,9 @@
 package com.skilldistillery.nationalperks.controllers;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.skilldistillery.nationalperks.data.AmenityDAO;
 import com.skilldistillery.nationalperks.data.ParkDAO;
+import com.skilldistillery.nationalperks.entities.Amenity;
+import com.skilldistillery.nationalperks.entities.AmenityCategory;
 import com.skilldistillery.nationalperks.entities.Park;
 import com.skilldistillery.nationalperks.entities.User;
 
@@ -19,6 +25,9 @@ import jakarta.servlet.http.HttpSession;
 public class ParkController {
 	@Autowired
 	private ParkDAO parkDao;
+	
+	@Autowired
+	private AmenityDAO amenityDao;
 
 	private boolean isAdmin(User user) {
 		return user.getRole().equals("admin");
@@ -36,9 +45,32 @@ public class ParkController {
 	@GetMapping("parkDetails.do")
 	public String parkDetails(Model model, @RequestParam("parkId") int parkId) {
 		Park foundPark = parkDao.findParkById(parkId);
+		List<Amenity> amenities = amenityDao.listAllAmenitiesByParkId(parkId);
 		model.addAttribute("park", foundPark);
+		model.addAttribute("amenities", amenities);
 		return "parkDetails";
 	}
+	
+	private Map<String, List<Amenity>> generateAmenityMap(List<Amenity> amenities) {
+		Map<String, List<Amenity>> amenityCategoryMap = new HashMap<>();
+		for (Amenity amenity : amenities) {
+			List<AmenityCategory> categories = amenity.getAmenityCategories();
+			for (AmenityCategory category : categories) {
+				if(amenityCategoryMap.containsKey(category.getName())) {
+					List<Amenity> amenitiesList = amenityCategoryMap.get(category);
+					amenitiesList.add(amenity);
+				} else {
+					List<Amenity> newAmenityList = new ArrayList<>();
+					newAmenityList.add(amenity);
+					amenityCategoryMap.put(category.getName(), newAmenityList);
+				}
+				
+			}
+			
+		}
+		return amenityCategoryMap;
+	}
+	
 
 	@GetMapping("goAdminEditParkDetails.do")
 	public String goAdminEditParkDetails(HttpSession session, @RequestParam("parkId") int parkToEditId) {
