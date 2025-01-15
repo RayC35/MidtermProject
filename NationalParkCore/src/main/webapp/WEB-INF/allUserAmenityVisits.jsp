@@ -38,9 +38,9 @@
 									<th>Date Visited</th>
 									<th>Rating</th>
 									<th>Website</th>
-									<th>Edit</th>
+									<!-- <th>Edit</th>
 									<th>Disable</th>
-								</tr>
+ -->								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="amenityVisit" items="${amenityVisitList}">
@@ -57,18 +57,18 @@
 									</c:if>
 									<tr>
 										<td><a
-											href="<c:url value='parkVisitDetails.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
+											href="<c:url value='amenityVisitDetails.do'><c:param name='amenityVisitId' value='${amenityVisit.id}'/></c:url>">
 												${amenityVisit.name}</a></td>
-										<td>${amenityVisit.costRange}</td>
+										<td>${amenity.costRange}</td>
 										<td>${amenityVisit.createDate}</td>
 										<td>${amenityVisit.lastUpdate}</td>
 										<td>${amenityVisit.dateVisited}</td>
 										<td>${amenityVisit.rating}</td>
 										<td>${amenity.websiteUrl}</td>
-										<td><button class="btn btn-warning" type="submit"
+										<%-- <td><button class="btn btn-warning" type="submit"
 												onclick="window.location.href='goEditParkVisit.do?parkVisitId=${parkVisit.id}'">
-												Edit</button></td>
-										<td><c:if test="${parkVisit.enabled == 'true'}">
+												Edit</button></td> --%>
+										<%-- <td><c:if test="${parkVisit.enabled == 'true'}">
 												<form action="adminDisableparkVisit.do" method="POST"
 													onsubmit="return window.confirm('Confirm Disable?');">
 													<div class="form-group">
@@ -79,7 +79,7 @@
 												</form>
 											</c:if> <c:if test="${parkVisit.enabled == 'false'}">
 												<p class="unable">Disabled</p>
-											</c:if></td>
+											</c:if></td> --%>
 									</tr>
 								</c:forEach>
 							</tbody>
