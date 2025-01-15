@@ -36,6 +36,7 @@
 									<th>Name</th>
 									<th>State</th>
 									<th>Website</th>
+									<th>Edit</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -59,8 +60,8 @@
 										<td>${park.stateAbbreviation}</td>
 										<td><a href="${park.websiteURL}" target="_blank">View
 												Website</a></td>
-												<td><button class="btn btn-warning" type="submit"
-											onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
+										<td><button class="btn btn-warning" type="submit"
+												onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
 												Edit</button></td>
 										<td><c:if test="${user.role == 'user'}">
 												<form action="adminDisableUser.do" method="POST"
@@ -77,7 +78,7 @@
 												</p>
 											</c:if></td>
 									</tr>
-									
+
 								</c:forEach>
 							</tbody>
 						</table>
