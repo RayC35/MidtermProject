@@ -6,10 +6,10 @@ import com.skilldistillery.nationalperks.entities.ParkVisit;
 
 public interface ParkVisitDAO {
 	
-	public List<ParkVisit> listUserParkVisits();
+	public List<ParkVisit> listUserParkVisits(int userId);
 	
 	public ParkVisit findParkVisitById(int parkVisitId);
 	
-	public ParkVisit createParkVisit();
+	public ParkVisit createParkVisit(ParkVisit parkVisit);
 
 }
