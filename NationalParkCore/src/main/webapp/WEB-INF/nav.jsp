@@ -17,7 +17,7 @@
 			<li class="nav-item"><a class="nav-link" href="listAllParks.do">Parks</a>
 			</li>
 			<li class="nav-item"><a class="nav-link"
-				href="goListAllAmenitiesByPark.do">Amenities</a></li>
+				href="listAllAmenityVisitsByAmenityId.do">Amenities</a></li>
 		</ul>
 		<c:choose>
 			<c:when
