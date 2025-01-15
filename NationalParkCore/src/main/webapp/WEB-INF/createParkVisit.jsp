@@ -28,7 +28,7 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<form action="register.do" method="POST">
+							<form action="createParkVisit.do" method="POST">
 								<h2>Create A New Park Visit</h2>
 								<br>
 								<h4>Title</h4>
