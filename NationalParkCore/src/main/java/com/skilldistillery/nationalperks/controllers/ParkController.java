@@ -47,7 +47,7 @@ public class ParkController {
 		Park foundPark = parkDao.findParkById(parkId);
 		List<Amenity> amenities = amenityDao.listAllAmenitiesByParkId(parkId);
 		model.addAttribute("park", foundPark);
-		model.addAttribute("amenities", amenities);
+		model.addAttribute("amenities", generateAmenityMap(amenities));
 		return "parkDetails";
 	}
 	
@@ -57,7 +57,7 @@ public class ParkController {
 			List<AmenityCategory> categories = amenity.getAmenityCategories();
 			for (AmenityCategory category : categories) {
 				if(amenityCategoryMap.containsKey(category.getName())) {
-					List<Amenity> amenitiesList = amenityCategoryMap.get(category);
+					List<Amenity> amenitiesList = amenityCategoryMap.get(category.getName());
 					amenitiesList.add(amenity);
 				} else {
 					List<Amenity> newAmenityList = new ArrayList<>();
