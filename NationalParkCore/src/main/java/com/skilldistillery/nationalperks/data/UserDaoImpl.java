@@ -45,7 +45,6 @@ public class UserDaoImpl implements UserDAO {
 		User managedUser = em.find(User.class, userId);
 		managedUser.setFirstName(user.getFirstName());
 		managedUser.setLastName(user.getLastName());
-		managedUser.setPassword(user.getPassword());
 		managedUser.setEmail(user.getEmail());
 		managedUser.setBiography(user.getBiography());
 		managedUser.setImageURL(user.getImageURL());
@@ -69,6 +68,28 @@ public class UserDaoImpl implements UserDAO {
 			e.printStackTrace();
 		}
 		return foundUser;
+	}
+	
+	@Override
+	public User adminEditUserProfile(User user, int userId) {
+		User foundUser = em.find(User.class, userId);
+		foundUser.setEnabled(user.getEnabled());
+		foundUser.setRole(user.getRole());
+		foundUser.setFirstName(user.getFirstName());
+		foundUser.setLastName(user.getLastName());
+		foundUser.setEmail(user.getEmail());
+		foundUser.setBiography(user.getBiography());
+		foundUser.setImageURL(user.getImageURL());
+		em.persist(foundUser);
+		return foundUser;
+	}
+
+	@Override
+	public User adminDisableUser(int userId) {
+		User managedUser = em.find(User.class, userId);
+		managedUser.setEnabled(false);
+		em.persist(managedUser);
+		return managedUser;
 	}
 
 }

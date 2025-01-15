@@ -15,5 +15,8 @@ public interface UserDAO {
 	public List<User> listAllUsers();
 	
 	public User findUserProfileById(int userId);
+
+	public User adminEditUserProfile(User user, int userId);
 		
+	public User adminDisableUser (int userId);
 }

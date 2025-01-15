@@ -28,28 +28,37 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br>
-							<h2>Edit Your Profile</h2>
+							<h2>Edit ${adminFoundUser.username}'s Profile</h2>
 							<br>
-							<form action="editUserProfile.do" method="POST"
+							<form action="adminEditUserProfile.do" method="POST"
 								onsubmit="return window.confirm('Confirm Edits?');">
-								<img src="${loggedInUser.imageURL}"> <br> <br>
+								<img src="${adminFoundUser.imageURL}"> <br> <br>
 								<h3>Profile Image</h3>
 								<input type="text" name="imageURL"
-									value="${loggedInUser.imageURL}" size="60"
-									style="text-align: center" /> <br> <br>
+									value="${adminFoundUser.imageURL}" size="60"
+									style="text-align: center" /> <br> <br> 
+								<h3>Enabled</h3>
+								<input type="radio" name="enabled" value="true"
+									<c:if test="${adminFoundUser.enabled == true}">Checked</c:if>>
+								<h3>Disabled</h3>
+								<input type="radio" name="enabled" value="false"
+									<c:if test="${adminFoundUser.enabled == false}">Checked</c:if>>
+								<h3>Role</h3>
+								<input type="text" name="role" value="${adminFoundUser.role}"
+									style="text-align: center" />
 								<h3>First Name</h3>
 								<input type="text" name="firstName"
-									value="${loggedInUser.firstName}" style="text-align: center" />
+									value="${adminFoundUser.firstName}" style="text-align: center" />
 								<br> <br>
 								<h3>Last Name</h3>
 								<input type="text" name="lastName"
-									value="${loggedInUser.lastName}" style="text-align: center" />
+									value="${adminFoundUser.lastName}" style="text-align: center" />
 								<br> <br>
 								<h4>Email Address</h4>
-								<input type="email" name="email" value="${loggedInUser.email}"
+								<input type="email" name="email" value="${adminFoundUser.email}"
 									size="30" style="text-align: center" /> <br> <br>
 								<h4>Bio</h4>
-								<textarea cols="70" rows="8" name="biography">${loggedInUser.biography}</textarea>
+								<textarea cols="70" rows="8" name="biography">${adminFoundUser.biography}</textarea>
 								<br> <br>
 								<button type="submit" class="btn btn-success">
 									Submit Changes <i class="bi bi-signpost-2"></i>

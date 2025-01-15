@@ -115,9 +115,45 @@ public class UserController {
 		if (isAdmin(loggedInUser)) {
 			User foundUser = userDao.findUserProfileById(userId);
 			session.setAttribute("adminFoundUser", foundUser);
-			return "userProfile";
+			return "adminViewUserProfile";
 		} else {
-			return "login";
+			return "home";
+		}
+	}
+
+	@GetMapping("goAdminEditUserProfile.do")
+	public String goAdminEditProfile(HttpSession session, @RequestParam("userId") int userToEditId) {
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
+		if (isAdmin(loggedInUser)) {
+			User foundUser = userDao.findUserProfileById(userToEditId);
+			session.setAttribute("adminFoundUser", foundUser);
+			return "adminEditUserProfile";
+		} else {
+			return "home";
+		}
+	}
+
+	@PostMapping("adminEditUserProfile.do")
+	public String doAdminEditUserProfile(HttpSession session, User adminUpdatedUser) {
+		User adminFoundUser = (User) session.getAttribute("adminFoundUser");
+		if (adminFoundUser != null) {
+			adminUpdatedUser = userDao.adminEditUserProfile(adminUpdatedUser, adminFoundUser.getId());
+			session.setAttribute("adminFoundUser", adminUpdatedUser);
+			return "adminViewUserProfile";
+		} else {
+			return "adminEditUserProfile";
+		}
+	}
+
+	@PostMapping("adminDisableUser.do")
+	public String doAdminDisableUser(HttpSession session, User adminDisabledUser) {
+		User adminFoundUser = (User) session.getAttribute("adminFoundUser");
+		if (adminFoundUser != null) {
+			adminDisabledUser = userDao.adminEditUserProfile(adminDisabledUser, adminFoundUser.getId());
+			session.setAttribute("adminFoundUser", adminDisabledUser);
+			return "allUsers";
+		} else {
+			return "adminEditUserProfile";
 		}
 	}
 }

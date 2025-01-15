@@ -71,10 +71,10 @@
 										<td>${user.lastUpdate}</td>
 										<td>${user.email}</td>
 										<td><button class="btn btn-warning" type="submit"
-												onclick="window.location.href='editUserProfile.do?userId=${user.id}'">
+											onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
 												Edit</button></td>
-										<td><c:if test="${user.id > 4}">
-												<form action="disableUser.do" method="POST"
+										<td><c:if test="${user.role == 'user'}">
+												<form action="adminDisableUser.do" method="POST"
 													onsubmit="return window.confirm('Confirm Disable?');">
 													<div class="form-group">
 														<input type="hidden" class="form-control" id="id"
@@ -82,7 +82,7 @@
 													</div>
 													<button type="submit" class="btn btn-danger">Disable</button>
 												</form>
-											</c:if> <c:if test="${user.id <= 4}">
+											</c:if> <c:if test="${user.role == 'admin'}">
 												<p class="unable">
 													<i class="bi bi-exclamation-octagon"></i>
 												</p>
