@@ -19,6 +19,9 @@
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
+	<c:forEach var="amenity" items="${amenities }">
+	<p>${amenity.name}</p>
+	</c:forEach>
 	<br>
 	<br>
 	<div class="container">
