@@ -28,7 +28,7 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br>
-							<h2>Edit ${adminFoundPark.name}</h2>
+							<h2>Edit ${adminFoundPark.name} National Park</h2>
 							<br>
 							<form action="adminEditParkDetails.do" method="POST"
 								onsubmit="return window.confirm('Confirm Edits?');">
@@ -42,7 +42,7 @@
 									style="text-align: center" />
 								<h3>Description</h3>
 								<input type="text" name="description"
-									value="${adminFoundPark.description}"
+									value="${adminFoundPark.description}" size="70"
 									style="text-align: center" /> <br> <br>
 								<h3>Main Entrance Latitude</h3>
 								<input type="text" name="mainEntranceLongitude"
@@ -73,8 +73,7 @@
 									value="${adminFoundPark.websiteURL}" size="60"
 									style="text-align: center" /> <br> <br>
 								<button type="submit" class="btn btn-success text-nowrap">
-									Submit Changes <i class="bi bi-signpost-2"></i>
-								</button>
+									Submit Changes</button>
 							</form>
 						</div>
 					</div>

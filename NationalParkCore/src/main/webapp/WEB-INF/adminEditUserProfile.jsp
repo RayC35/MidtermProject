@@ -61,8 +61,7 @@
 								<textarea cols="70" rows="8" name="biography">${adminFoundUser.biography}</textarea>
 								<br> <br>
 								<button type="submit" class="btn btn-success text-nowrap">
-									Submit Changes <i class="bi bi-signpost-2"></i>
-								</button>
+									Submit Changes</button>
 							</form>
 						</div>
 					</div>

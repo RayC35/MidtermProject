@@ -51,9 +51,8 @@
 								<h4>Bio</h4>
 								<textarea cols="70" rows="8" name="biography">${loggedInUser.biography}</textarea>
 								<br> <br>
-								<button type="submit" class="btn btn-success">
-									Submit Changes <i class="bi bi-signpost-2"></i>
-								</button>
+								<button type="submit" class="btn btn-success">Submit
+									Changes</button>
 							</form>
 						</div>
 					</div>
