@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>My Account</title>
+<title>Park Visit Details</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -28,36 +28,33 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<h2>${loggedInUser.firstName}&nbsp;${loggedInUser.lastName}</h2>
-							<img src="${loggedInUser.imageURL}"> <br> <br>
-							<h4>Username:</h4>
-							<p>${loggedInUser.username}</p>
-							<h4>Email Address:</h4>
-							<p>${loggedInUser.email}</p>
-							<h4>Bio:</h4>
+							<h2>${parkVisit.title}:&nbsp;${parkVisit.createDate}</h2>
+							<img src="${parkVisit.imageURL}"> <br> <br>
+							<h3>${parkVisit.startDate}&nbsp;-&nbsp;${parkVisit.endDate}</h3>
+							<br>
+							<hr>
+							<h4>Rating:&nbsp;${parkVisit.rating}</h4>
 							<div class="container">
 								<div class="row">
 									<div class="col-md-11 mx-auto">
 										<div class="card mt-1">
 											<br>
-											<p>${loggedInUser.biography}</p>
+											<p>${parkVisit.remarks}</p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<jsp:include page="parkVisitsAtAGlance.jsp" />
+							<h4>${parkVisit.lastUpdate}</h4>
 							<br>
-							<button class="btn btn-warning mr-4" type="submit"
-								onclick="window.location.href='goCreateParkVisit.do'">
-								Add A Park Visit <i class="bi bi-signpost-2"></i>
-							</button>
-							<button class="btn btn-warning mx-4" type="submit"
-								onclick="window.location.href='goEditParkVisit.do'">
-								Edit My Profile <i class="bi bi-signpost-2"></i>
-							</button>
+							<c:if test="${loggedInUser.userId == parkVisit.userId}">
+								<button class="btn btn-warning mr-4" type="submit"
+									onclick="window.location.href='goEditParkVisit.do'">
+									Edit Visit <i class="bi bi-signpost-2"></i>
+								</button>
+							</c:if>
 							<button class="btn btn-primary" type="submit"
-								onclick="window.location.href='listAllUserParkVisits.do'">
-								View Detailed Park Visits <i class="bi bi-tree"></i>
+								onclick="window.location.href='goParkVisits.do'">
+								Back To Park Visits <i class="bi bi-tree"></i>
 							</button>
 							<br> <br>
 						</div>
