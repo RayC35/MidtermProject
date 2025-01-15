@@ -45,7 +45,7 @@
 									value="${adminFoundPark.description}" size="70"
 									style="text-align: center" /> <br> <br>
 								<h3>Main Entrance Latitude</h3>
-								<input type="text" name="mainEntranceLongitude"
+								<input type="text" name="mainEntranceLatitude"
 									value="${adminFoundPark.mainEntranceLatitude}"
 									style="text-align: center" /> <br> <br>
 								<h3>Main Entrance Longitude</h3>

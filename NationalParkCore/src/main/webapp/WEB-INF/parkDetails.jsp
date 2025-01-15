@@ -47,8 +47,9 @@
 							<a href="${park.websiteURL}" target="_blank">${park.name}
 								Website</a>
 						</p>
+
+						<hr>
 						<c:if test="${loggedInUser.role == 'admin'}">
-							<hr>
 							<button class="btn btn-warning text-nowrap" type="submit"
 								onclick="window.location.href='goAdminEditParkDetails.do?parkId=${park.id}'">
 								Edit Park <i class="bi bi-tree-fill"></i>
