@@ -23,7 +23,7 @@
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-11 mx-auto">
+			<div class="col-md-13 mx-auto">
 				<div class="card mt-4">
 					<div class="card-body">
 						<h2 style="text-align: center;">All Park Visits</h2>

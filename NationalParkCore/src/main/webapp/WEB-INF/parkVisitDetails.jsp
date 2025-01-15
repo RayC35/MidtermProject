@@ -23,38 +23,46 @@
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 mx-auto">
+			<div class="col-md-9 mx-auto">
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<h2>${parkVisit.title}:&nbsp;${parkVisit.createDate}</h2>
-							<img src="${parkVisit.imageURL}"> <br> <br>
-							<h3>${parkVisit.startDate}&nbsp;-&nbsp;${parkVisit.endDate}</h3>
+							<h2>${parkVisit.title}</h2>
+							<p>Posted On:&nbsp;${parkVisit.createDate}</p>
+							<img class="parkVisitImage" width="50%"
+								src="${parkVisit.imageURL}"> <br> <br>
+							<h4>Park Visited:</h4>
+							<h4>${parkVisit.startDate}&nbsp;-&nbsp;${parkVisit.endDate}</h4>
 							<br>
 							<hr>
-							<h4>Rating:&nbsp;${parkVisit.rating}</h4>
+							<br>
+							<h2>Rating:&nbsp;${parkVisit.rating}</h2>
 							<div class="container">
 								<div class="row">
 									<div class="col-md-11 mx-auto">
 										<div class="card mt-1">
 											<br>
-											<p>${parkVisit.remarks}</p>
+											<p class="mx-4">${parkVisit.remarks}</p>
 										</div>
 									</div>
 								</div>
 							</div>
-							<h4>${parkVisit.lastUpdate}</h4>
+							<p>Last Updated:&nbsp;${parkVisit.lastUpdate}</p>
 							<br>
 							<c:if test="${loggedInUser.id == parkVisit.user.id}">
-								<button class="btn btn-warning mr-4" type="submit"
+								<button class="btn btn-primary mx-2" type="submit"
 									onclick="window.location.href='goEditParkVisit.do'">
-									Edit Visit <i class="bi bi-signpost-2"></i>
+									Edit Park Visit <i class="bi bi-person-walking"></i>
 								</button>
 							</c:if>
-							<button class="btn btn-primary" type="submit"
+							<button class="btn btn-success mx-2" type="submit"
 								onclick="window.location.href='listAllUserParkVisits.do?userId=${loggedInUser.id}'">
-								Back To Park Visits <i class="bi bi-tree"></i>
+								Back To Park Visits <i class="bi bi-signpost-2-fill"></i>
+							</button>
+							<button class="btn btn-warning text-nowrap mx-2" type="submit"
+								onclick="window.location.href='goUserProfile.do'">
+								My Account <i class="bi bi-tree-fill"></i>
 							</button>
 							<br> <br>
 						</div>

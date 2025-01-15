@@ -68,7 +68,7 @@
 								<h4>Park Visit Image URL</h4>
 								<input type="text" name="imageURL" size="40"
 									style="text-align: center"><br> <br>
-								<button type="submit" class="btn btn-success text-nowrap">
+								<button type="submit" class="btn btn-primary text-nowrap">
 									Create Park Visit</button>
 							</form>
 							<br> <br>
