@@ -56,7 +56,6 @@ public class AmenityVisitComment {
 		super();
 	}
 
-
 	public AmenityVisit getAmenityVisit() {
 		return amenityVisit;
 	}
@@ -65,11 +64,9 @@ public class AmenityVisitComment {
 		return user;
 	}
 
-
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 
 	public void setAmenityVisit(AmenityVisit amenityVisit) {
 		this.amenityVisit = amenityVisit;
@@ -152,13 +149,11 @@ public class AmenityVisitComment {
 		return id == other.id;
 	}
 
-
 	@Override
 	public String toString() {
 		return "AmenityVisitComment [id=" + id + ", comment=" + comment + ", createDate=" + createDate + ", lastUpdate="
 				+ lastUpdate + ", enabled=" + enabled + ", amenityVisit=" + amenityVisit + ", user=" + user
 				+ ", commentRepliedTo=" + commentRepliedTo + ", commentReplies=" + commentReplies + "]";
 	}
-
 
 }

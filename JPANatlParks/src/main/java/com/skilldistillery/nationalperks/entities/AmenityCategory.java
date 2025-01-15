@@ -95,7 +95,5 @@ public class AmenityCategory {
 		return "AmenityCategory [id=" + id + ", name=" + name + ", description=" + description + ", imageURL="
 				+ imageURL + "]";
 	}
-	
-	
 
 }
