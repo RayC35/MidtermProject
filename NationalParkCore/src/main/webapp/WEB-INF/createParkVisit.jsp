@@ -27,7 +27,51 @@
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							<br> Create Park Visit <br>
+							<br> <br>
+							<form action="register.do" method="POST">
+								<h2>Create A New Park Visit</h2>
+								<br>
+								<h4>Title</h4>
+								<input type="text" name="title" required
+									style="text-align: center"><br> <br>
+								<h4>Remarks</h4>
+								<textarea></textarea>
+								<br> <br>
+								<h4>Start Date</h4>
+								<input type="text" name="firstName" required
+									style="text-align: center"><br> <br>
+								<h4>End Date</h4>
+								<input type="text" name="firstName" required
+									style="text-align: center"><br> <br>
+								<h4>Rating</h4>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="rating"
+										value="1"> <label class="form-check-label">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="rating"
+										value="2"> <label class="form-check-label">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="rating"
+										value="3"> <label class="form-check-label">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="rating"
+										value="4"> <label class="form-check-label">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="rating"
+										value="5"> <label class="form-check-label">5</label>
+								</div>
+								<br> <br>
+								<h4>Park Visit Image URL</h4>
+								<input type="text" name="imageURL" size="40"
+									style="text-align: center"><br> <br>
+								<button type="submit" class="btn btn-success text-nowrap">
+									Create Park Visit</button>
+							</form>
+							<br> <br>
 						</div>
 					</div>
 				</div>
@@ -37,5 +81,10 @@
 	<br>
 	<br>
 	<jsp:include page="footer.jsp" />
+	<br>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
 </body>
 </html>

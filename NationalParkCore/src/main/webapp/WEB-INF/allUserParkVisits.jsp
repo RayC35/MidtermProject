@@ -58,7 +58,7 @@
 									</c:if>
 									<tr>
 										<td><a
-											href="<c:url value='goParkVisit.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
+											href="<c:url value='parkVisitDetails.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
 												${parkVisit.title}</a></td>
 										<td>${parkVisit.startDate}</td>
 										<td>${parkVisit.endDate}</td>

@@ -45,18 +45,20 @@
 									</div>
 								</div>
 							</div>
-							<jsp:include page="parkVisitsAtAGlance.jsp" />
 							<br>
-							<button class="btn btn-warning mr-4" type="submit"
-								onclick="window.location.href='goCreateParkVisit.do'">
-								Add A Park Visit <i class="bi bi-signpost-2"></i>
-							</button>
-							<button class="btn btn-warning mx-4" type="submit"
+							<button class="btn btn-warning" type="submit"
 								onclick="window.location.href='goEditParkVisit.do'">
 								Edit My Profile <i class="bi bi-signpost-2"></i>
 							</button>
-							<button class="btn btn-primary" type="submit"
-								onclick="window.location.href='listAllUserParkVisits.do'">
+							<br>
+							<jsp:include page="parkVisitsAtAGlance.jsp" />
+							<br>
+							<button class="btn btn-primary mx-2" type="submit"
+								onclick="window.location.href='goCreateParkVisit.do'">
+								Add A Park Visit <i class="bi bi-person-walking"></i>
+							</button>
+							<button class="btn btn-success mx-2" type="submit"
+								onclick="window.location.href='listAllUserParkVisits.do?userId=${loggedInUser.id}'">
 								View Detailed Park Visits <i class="bi bi-tree"></i>
 							</button>
 							<br> <br>
