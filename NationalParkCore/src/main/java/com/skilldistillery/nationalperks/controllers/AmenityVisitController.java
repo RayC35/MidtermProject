@@ -17,7 +17,7 @@ public class AmenityVisitController {
 	@Autowired
 	private AmenityVisitDAO amenityVisitDao;
 	
-	@GetMapping("")
+	@GetMapping("amenityVisitDetails.do")
 	public String findAmenityVisitById(Model model, @RequestParam("amenityVisitId") int amenityVisitId) {
 		AmenityVisit foundAmenityVisit = null;
 		try {
