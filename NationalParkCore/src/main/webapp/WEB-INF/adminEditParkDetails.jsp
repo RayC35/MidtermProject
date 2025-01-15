@@ -36,38 +36,43 @@
 								<h3>Image URL</h3>
 								<input type="text" name="imageURL"
 									value="${adminFoundPark.imageURL}" size="60"
-									style="text-align: center" /> <br> <br> 
+									style="text-align: center" /> <br> <br>
 								<h3>Name</h3>
 								<input type="text" name="name" value="${adminFoundPark.name}"
 									style="text-align: center" />
 								<h3>Description</h3>
 								<input type="text" name="description"
-									value="${adminFoundPark.description}" style="text-align: center" />
-								<br> <br>
+									value="${adminFoundPark.description}"
+									style="text-align: center" /> <br> <br>
 								<h3>Main Entrance Latitude</h3>
 								<input type="text" name="mainEntranceLongitude"
-									value="${adminFoundPark.mainEntranceLatitude}" style="text-align: center" />
-								<br> <br>
+									value="${adminFoundPark.mainEntranceLatitude}"
+									style="text-align: center" /> <br> <br>
 								<h3>Main Entrance Longitude</h3>
 								<input type="text" name="mainEntranceLongitude"
-									value="${adminFoundPark.mainEntranceLongitude}" style="text-align: center" />
-								<br> <br>
+									value="${adminFoundPark.mainEntranceLongitude}"
+									style="text-align: center" /> <br> <br>
 								<h3>State Abbreviation</h3>
-								<input type="text" name="stateAbbreviation" value="${adminFoundPark.stateAbbreviation}"
+								<input type="text" name="stateAbbreviation"
+									value="${adminFoundPark.stateAbbreviation}"
 									style="text-align: center" /> <br> <br>
-									<h3>Opening Time</h3>
-								<input type="time" name="openingTime" value="${adminFoundPark.openingTime}"
+								<h3>Opening Time</h3>
+								<input type="time" name="openingTime"
+									value="${adminFoundPark.openingTime}"
 									style="text-align: center" /> <br> <br>
-									<h3>Closing Time</h3>
-								<input type="time" name="closingTime" value="${adminFoundPark.closingTime}"
+								<h3>Closing Time</h3>
+								<input type="time" name="closingTime"
+									value="${adminFoundPark.closingTime}"
 									style="text-align: center" /> <br> <br>
 								<h3>Entry Fee</h3>
-								<input type="number" name="entryFee" value="${adminFoundPark.entryFee}"
-									style="text-align: center" /> <br> <br>	
-									<h3>Website URL</h3>
-								<input type="text" name="websiteURL" value="${adminFoundPark.websiteURL}"
-									size="60" style="text-align: center" /> <br> <br>
-								<button type="submit" class="btn btn-success">
+								<input type="number" name="entryFee"
+									value="${adminFoundPark.entryFee}" style="text-align: center" />
+								<br> <br>
+								<h3>Website URL</h3>
+								<input type="text" name="websiteURL"
+									value="${adminFoundPark.websiteURL}" size="60"
+									style="text-align: center" /> <br> <br>
+								<button type="submit" class="btn btn-success text-nowrap">
 									Submit Changes <i class="bi bi-signpost-2"></i>
 								</button>
 							</form>

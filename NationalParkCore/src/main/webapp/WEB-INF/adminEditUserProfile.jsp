@@ -36,7 +36,7 @@
 								<h3>Profile Image</h3>
 								<input type="text" name="imageURL"
 									value="${adminFoundUser.imageURL}" size="60"
-									style="text-align: center" /> <br> <br> 
+									style="text-align: center" /> <br> <br>
 								<h3>Enabled</h3>
 								<input type="radio" name="enabled" value="true"
 									<c:if test="${adminFoundUser.enabled == true}">Checked</c:if>>
@@ -60,7 +60,7 @@
 								<h4>Bio</h4>
 								<textarea cols="70" rows="8" name="biography">${adminFoundUser.biography}</textarea>
 								<br> <br>
-								<button type="submit" class="btn btn-success">
+								<button type="submit" class="btn btn-success text-nowrap">
 									Submit Changes <i class="bi bi-signpost-2"></i>
 								</button>
 							</form>
