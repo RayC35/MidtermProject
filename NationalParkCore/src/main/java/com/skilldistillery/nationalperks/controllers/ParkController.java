@@ -20,25 +20,26 @@ public class ParkController {
 	@Autowired
 	private ParkDAO parkDao;
 
+	private boolean isAdmin(User user) {
+		return user.getRole().equals("admin");
+	}
+
 	@GetMapping("listAllParks.do")
-	public String listAllParks(Model model) {
+	public String listAllParks(Model model, HttpSession session) {
+		User user = (User) session.getAttribute("loggedInUser");
 		List<Park> allParks = parkDao.listAllParks();
 		model.addAttribute("parkList", allParks);
+		session.setAttribute("user", user);
 		return "allParks";
 	}
-	
-	@GetMapping ("parkDetails.do")
-	public String parkDetails(Model model, @RequestParam ("parkId") int parkId) {
+
+	@GetMapping("parkDetails.do")
+	public String parkDetails(Model model, @RequestParam("parkId") int parkId) {
 		Park foundPark = parkDao.findParkById(parkId);
 		model.addAttribute("park", foundPark);
 		return "parkDetails";
 	}
-	
-	
-	private boolean isAdmin(User user) {
-		return user.getRole().equals("admin");
-	}
-	
+
 	@GetMapping("goAdminEditParkDetails.do")
 	public String goAdminEditParkDetails(HttpSession session, @RequestParam("parkId") int parkToEditId) {
 		User loggedInUser = (User) session.getAttribute("loggedInUser");
@@ -64,6 +65,5 @@ public class ParkController {
 			return "adminEditParkDetails";
 		}
 	}
-
 
 }

@@ -48,7 +48,7 @@
 								Website</a>
 						</p>
 						<hr>
-						<c:if test="${user.role == 'admin'}">
+						<c:if test="${loggedInUser.role == 'admin'}">
 							<button class="btn btn-warning text-nowrap" type="submit"
 								onclick="window.location.href='goAdminEditParkDetails.do?parkId=${park.id}'">
 								Edit Park <i class="bi bi-tree-fill"></i>
