@@ -35,6 +35,7 @@
 									<th>Start Date</th>
 									<th>End Date</th>
 									<th>Rating</th>
+									<th>Author</th>
 									<th>Last Update</th>
 								</tr>
 							</thead>
@@ -68,7 +69,8 @@
 											</c:if> <c:if test="${parkVisit.rating == 5}">
 												<p style="color: orange;">★★★★★</p>
 											</c:if></td>
-										<td>${parkVisit.createDate}</td>
+										<td>${parkVisit.user.username}</td>
+										<td>${parkVisit.lastUpdate}</td>
 									</tr>
 								</c:forEach>
 							</tbody>

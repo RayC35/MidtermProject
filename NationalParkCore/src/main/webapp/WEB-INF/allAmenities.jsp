@@ -21,8 +21,6 @@
 								<th>Enabled</th>
 								<th>Create Date</th>
 								<th>Last Update</th>
-								<th>Edit</th>
-								<th>Disable</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -41,34 +39,24 @@
 								<tr>
 									<td>${amenity.id}</td>
 									<td><a
-										href="<c:url value='adminGoAmenity.do'><c:param name='amenityId' value='${amenity.id}'/></c:url>">
-											${amenity.name}</a></td>
-									<td>${park.name}</td>
-									<td>${amenity.costRange}</td>
-									<td>${amenity.websiteURL}</td>
+										href="<c:url value='amenityDetails.do'><c:param name='amenityId' 
+				      value='${amenity.id}'/></c:url>">${amenity.name}</a></td>
+									<td>${amenity.park.name}</td>
+									<td><c:if test="${amenity.costRange == 0}">
+											<p>FREE</p>
+										</c:if> <c:if test="${amenity.costRange == 1}">
+											<p>$</p>
+										</c:if> <c:if test="${amenity.costRange == 2}">
+											<p>$$</p>
+										</c:if> <c:if test="${amenity.costRange == 3}">
+											<p>$$$</p>
+										</c:if></td>
+									<td><a href="${amenity.websiteURL}" target="_blank">View
+											Website</a></td>
 									<td>${amenity.enabled}</td>
 									<td>${amenity.createDate}</td>
 									<td>${amenity.lastUpdate}</td>
-									<td><button class="btn btn-warning" type="submit"
-											onclick="window.location.href='goAdminEditAmenity.do?amenityId=${amenity.id}'">
-											Edit</button></td>
-									<td><c:if
-											test="${user.role == 'user' && user.enabled == 'true'}">
-											<form action="adminDisableAmenity.do" method="POST"
-												onsubmit="return window.confirm('Confirm Disable?');">
-												<div class="form-group">
-													<input type="hidden" class="form-control" id="id" name="id"
-														value="<c:out value='${amenity.id}' />">
-												</div>
-												<button type="submit" class="btn btn-danger">Disable</button>
-											</form>
-										</c:if> <c:if test="${amenity.enabled == 'false'}">
-											<p class="unable">Disabled</p>
-										</c:if> <c:if test="${user.role == 'admin'}">
-											<p class="unable">
-												<i class="bi bi-exclamation-octagon"></i>
-											</p>
-										</c:if></td>
+
 								</tr>
 							</c:forEach>
 						</tbody>

@@ -52,18 +52,25 @@ public class ParkVisitController {
 			return "home";
 		}
 	}
-	
+
 	@PostMapping("createParkVisit.do")
 	public String createParkVisit(HttpSession session, ParkVisit createdParkVisit) {
-		ParkVisit newParkVisit = parkVisitDao.createParkVisit(createdParkVisit);
-		if (newParkVisit != null) {
-			session.setAttribute("parkVisit", newParkVisit);
-			return "allUserParkVisits";
+		User user = (User) session.getAttribute("loggedInUser");
+		if (user != null) {
+			ParkVisit newParkVisit = parkVisitDao.createParkVisit(createdParkVisit, user.getId());
+			if (newParkVisit != null) {
+				session.setAttribute("parkVisit", newParkVisit);
+				return "redirect:parkVisitDetails.do?parkVisitId="+newParkVisit.getId();
+			} else {
+				return "userProfile";
+			}
 		} else {
-			return "userProfile";
+			return "login";
+
 		}
+
 	}
-	
+
 	@GetMapping("goEditParkVisitDetails.do")
 	public String goEditParkVisitDetails(HttpSession session, @RequestParam("parkVisitId") int parkVisitToEditId) {
 		User loggedInUser = (User) session.getAttribute("loggedInUser");
@@ -88,7 +95,7 @@ public class ParkVisitController {
 		} else {
 			return "editParkVisitDetails";
 		}
-	}	
+	}
 
 	@GetMapping("listParkVisitsByPark.do")
 	public String listParkVisitsByPark(Model model, @RequestParam("park") int parkId) {
@@ -96,5 +103,5 @@ public class ParkVisitController {
 		model.addAttribute("parkVisitList", parkVisitsByPark);
 		return "listParkVisitsByPark";
 	}
-	
+
 }

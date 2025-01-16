@@ -10,7 +10,7 @@ public interface ParkVisitDAO {
 	
 	public ParkVisit findParkVisitById(int parkVisitId);
 	
-	public ParkVisit createParkVisit(ParkVisit parkVisit);
+	public ParkVisit createParkVisit(ParkVisit parkVisit, int userId);
 	
 	public ParkVisit editParkVisit (ParkVisit parkVisit, int parkVisitId);
 	

@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.skilldistillery.nationalperks.data.AmenityDAO;
 import com.skilldistillery.nationalperks.data.AmenityVisitDAO;
 import com.skilldistillery.nationalperks.data.ParkVisitDAO;
 import com.skilldistillery.nationalperks.data.UserDAO;
+import com.skilldistillery.nationalperks.entities.Amenity;
 import com.skilldistillery.nationalperks.entities.User;
 
 import jakarta.servlet.http.HttpSession;
@@ -24,6 +26,9 @@ public class UserController {
 
 	@Autowired
 	private ParkVisitDAO parkVisitDao;
+
+	@Autowired
+	private AmenityDAO amenityDao;
 
 	@Autowired
 	private AmenityVisitDAO amenityVisitDao;
@@ -110,6 +115,10 @@ public class UserController {
 
 	@GetMapping("goAdminDashboard.do")
 	public String dashboard(Model model) {
+		List<User> allUsers = userDao.listAllUsers();
+		model.addAttribute("userList", allUsers);
+		List<Amenity> allAmenities = amenityDao.listAllAmenities();
+		model.addAttribute("amenityList", allAmenities);
 		return "adminDashboard";
 	}
 
@@ -119,7 +128,6 @@ public class UserController {
 		model.addAttribute("userList", allUsers);
 		return "allUsers";
 	}
-
 
 	private boolean isAdmin(User user) {
 		return user.getRole().equals("admin");
