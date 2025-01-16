@@ -29,15 +29,15 @@
 						<div class="card-body text-center bg-light">
 							<br> <br>
 							<h2>${parkVisit.title}</h2>
-							<p>Posted On:&nbsp;${parkVisit.createDate}</p>
+							<p>Posted On: ${parkVisit.createDate}</p>
 							<img class="parkVisitImage" width="50%"
 								src="${parkVisit.imageURL}"> <br> <br>
 							<h4>Park Visited:</h4>
-							<h4>${parkVisit.startDate}&nbsp;-&nbsp;${parkVisit.endDate}</h4>
+							<h4>${parkVisit.startDate}- ${parkVisit.endDate}</h4>
 							<br>
 							<hr>
 							<br>
-							<h2>Rating:&nbsp;${parkVisit.rating}</h2>
+							<h2>Rating: ${parkVisit.rating}</h2>
 							<div class="container">
 								<div class="row">
 									<div class="col-md-11 mx-auto">
@@ -48,7 +48,7 @@
 									</div>
 								</div>
 							</div>
-							<p>Last Updated:&nbsp;${parkVisit.lastUpdate}</p>
+							<p>Last Updated: ${parkVisit.lastUpdate}</p>
 							<br>
 							<c:if test="${loggedInUser.id == parkVisit.user.id}">
 								<button class="btn btn-primary mx-2" type="submit"
