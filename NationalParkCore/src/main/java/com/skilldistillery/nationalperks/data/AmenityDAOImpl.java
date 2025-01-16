@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.nationalperks.entities.Amenity;
+import com.skilldistillery.nationalperks.entities.AmenityVisit;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -41,6 +42,23 @@ public class AmenityDAOImpl implements AmenityDAO {
 		createdAmenity.setEnabled(true);
 		em.persist(createdAmenity);
 		return createdAmenity;
+	}
+
+	@Override
+	public Amenity adminEditAmenity(Amenity editedAmenity, int amenityId) {
+		Amenity managedAmenity = em.find(Amenity.class, amenityId);
+		managedAmenity.setName(editedAmenity.getName());
+		managedAmenity.setImageURL(editedAmenity.getImageURL());
+		managedAmenity.setDescription(editedAmenity.getDescription());
+		managedAmenity.setCostRange(editedAmenity.getCostRange());
+		managedAmenity.setLatitude(editedAmenity.getLatitude());
+		managedAmenity.setLongitude(editedAmenity.getLongitude());
+		managedAmenity.setWebsiteURL(editedAmenity.getWebsiteURL());
+		managedAmenity.setAmenityCategories(editedAmenity.getAmenityCategories());
+		managedAmenity.setPark(editedAmenity.getPark());
+		managedAmenity.setEnabled(editedAmenity.getEnabled());
+		em.persist(managedAmenity);
+		return managedAmenity;		
 	}
 
 }
