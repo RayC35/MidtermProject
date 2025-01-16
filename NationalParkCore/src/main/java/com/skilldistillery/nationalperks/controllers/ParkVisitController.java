@@ -59,7 +59,6 @@ public class ParkVisitController {
 			session.setAttribute("parkVisit", newParkVisit);
 			return "allUserParkVisits";
 		} else {
-			
 			return "userProfile";
 		}
 	}

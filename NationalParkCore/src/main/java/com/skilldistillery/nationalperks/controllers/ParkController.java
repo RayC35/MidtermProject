@@ -70,7 +70,6 @@ public class ParkController {
 		}
 		return amenityCategoryMap;
 	}
-	
 
 	@GetMapping("goAdminEditParkDetails.do")
 	public String goAdminEditParkDetails(HttpSession session, @RequestParam("parkId") int parkToEditId) {
