@@ -29,10 +29,9 @@
 							<div class="row">
 								<div class="col-sm">
 									<h2 style="text-align: centered">${amenity.name}</h2>
-									<p>${amenity.id}</p>
 									<p>Description: ${amenity.description}</p>
-									<p>${amenity.costRange}</p>
-									<p><a href="url" target="_blank">${amenity.websiteURL}</a></p>
+									<p>Price index: ${amenity.costRange}</p>
+									<p><a href="${amenity.websiteURL}" target="_blank">Amenity Website</a></p>
 								</div>
 							</div>
 						</div>
