@@ -13,5 +13,7 @@ public interface AmenityVisitDAO {
 	public List<AmenityVisit> listAllAmenityVisitsByUserId(int userId);
 	
 	public AmenityVisit createAmenityVisit(AmenityVisit amenityVisit);
+	
+	public AmenityVisit editAmenityVisit (AmenityVisit amenityVisit, int amenityVisitId);
 
 }

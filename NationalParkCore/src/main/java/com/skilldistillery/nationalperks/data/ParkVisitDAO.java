@@ -11,5 +11,7 @@ public interface ParkVisitDAO {
 	public ParkVisit findParkVisitById(int parkVisitId);
 	
 	public ParkVisit createParkVisit(ParkVisit parkVisit);
+	
+	public ParkVisit editParkVisit (ParkVisit parkVisit, int parkVisitId);
 
 }
