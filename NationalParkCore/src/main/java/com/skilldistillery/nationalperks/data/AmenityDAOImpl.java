@@ -68,5 +68,4 @@ public class AmenityDAOImpl implements AmenityDAO {
 		List<Amenity> allAmenities = em.createQuery(jpql, Amenity.class).getResultList();
 		return allAmenities;
 	}
-
 }

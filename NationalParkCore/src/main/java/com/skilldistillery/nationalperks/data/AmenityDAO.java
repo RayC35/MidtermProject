@@ -13,7 +13,7 @@ public interface AmenityDAO {
 	public Amenity createAmenity(Amenity createdAmenity);
 
 	public List<Amenity> listAllAmenities();
-
+	
 	Amenity adminEditAmenity(Amenity editedAmenity, int amenityId);
 
 }
