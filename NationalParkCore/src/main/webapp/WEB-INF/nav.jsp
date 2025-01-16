@@ -52,7 +52,7 @@
 					Log Out <i class="bi bi-signpost-2-fill"></i>
 				</button>
 				<form
-					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto">
+					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto w-25">
 					<input class="form-control mr-sm-2 form-inline" type="search"
 						placeholder="Search">
 					<button class="btn btn-outline-success mr-4" type="submit">Search</button>
@@ -68,7 +68,7 @@
 					Log In <i class="bi bi-signpost-2"></i>
 				</button>
 				<form
-					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto">
+					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto w-25">
 					<input class="form-control mr-sm-2 form-inline" type="search"
 						placeholder="Search">
 					<button class="btn btn-outline-success mr-4" type="submit">Search</button>
