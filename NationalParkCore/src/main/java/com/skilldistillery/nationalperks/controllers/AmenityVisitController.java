@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.nationalperks.data.AmenityVisitDAO;
 import com.skilldistillery.nationalperks.entities.AmenityVisit;
+import com.skilldistillery.nationalperks.entities.Park;
+import com.skilldistillery.nationalperks.entities.ParkVisit;
 import com.skilldistillery.nationalperks.entities.User;
 
 import jakarta.servlet.http.HttpSession;
@@ -57,7 +59,32 @@ public class AmenityVisitController {
 			session.setAttribute("amenityVisit", newAmenityVisit);
 			return "amenityDetails";
 		} else {
-			
 			return "createAmenityVisit";
 		}
-	}}
+	}
+	
+	@GetMapping("goEditAmityVisitDetails.do")
+	public String goEditAmenityVisitDetails(HttpSession session, @RequestParam("amenityVisitId") int amenityVisitToEditId) {
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
+		AmenityVisit managedAmenityVisit = amenityVisitDao.findAmenityVisitById(amenityVisitToEditId);
+		if (loggedInUser != null) {
+			session.setAttribute("editedAmenityVisit", managedAmenityVisit);
+			return "editAmenityVisitDetails";
+		} else {
+			return "createAmenityVisit";
+		}
+	}
+
+	@PostMapping("editAmenityVisitDetails.do")
+	public String doEditAmenityVisitDetails(HttpSession session, AmenityVisit updatedAmenityVisit) {
+		AmenityVisit managedAmenityVisit = (AmenityVisit) session.getAttribute("editedAmenityVisit");
+		if (managedAmenityVisit != null) {
+			updatedAmenityVisit = amenityVisitDao.editAmenityVisit(updatedAmenityVisit, managedAmenityVisit.getId());
+			session.setAttribute("amenityVisit", updatedAmenityVisit);
+			return "viewAmenityVisit";
+		} else {
+			return "createAmenityVisit";
+		}
+	}	
+
+}

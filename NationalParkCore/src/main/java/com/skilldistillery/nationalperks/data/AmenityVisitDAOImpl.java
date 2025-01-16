@@ -51,4 +51,15 @@ public class AmenityVisitDAOImpl implements AmenityVisitDAO {
 		return amenityVisit;
 	}
 
+	@Override
+	public AmenityVisit editAmenityVisit(AmenityVisit amenityVisit, int amenityVisitId) {
+		AmenityVisit managedAmenityVisit = em.find(AmenityVisit.class, amenityVisitId);
+		managedAmenityVisit.setRemarks(amenityVisit.getRemarks());
+		managedAmenityVisit.setRating(amenityVisit.getRating());
+		managedAmenityVisit.setDateVisited(amenityVisit.getDateVisited());
+		managedAmenityVisit.setEnabled(amenityVisit.getEnabled());
+		em.persist(managedAmenityVisit);
+		return managedAmenityVisit;
+	}
+
 }
