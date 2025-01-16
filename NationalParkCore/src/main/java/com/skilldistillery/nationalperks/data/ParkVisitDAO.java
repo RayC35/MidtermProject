@@ -14,6 +14,6 @@ public interface ParkVisitDAO {
 	
 	public ParkVisit editParkVisit (ParkVisit parkVisit, int parkVisitId);
 	
-	public List<ParkVisit> findParkVisitByParkId (int parkId);
+	public List<ParkVisit> findParkVisitsByParkId (int parkId);
  
 }

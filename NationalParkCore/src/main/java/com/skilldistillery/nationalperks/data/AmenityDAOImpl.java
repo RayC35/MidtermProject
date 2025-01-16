@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.nationalperks.entities.Amenity;
-import com.skilldistillery.nationalperks.entities.AmenityVisit;
-import com.skilldistillery.nationalperks.entities.User;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
