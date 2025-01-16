@@ -70,18 +70,6 @@
 										<td><button class="btn btn-warning" type="submit"
 												onclick="window.location.href='goEditParkVisitDetails.do?parkVisitId=${parkVisit.id}'">
 												Edit</button></td>
-										<td><c:if test="${parkVisit.enabled == 'true'}">
-												<form action="adminDisableparkVisit.do" method="POST"
-													onsubmit="return window.confirm('Confirm Disable?');">
-													<div class="form-group">
-														<input type="hidden" class="form-control" id="id"
-															name="id" value="<c:out value='${parkVisit.id}' />">
-													</div>
-													<button type="submit" class="btn btn-danger">Disable</button>
-												</form>
-											</c:if> <c:if test="${parkVisit.enabled == 'false'}">
-												<p class="unable">Disabled</p>
-											</c:if></td>
 									</tr>
 								</c:forEach>
 							</tbody>

@@ -54,8 +54,8 @@
 							<p>$$$</p>
 						</c:if>
 						<p>
-							<a href="${amenity.websiteURL}" target="_blank">Go To This
-								Amenity</a>
+							<a href="${amenity.websiteURL}" target="_blank">Official
+								Amenity Website</a>
 						</p>
 						<button class="btn btn-success mx-2" type="submit"
 							onclick="window.location.href='listAmenityVisitsByAmenity.do?amenity=${amenity.id}'">

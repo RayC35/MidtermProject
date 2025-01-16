@@ -26,6 +26,7 @@
 			<div class="col-md-11 mx-auto">
 				<div class="card mt-4">
 					<div class="card-body">
+						<br>
 						<h2 style="text-align: center;">Amenity Visits</h2>
 						<br>
 						<table class="table table-hover">
@@ -34,6 +35,7 @@
 									<th>Amenity</th>
 									<th>Rating</th>
 									<th>Remarks</th>
+									<th>Author</th>
 									<th>Last Update</th>
 								</tr>
 							</thead>
@@ -66,11 +68,19 @@
 												<p style="color: orange;">★★★★★</p>
 											</c:if></td>
 										<td>${amenityVisit.remarks}</td>
+										<td>${user.username}</td>
 										<td>${amenityVisit.lastUpdate}</td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
+						<br>
+						<div style="text-align: center;">
+							<button class="btn btn-success" type="button"
+								onclick="history.back()">
+								Go Back <i class="bi bi-tree"></i>
+							</button>
+						</div>
 						<br>
 					</div>
 				</div>
