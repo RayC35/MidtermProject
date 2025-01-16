@@ -61,4 +61,10 @@ public class AmenityDAOImpl implements AmenityDAO {
 		return managedAmenity;		
 	}
 
+	@Override
+	public List<Amenity> listAllAmenities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
