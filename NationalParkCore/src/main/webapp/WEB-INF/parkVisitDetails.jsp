@@ -52,15 +52,12 @@
 								<c:if test="${parkVisit.rating == 2}">
 									<p style="color: orange;">★★☆☆☆</p>
 								</c:if>
-
 								<c:if test="${parkVisit.rating == 3}">
 									<p style="color: orange;">★★★☆☆</p>
 								</c:if>
-
 								<c:if test="${parkVisit.rating == 4}">
 									<p style="color: orange;">★★★★☆</p>
 								</c:if>
-
 								<c:if test="${parkVisit.rating == 5}">
 									<p style="color: orange;">★★★★★</p>
 								</c:if>
