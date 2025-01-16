@@ -68,6 +68,10 @@
 								Edit Park <i class="bi bi-tree-fill"></i>
 							</button>
 						</c:if>
+						<button class="btn btn-success mx-2" type="submit"
+							onclick="window.location.href='listParkVisitsByPark.do?park=${park.id}'">
+							View Park Visits <i class="bi bi-signpost-2-fill"></i>
+						</button>
 						<br>
 					</div>
 				</div>

@@ -36,8 +36,9 @@
 							<h2>${parkVisit.title}</h2>
 							<p>
 								<strong>Posted On: </strong>${parkVisit.createDate}</p>
+							<c:forEach var="visitImage" items="${parkVisitImages}">
 							<img class="parkVisitImage" width="50%"
-								src="${parkVisit.imageURL}"> <br> <br>
+								src="${visitImage.imageURL}">${visitImage.description} </c:forEach><br> <br>
 							<h3>Park Visited:</h3>
 							<h4>${parkVisit.startDate}-${parkVisit.endDate}</h4>
 							<br>
