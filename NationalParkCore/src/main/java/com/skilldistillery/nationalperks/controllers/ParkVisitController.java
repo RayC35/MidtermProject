@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.nationalperks.data.ParkVisitDAO;
-import com.skilldistillery.nationalperks.entities.AmenityVisit;
 import com.skilldistillery.nationalperks.entities.ParkVisit;
 import com.skilldistillery.nationalperks.entities.User;
 
