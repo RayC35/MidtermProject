@@ -40,19 +40,19 @@
 								<h4>Cost Range</h4>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="0"> <label class="form-check-label">0</label>
+										value="0"> <label class="form-check-label">FREE</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="1"> <label class="form-check-label">1</label>
+										value="1"> <label class="form-check-label">$</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="2"> <label class="form-check-label">2</label>
+										value="2"> <label class="form-check-label">$$</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="3"> <label class="form-check-label">3</label>
+										value="3"> <label class="form-check-label">$$$</label>
 								</div>
 								<br> <br>
 								<h4>Latitude</h4>
