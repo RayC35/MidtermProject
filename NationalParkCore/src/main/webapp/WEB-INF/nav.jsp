@@ -17,14 +17,18 @@
 			<li class="nav-item"><a class="nav-link" href="listAllParks.do">Explore
 					Parks</a></li>
 			<li class="nav-item"><a class="nav-link"
-				href="listAllAmenityVisitsByAmenityId.do">View Amenities</a></li>
+				href="listAllAmenityVisitsByAmenityId.do">???</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="listAllAmenityVisitsByAmenityId.do">???</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="listAllAmenityVisitsByAmenityId.do">???</a></li>
 		</ul>
 		<c:choose>
 			<c:when
 				test="${not empty loggedInUser && loggedInUser.role == 'admin'}">
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
-					onclick="window.location.href='listAllUsers.do'">
-					User Admin <i class="bi bi-person-lines-fill"></i>
+					onclick="window.location.href='goAdminDashboard.do'">
+					Admin Dashboard <i class="bi bi-person-lines-fill"></i>
 				</button>
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
 					onclick="window.location.href='goUserProfile.do'">
