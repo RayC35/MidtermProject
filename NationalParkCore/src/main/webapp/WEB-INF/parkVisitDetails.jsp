@@ -27,17 +27,43 @@
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							<br> <br>
+							<br> <br> 
+							
+							PARK NAME HERE!!! 
+							
+							<br>
+							<br>
 							<h2>${parkVisit.title}</h2>
-							<p>Posted On: ${parkVisit.createDate}</p>
+							<p>
+								<strong>Posted On: </strong>${parkVisit.createDate}</p>
 							<img class="parkVisitImage" width="50%"
 								src="${parkVisit.imageURL}"> <br> <br>
-							<h4>Park Visited:</h4>
-							<h4>${parkVisit.startDate}- ${parkVisit.endDate}</h4>
+							<h3>Park Visited:</h3>
+							<h4>${parkVisit.startDate}-${parkVisit.endDate}</h4>
 							<br>
 							<hr>
 							<br>
-							<h2>Rating: ${parkVisit.rating}</h2>
+							<h3>Rating:</h3>
+							<h1>
+								<c:if test="${parkVisit.rating == 1}">
+									<p style="color: orange;">★☆☆☆☆</p>
+								</c:if>
+								<c:if test="${parkVisit.rating == 2}">
+									<p style="color: orange;">★★☆☆☆</p>
+								</c:if>
+
+								<c:if test="${parkVisit.rating == 3}">
+									<p style="color: orange;">★★★☆☆</p>
+								</c:if>
+
+								<c:if test="${parkVisit.rating == 4}">
+									<p style="color: orange;">★★★★☆</p>
+								</c:if>
+
+								<c:if test="${parkVisit.rating == 5}">
+									<p style="color: orange;">★★★★★</p>
+								</c:if>
+							</h1>
 							<div class="container">
 								<div class="row">
 									<div class="col-md-11 mx-auto">
@@ -65,6 +91,20 @@
 								My Account <i class="bi bi-tree-fill"></i>
 							</button>
 							<br> <br>
+							<hr>
+							<br>
+							<h3>Park Amenity Visits</h3>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-11 mx-auto">
+										<div class="card mt-1">
+											<br>
+											<p class="mx-4">${amenityVisit.remarks}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br>
 						</div>
 					</div>
 				</div>

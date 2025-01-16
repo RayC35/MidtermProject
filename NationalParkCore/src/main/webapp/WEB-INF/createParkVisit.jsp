@@ -31,17 +31,22 @@
 							<form action="createParkVisit.do" method="POST">
 								<h2>Create A New Park Visit</h2>
 								<br>
+								<h3>Park Visited</h3>
+								<select id="parkId" name="parkId" style="text-align: center;">
+									<option value="1">Rocky Mountain - Colorado</option>
+									<option value="2">Mesa Verde - Colorado</option>
+									<option value="3">Great Sand Dunes - Colorado</option>
+									<option value="4">Black Canyon of the Gunnison -
+										Colorado</option>
+									<option value="5">Arches - Utah</option>
+									<option value="6">Bryce Canyon - Utah</option>
+									<option value="7">Canyonlands - Utah</option>
+									<option value="8">Capitol Reef - Utah</option>
+									<option value="9">Zion - Utah</option>
+								</select><br>
+								<br>
 								<h4>Title</h4>
 								<input type="text" name="title" required
-									style="text-align: center"><br> <br>
-								<h4>Remarks</h4>
-								<textarea cols="70" rows="8"></textarea>
-								<br> <br>
-								<h4>Start Date</h4>
-								<input type="text" name="startDate" required
-									style="text-align: center"><br> <br>
-								<h4>End Date</h4>
-								<input type="text" name="endDate" required
 									style="text-align: center"><br> <br>
 								<h4>Rating</h4>
 								<div class="form-check form-check-inline">
@@ -65,6 +70,15 @@
 										value="5"> <label class="form-check-label">5</label>
 								</div>
 								<br> <br>
+								<h4>Remarks</h4>
+								<textarea cols="70" rows="8" style="text-align: center;"></textarea>
+								<br> <br>
+								<h4>Start Date</h4>
+								<input type="date" name="startDate" required
+									style="text-align: center"><br> <br>
+								<h4>End Date</h4>
+								<input type="date" name="endDate" required
+									style="text-align: center"><br> <br>
 								<h4>Park Visit Image URL</h4>
 								<input type="text" name="imageURL" size="40"
 									style="text-align: center"><br> <br>
