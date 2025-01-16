@@ -63,4 +63,12 @@ public class ParkVisitDAOImpl implements ParkVisitDAO {
 		return managedParkVisit;
 	}
 
+	@Override
+	public List<ParkVisit> findParkVisitByParkId(int parkId) {
+		String jpql = "SELECT p FROM ParkVisit p WHERE p.park.id = :id";
+		List<ParkVisit> parkVisitsByPark = em.createQuery(jpql, ParkVisit.class).setParameter("id", parkId)
+				.getResultList();
+		return parkVisitsByPark;
+	}
+
 }

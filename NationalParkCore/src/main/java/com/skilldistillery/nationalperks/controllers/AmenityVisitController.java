@@ -65,21 +65,21 @@ public class AmenityVisitController {
 
 	}
 
-	@GetMapping("goEditAmityVisitDetails.do")
-	public String goEditAmenityVisitDetails(HttpSession session,
+	@GetMapping("goEditAmityVisit.do")
+	public String goEditAmenityVisit(HttpSession session,
 			@RequestParam("amenityVisitId") int amenityVisitToEditId) {
 		User loggedInUser = (User) session.getAttribute("loggedInUser");
 		AmenityVisit managedAmenityVisit = amenityVisitDao.findAmenityVisitById(amenityVisitToEditId);
 		if (loggedInUser != null) {
 			session.setAttribute("editedAmenityVisit", managedAmenityVisit);
-			return "editAmenityVisitDetails";
+			return "editAmenityVisit";
 		} else {
 			return "createAmenityVisit";
 		}
 	}
 
-	@PostMapping("editAmenityVisitDetails.do")
-	public String doEditAmenityVisitDetails(HttpSession session, AmenityVisit updatedAmenityVisit) {
+	@PostMapping("editAmenityVisit.do")
+	public String doEditAmenityVisit(HttpSession session, AmenityVisit updatedAmenityVisit) {
 		AmenityVisit managedAmenityVisit = (AmenityVisit) session.getAttribute("editedAmenityVisit");
 		if (managedAmenityVisit != null) {
 			updatedAmenityVisit = amenityVisitDao.editAmenityVisit(updatedAmenityVisit, managedAmenityVisit.getId());
