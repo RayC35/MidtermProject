@@ -40,6 +40,10 @@
 								<h4>Cost Range</h4>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
+										value="0"> <label class="form-check-label">0</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="rating"
 										value="1"> <label class="form-check-label">1</label>
 								</div>
 								<div class="form-check form-check-inline">
@@ -50,21 +54,13 @@
 									<input class="form-check-input" type="radio" name="rating"
 										value="3"> <label class="form-check-label">3</label>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="rating"
-										value="4"> <label class="form-check-label">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="rating"
-										value="5"> <label class="form-check-label">5</label>
-								</div>
 								<br> <br>
 								<h4>Latitude</h4>
-								<input type="text" name="latitude" 
-									style="text-align: center"><br> <br>
+								<input type="text" name="latitude" style="text-align: center"><br>
+								<br>
 								<h4>Longitude</h4>
-								<input type="text" name="longitude"
-									style="text-align: center"><br> <br>
+								<input type="text" name="longitude" style="text-align: center"><br>
+								<br>
 								<h4>Amenity Image URL</h4>
 								<input type="text" name="imageURL" size="40"
 									style="text-align: center"><br> <br>
