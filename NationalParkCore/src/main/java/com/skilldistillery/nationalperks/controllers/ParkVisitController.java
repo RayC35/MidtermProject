@@ -24,10 +24,14 @@ public class ParkVisitController {
 	@GetMapping("listAllUserParkVisits.do")
 	public String listAllUserParkVisits(HttpSession session) {
 		User user = (User) session.getAttribute("loggedInUser");
-		int userId = user.getId();
-		List<ParkVisit> userParkVisits = parkVisitDao.listUserParkVisits(userId);
-		session.setAttribute("parkVisitList", userParkVisits);
-		return "allUserParkVisits";
+		if (user != null) {
+			List<ParkVisit> userParkVisits = parkVisitDao.listUserParkVisits(user.getId());
+			session.setAttribute("parkVisitList", userParkVisits);
+			return "allUserParkVisits";			
+		}
+		else {
+			return "home";
+		}
 	}
 
 	@GetMapping("parkVisitDetails.do")
@@ -78,13 +82,15 @@ public class ParkVisitController {
 	}
 
 	@PostMapping("editParkVisitDetails.do")
-	public String doEditParkVisitDetails(HttpSession session, ParkVisit updatedParkVisit) {
-		ParkVisit managedParkVisit = (ParkVisit) session.getAttribute("editedParkVisit");
+	public String doEditParkVisitDetails(HttpSession session, Model model, ParkVisit updatedParkVisit) {
+		ParkVisit managedParkVisit = (ParkVisit) session.getAttribute("parkVisit");
 		if (managedParkVisit != null) {
 			updatedParkVisit = parkVisitDao.editParkVisit(updatedParkVisit, managedParkVisit.getId());
 			session.setAttribute("parkVisit", updatedParkVisit);
 			session.setAttribute("parkVisitImages", managedParkVisit.getParkVisitImages());
-			return "allUserParkVisits";
+			model.addAttribute("parkVisit", updatedParkVisit);
+			model.addAttribute("parkVisitImages", managedParkVisit.getParkVisitImages());
+			return "redirect:listAllUserParkVisits.do";
 		} else {
 			return "editParkVisitDetails";
 		}

@@ -52,7 +52,7 @@ public class ParkVisitDAOImpl implements ParkVisitDAO {
 		managedParkVisit.setStartDate(parkVisit.getStartDate());
 		managedParkVisit.setEndDate(parkVisit.getEndDate());
 		managedParkVisit.setTitle(parkVisit.getTitle());
-		managedParkVisit.setImageURL(parkVisit.getImageURL());
+		managedParkVisit.setParkVisitImages(parkVisit.getParkVisitImages());
 		managedParkVisit.setPublished(parkVisit.getPublished());
 		managedParkVisit.setEnabled(parkVisit.getEnabled());
 		em.persist(managedParkVisit);

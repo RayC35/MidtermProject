@@ -46,7 +46,7 @@
 						</div>
 						<br>
 						<button class="btn btn-warning" type="submit"
-							onclick="window.location.href='goEditUserProfile.do?userId=${user.id}'">
+							onclick="window.location.href='goEditUserProfile.do'">
 							Edit My Profile <i class="bi bi-tree-fill"></i>
 						</button>
 						<br>
@@ -57,7 +57,7 @@
 							Add A Park Visit <i class="bi bi-person-walking"></i>
 						</button>
 						<button class="btn btn-success mx-2" type="submit"
-							onclick="window.location.href='listAllUserParkVisits.do?user=${loggedInUser.id}'">
+							onclick="window.location.href='listAllUserParkVisits.do'">
 							View Detailed Park Visits <i class="bi bi-signpost-2-fill"></i>
 						</button>
 						<br> <br>

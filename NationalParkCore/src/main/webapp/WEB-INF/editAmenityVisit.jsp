@@ -28,7 +28,7 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br>
-							<h2>Edit Your Visit</h2>
+							<h2>Edit Your Amenity Visit</h2>
 							<br>
 							<form action="editAmenityVisit.do" method="POST"
 								onsubmit="return window.confirm('Confirm Edits?');">
