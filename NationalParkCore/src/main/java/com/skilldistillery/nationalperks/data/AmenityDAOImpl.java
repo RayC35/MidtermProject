@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.nationalperks.entities.Amenity;
 import com.skilldistillery.nationalperks.entities.AmenityVisit;
+import com.skilldistillery.nationalperks.entities.User;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -63,8 +64,8 @@ public class AmenityDAOImpl implements AmenityDAO {
 
 	@Override
 	public List<Amenity> listAllAmenities() {
-		// TODO Auto-generated method stub
-		return null;
+		String jpql = "SELECT a FROM Amenity a";
+		List<Amenity> allAmenities = em.createQuery(jpql, Amenity.class).getResultList();
+		return allAmenities;
 	}
-
 }

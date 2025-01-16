@@ -15,4 +15,5 @@ public interface AmenityDAO {
 	public List<Amenity> listAllAmenities();
 	
 	Amenity adminEditAmenity(Amenity editedAmenity, int amenityId);
+
 }

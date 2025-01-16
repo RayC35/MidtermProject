@@ -66,7 +66,7 @@ public class AmenityController {
 		}
 	}
 	
-	@GetMapping("goAdminEditAmity.do")
+	@GetMapping("goAdminEditAmenity.do")
 	public String goAdminEditAmenity(HttpSession session,
 			@RequestParam("amenityId") int amenityToEditId) {
 		User loggedInUser = (User) session.getAttribute("loggedInUser");
@@ -89,5 +89,12 @@ public class AmenityController {
 		} else {
 			return "createAmenity";
 		}
+	}
+	
+	@GetMapping("listAllAmenities.do")
+	public String listAllAmenities(Model model) {
+		List<Amenity> allAmenities = amenityDao.listAllAmenities();
+		model.addAttribute("amenityList", allAmenities);
+		return "allAmenities";
 	}
 }
