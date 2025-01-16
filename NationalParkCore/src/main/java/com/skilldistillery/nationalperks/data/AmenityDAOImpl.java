@@ -17,13 +17,6 @@ public class AmenityDAOImpl implements AmenityDAO {
 	@PersistenceContext
 	private EntityManager em;
 
-//	@Override
-//	public List<Amenity> listAllAmenitiesByParkId(int parkId) {
-//		String jpql = "SELECT a FROM Amenity a WHERE a.park.id =:id";
-//		List<Amenity> amenitiesByPark = em.createQuery(jpql, Amenity.class)
-//				.setParameter("id", parkId).getResultList();
-//		return amenitiesByPark;
-//	}
 	@Override
 	public List<Amenity> listAllAmenitiesByParkId(int parkId) {
 		String jpql = "SELECT a FROM Amenity a JOIN a.amenityCategories ac WHERE a.park.id =:id ORDER BY ac.name";

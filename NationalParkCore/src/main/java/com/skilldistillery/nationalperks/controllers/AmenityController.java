@@ -62,7 +62,6 @@ public class AmenityController {
 			session.setAttribute("amenity", newAmenity);
 			return "amenityDetails";
 		} else {
-			
 			return "createAmenity";
 		}
 	}
