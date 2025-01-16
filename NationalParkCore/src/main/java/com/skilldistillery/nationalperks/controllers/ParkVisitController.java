@@ -69,9 +69,9 @@ public class ParkVisitController {
 		User loggedInUser = (User) session.getAttribute("loggedInUser");
 		ParkVisit managedParkVisit = parkVisitDao.findParkVisitById(parkVisitToEditId);
 		if (loggedInUser != null) {
-			session.setAttribute("editedParkVisit", managedParkVisit);
+			session.setAttribute("parkVisit", managedParkVisit);
 			session.setAttribute("parkVisitImages", managedParkVisit.getParkVisitImages());
-			return "editParkVisitDetails";
+			return "editParkVisit";
 		} else {
 			return "createParkVisit";
 		}

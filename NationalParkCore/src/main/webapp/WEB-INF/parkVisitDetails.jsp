@@ -75,7 +75,7 @@
 							<br>
 							<c:if test="${loggedInUser.id == parkVisit.user.id}">
 								<button class="btn btn-primary mx-2" type="submit"
-									onclick="window.location.href='goEditParkVisit.do'">
+									onclick="window.location.href='goEditParkVisitDetails.do?parkVisitId=${parkVisit.id}'">
 									Edit Park Visit <i class="bi bi-person-walking"></i>
 								</button>
 							</c:if>

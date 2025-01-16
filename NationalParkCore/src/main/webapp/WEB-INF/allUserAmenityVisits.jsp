@@ -60,11 +60,29 @@
 										<td><a
 											href="<c:url value='amenityVisitDetails.do'><c:param name='amenityVisitId' value='${amenityVisit.id}'/></c:url>">
 												${amenityVisit.name}</a></td>
-										<td>${amenity.costRange}</td>
+										<td><c:if test="${amenity.costRange == 0}">
+												<p>FREE</p>
+											</c:if> <c:if test="${amenity.costRange == 1}">
+												<p>$</p>
+											</c:if> <c:if test="${amenity.costRange == 2}">
+												<p>$$</p>
+											</c:if> <c:if test="${amenity.costRange == 3}">
+												<p>$$$</p>
+											</c:if></td>
 										<td>${amenityVisit.createDate}</td>
 										<td>${amenityVisit.lastUpdate}</td>
 										<td>${amenityVisit.dateVisited}</td>
-										<td>${amenityVisit.rating}</td>
+										<td><c:if test="${amenityVisit.rating == 1}">
+												<p style="color: orange;">★☆☆☆☆</p>
+											</c:if> <c:if test="${amenityVisit.rating == 2}">
+												<p style="color: orange;">★★☆☆☆</p>
+											</c:if> <c:if test="${amenityVisit.rating == 3}">
+												<p style="color: orange;">★★★☆☆</p>
+											</c:if> <c:if test="${amenityVisit.rating == 4}">
+												<p style="color: orange;">★★★★☆</p>
+											</c:if> <c:if test="${amenityVisit.rating == 5}">
+												<p style="color: orange;">★★★★★</p>
+											</c:if></td>
 										<td>${amenity.websiteURL}</td>
 										<%-- <td><button class="btn btn-warning" type="submit"
 												onclick="window.location.href='goEditParkVisit.do?parkVisitId=${parkVisit.id}'">

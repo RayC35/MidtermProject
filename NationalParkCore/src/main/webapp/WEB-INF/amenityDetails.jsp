@@ -34,7 +34,7 @@
 								<div class="col-md-11 mx-auto">
 									<div class="card mt-1">
 										<br>
-										<p>${amenity.description}</p>
+										<p class="mx-4">${amenity.description}</p>
 									</div>
 								</div>
 							</div>

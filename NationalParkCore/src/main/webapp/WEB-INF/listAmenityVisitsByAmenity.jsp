@@ -54,7 +54,17 @@
 										<td><a
 											href="<c:url value='amenityVisitDetails.do'><c:param name='amenityVisitId' value='${amenityVisit.id}'/></c:url>">
 												${amenityVisit.amenity.name}</a></td>
-										<td>${amenityVisit.rating}</td>
+										<td><c:if test="${parkVisit.rating == 1}">
+												<p style="color: orange;">★☆☆☆☆</p>
+											</c:if> <c:if test="${amenityVisit.rating == 2}">
+												<p style="color: orange;">★★☆☆☆</p>
+											</c:if> <c:if test="${amenityVisit.rating == 3}">
+												<p style="color: orange;">★★★☆☆</p>
+											</c:if> <c:if test="${amenityVisit.rating == 4}">
+												<p style="color: orange;">★★★★☆</p>
+											</c:if> <c:if test="${amenityVisit.rating == 5}">
+												<p style="color: orange;">★★★★★</p>
+											</c:if></td>
 										<td>${amenityVisit.remarks}</td>
 										<td>${amenityVisit.lastUpdate}</td>
 									</tr>
