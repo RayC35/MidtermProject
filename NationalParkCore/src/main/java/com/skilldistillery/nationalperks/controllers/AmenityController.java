@@ -66,8 +66,8 @@ public class AmenityController {
 		}
 	}
 	
-	@GetMapping("goAdminEditAmityDetails.do")
-	public String goAdminEditAmenityDetails(HttpSession session,
+	@GetMapping("goAdminEditAmity.do")
+	public String goAdminEditAmenity(HttpSession session,
 			@RequestParam("amenityId") int amenityToEditId) {
 		User loggedInUser = (User) session.getAttribute("loggedInUser");
 		Amenity managedAmenity = amenityDao.findAmenityById(amenityToEditId);
@@ -79,15 +79,15 @@ public class AmenityController {
 		}
 	}
 
-	@PostMapping("editAmenityVisitDetails.do")
-	public String doEditAmenityVisitDetails(HttpSession session, Amenity updatedAmenity) {
+	@PostMapping("adminEditAmenity.do")
+	public String doAdminEditAmenity(HttpSession session, Amenity updatedAmenity) {
 		Amenity managedAmenity = (Amenity) session.getAttribute("amenity");
 		if (managedAmenity != null) {
 			updatedAmenity = amenityDao.adminEditAmenity(updatedAmenity, managedAmenity.getId());
 			session.setAttribute("amenity", updatedAmenity);
 			return "userProfile";
 		} else {
-			return "createAmenityVisit";
+			return "createAmenity";
 		}
 	}
 }
