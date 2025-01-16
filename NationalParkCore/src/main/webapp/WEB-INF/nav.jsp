@@ -14,10 +14,10 @@
 		<ul class="navbar-nav w-100 mt-2 mt-lg-0">
 			<li class="nav-item active"><a class="nav-link" href="home.do">Home
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="listAllParks.do">Parks</a>
-			</li>
+			<li class="nav-item"><a class="nav-link" href="listAllParks.do">Explore
+					Parks</a></li>
 			<li class="nav-item"><a class="nav-link"
-				href="listAllAmenityVisitsByAmenityId.do">Amenities</a></li>
+				href="listAllAmenityVisitsByAmenityId.do">View Amenities</a></li>
 		</ul>
 		<c:choose>
 			<c:when
