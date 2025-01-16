@@ -91,7 +91,7 @@ public class ParkVisitController {
 	}	
 
 	@GetMapping("listParkVisitsByPark.do")
-	public String listParkVisitsByPark(Model model, @ RequestParam("park") int parkId) {
+	public String listParkVisitsByPark(Model model, @RequestParam("park") int parkId) {
 		List<ParkVisit> parkVisitsByPark = parkVisitDao.findParkVisitsByParkId(parkId);
 		model.addAttribute("parkVisitList", parkVisitsByPark);
 		return "listParkVisitsByPark";
