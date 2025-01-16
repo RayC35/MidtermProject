@@ -43,4 +43,11 @@ public class AmenityDAOImpl implements AmenityDAO {
 		return foundAmenity;
 	}
 
+	@Override
+	public Amenity createAmenity(Amenity createdAmenity) {
+		createdAmenity.setEnabled(true);
+		em.persist(createdAmenity);
+		return createdAmenity;
+	}
+
 }

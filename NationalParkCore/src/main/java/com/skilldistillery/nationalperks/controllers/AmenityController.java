@@ -6,12 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.nationalperks.data.AmenityDAO;
 import com.skilldistillery.nationalperks.data.AmenityVisitDAO;
 import com.skilldistillery.nationalperks.entities.Amenity;
 import com.skilldistillery.nationalperks.entities.AmenityVisit;
+import com.skilldistillery.nationalperks.entities.User;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class AmenityController {
@@ -42,5 +46,24 @@ public class AmenityController {
 		}
 		return "amenityDetails";
 	}
-	
+	@GetMapping("goCreateAmenity.do")
+	public String goCreateAmenity(HttpSession session) {
+		User user = (User) session.getAttribute("loggedIn");
+		if (user != null) {
+			return "createAmenity";
+			} else {
+			return "home";
+			}
+	}
+	@PostMapping("createAmenity.do")
+	public String createAmenity(HttpSession session, Amenity createdAmenity) {
+		Amenity newAmenity = amenityDao.createAmenity(createdAmenity);
+		if (newAmenity != null) {
+			session.setAttribute("amenity", newAmenity);
+			return "amenityDetails";
+		} else {
+			
+			return "createAmenity";
+		}
+	}
 }
