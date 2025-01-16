@@ -38,7 +38,7 @@
 										</h5>
 										<img class="image" src="images/zion-square.jpg"> <br>
 										<button class="btn btn-success text-nowrap mx-2" type="submit"
-											onclick="window.location.href='goParkDetails.do?parkId=9'">
+											onclick="window.location.href='parkDetails.do?parkId=9'">
 											Check Them Out!</button>
 										<br>
 									</div>
@@ -50,7 +50,7 @@
 									<img class="image" src="images/rocky-mountain-square.jpg">
 									<br>
 									<button class="btn btn-success text-nowrap mx-2" type="submit"
-										onclick="window.location.href='goParkDetails.do?parkId=1'">
+										onclick="window.location.href='parkDetails.do?parkId=1'">
 										Show Me!</button>
 									<br>
 								</div>
@@ -60,7 +60,7 @@
 									</h5>
 									<img class="image" src="images/mesa-verde-square.jpg"> <br>
 									<button class="btn btn-success text-nowrap mx-2" type="submit"
-										onclick="window.location.href='goParkDetails.do?parkId=2'">
+										onclick="window.location.href='parkDetails.do?parkId=2'">
 										Take Me There!</button>
 									<br>
 								</div>
