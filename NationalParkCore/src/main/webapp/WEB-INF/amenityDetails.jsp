@@ -28,7 +28,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-sm">
-									<h2 style="text-align: centered">${amenity.name}</h2>
+									<h2 style="text-align: centered;">${amenity.name}</h2>
 									<p>Description: ${amenity.description}</p>
 									<p>Price index: ${amenity.costRange}</p>
 									<p><a href="${amenity.websiteURL}" target="_blank">Amenity Website</a></p>

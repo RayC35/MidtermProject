@@ -17,10 +17,10 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class AmenityVisitController {
-	
+
 	@Autowired
 	private AmenityVisitDAO amenityVisitDao;
-	
+
 	@GetMapping("amenityVisitDetails.do")
 	public String findAmenityVisitById(Model model, @RequestParam("amenityVisitId") int amenityVisitId) {
 		AmenityVisit foundAmenityVisit = null;
@@ -32,14 +32,14 @@ public class AmenityVisitController {
 		}
 		return "amenityVisitDetails";
 	}
-	
+
 	@GetMapping("listAllAmenityVisitsByAmenityId.do")
 	public String listAllAmenityVisitsByAmenity(Model model, @RequestParam("amenityId") int amenityId) {
 		List<AmenityVisit> allAmenityVisits = amenityVisitDao.listAllAmenityVisitsByAmenityId(amenityId);
 		model.addAttribute("amenityList", allAmenityVisits);
 		return "amenityDetails";
 	}
-	
+
 	@GetMapping("goCreateAmenityVisit.do")
 	public String goCreateAmenityVisit(HttpSession session) {
 		User user = (User) session.getAttribute("loggedInUser");
@@ -49,7 +49,7 @@ public class AmenityVisitController {
 			return "home";
 		}
 	}
-	
+
 	@PostMapping("createAmenityVisit.do")
 	public String createParkVisit(HttpSession session, AmenityVisit createdAmenityVisit) {
 		AmenityVisit newAmenityVisit = amenityVisitDao.createAmenityVisit(createdAmenityVisit);
@@ -57,7 +57,8 @@ public class AmenityVisitController {
 			session.setAttribute("amenityVisit", newAmenityVisit);
 			return "amenityDetails";
 		} else {
-			
+
 			return "createAmenityVisit";
 		}
-	}}
+	}
+}
