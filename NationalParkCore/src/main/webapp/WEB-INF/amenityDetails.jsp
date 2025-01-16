@@ -61,6 +61,10 @@
 							onclick="window.location.href='listAmenityVisitsByAmenity.do?amenity=${amenity.id}'">
 							View Amenity Visits <i class="bi bi-signpost-2-fill"></i>
 						</button>
+						<button class="btn btn-success" type="button"
+							onclick="history.back()">
+							Go Back <i class="bi bi-tree"></i>
+						</button>
 					</div>
 				</div>
 			</div>

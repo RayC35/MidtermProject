@@ -34,7 +34,18 @@
 								<br> <img src="${amenity.imageURL}"> <br> <br>
 								<p>${amenity.description}</p>
 								<br>
-								<h2>${amenity.costRange}</h2>
+								<c:if test="${amenity.costRange == 0}">
+									<p>FREE</p>
+								</c:if>
+								<c:if test="${amenity.costRange == 1}">
+									<p>$</p>
+								</c:if>
+								<c:if test="${amenity.costRange == 2}">
+									<p>$$</p>
+								</c:if>
+								<c:if test="${amenity.costRange == 3}">
+									<p>$$$</p>
+								</c:if>
 								<br>
 								<h4>Location (Click to Open In Maps):</h4>
 								<h2>
@@ -75,8 +86,8 @@
 									</button>
 								</c:if>
 								<button class="btn btn-success mx-2" type="submit"
-									onclick="window.location.href='listAllUserAmenityVisits.do?userId=${loggedInUser.id}'">
-									Back To Amenity Visits <i class="bi bi-signpost-2-fill"></i>
+									onclick="history.back()">
+									Go Back <i class="bi bi-signpost-2-fill"></i>
 								</button>
 								<button class="btn btn-warning text-nowrap mx-2" type="submit"
 									onclick="window.location.href='goUserProfile.do'">

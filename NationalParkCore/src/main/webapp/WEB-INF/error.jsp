@@ -30,7 +30,7 @@
 							<br>
 							<h1>Error</h1>
 							<br> <img class="image" style="text-align: center"
-								src="images/404.jpg"><br> <br>
+								src="images/error.jpg"><br> <br>
 							<button class="btn btn-success" type="button"
 								onclick="history.back()">
 								Go Back <i class="bi bi-tree"></i>
