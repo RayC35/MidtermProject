@@ -35,13 +35,13 @@
 								<input type="text" name="title" required
 									style="text-align: center"><br> <br>
 								<h4>Remarks</h4>
-								<textarea></textarea>
+								<textarea cols="70" rows="8"></textarea>
 								<br> <br>
 								<h4>Start Date</h4>
-								<input type="text" name="firstName" required
+								<input type="text" name="startDate" required
 									style="text-align: center"><br> <br>
 								<h4>End Date</h4>
-								<input type="text" name="firstName" required
+								<input type="text" name="endDate" required
 									style="text-align: center"><br> <br>
 								<h4>Rating</h4>
 								<div class="form-check form-check-inline">

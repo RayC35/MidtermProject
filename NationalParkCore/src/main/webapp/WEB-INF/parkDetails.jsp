@@ -29,8 +29,18 @@
 						<br> <br>
 						<h1>Welcome to ${park.name} National Park!</h1>
 						<br> <img src="${park.imageURL}"> <br> <br>
-						<h2>${park.name}&nbsp;-&nbsp;${park.stateAbbreviation}</h2>
-						<p>${park.description}</p>
+						<h2>${park.name}- ${park.stateAbbreviation}</h2>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-11 mx-auto">
+									<div class="card mt-1">
+										<br>
+										<p class="mx-4">${park.description}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br>
 						<h4>Location (Click to Open In Maps):</h4>
 						<h2>
 							<a
@@ -38,7 +48,7 @@
 								target="_blank">${park.mainEntranceLatitude},
 								${park.mainEntranceLongitude}</a>
 						</h2>
-						<h4>Open hours:</h4>
+						<h4>Open Hours:</h4>
 						<p>${park.openingTime}-${park.closingTime}</p>
 						<h4>Entry Fee:</h4>
 						<p>$${park.entryFee}0</p>
@@ -47,7 +57,6 @@
 							<a href="${park.websiteURL}" target="_blank">${park.name}
 								National Park Website</a>
 						</p>
-						<br>
 						<hr>
 						<br>
 						<jsp:include page="listAllAmenitiesByPark.jsp" />

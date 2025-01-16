@@ -25,44 +25,42 @@
 		<div class="row">
 			<div class="col-md-9 mx-auto">
 				<div class="card mt-4">
-					<div>
-						<div class="card-body text-center bg-light">
-							<br> <br>
-							<h2>${loggedInUser.firstName}&nbsp;${loggedInUser.lastName}</h2>
-							<img src="${loggedInUser.imageURL}"> <br> <br>
-							<h4>Username:</h4>
-							<p>${loggedInUser.username}</p>
-							<h4>Email Address:</h4>
-							<p>${loggedInUser.email}</p>
-							<h4>Bio:</h4>
-							<div class="container">
-								<div class="row">
-									<div class="col-md-11 mx-auto">
-										<div class="card mt-1">
-											<br>
-											<p class="mx-4">${loggedInUser.biography}</p>
-										</div>
+					<div class="card-body text-center bg-light">
+						<br> <br>
+						<h2>${loggedInUser.firstName}&nbsp;${loggedInUser.lastName}</h2>
+						<img src="${loggedInUser.imageURL}"> <br> <br>
+						<h4>Username:</h4>
+						<p>${loggedInUser.username}</p>
+						<h4>Email Address:</h4>
+						<p>${loggedInUser.email}</p>
+						<h4>Bio:</h4>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-11 mx-auto">
+									<div class="card mt-1">
+										<br>
+										<p class="mx-4">${loggedInUser.biography}</p>
 									</div>
 								</div>
 							</div>
-							<br>
-							<button class="btn btn-warning" type="submit"
-								onclick="window.location.href='goEditUserProfile.do?userId=${user.id}'">
-								Edit My Profile <i class="bi bi-tree-fill"></i>
-							</button>
-							<br>
-							<jsp:include page="parkVisitsAtAGlance.jsp" />
-							<br>
-							<button class="btn btn-primary mx-2" type="submit"
-								onclick="window.location.href='goCreateParkVisit.do'">
-								Add A Park Visit <i class="bi bi-person-walking"></i>
-							</button>
-							<button class="btn btn-success mx-2" type="submit"
-								onclick="window.location.href='listAllUserParkVisits.do?user=${loggedInUser.id}'">
-								View Detailed Park Visits <i class="bi bi-signpost-2-fill"></i>
-							</button>
-							<br> <br>
 						</div>
+						<br>
+						<button class="btn btn-warning" type="submit"
+							onclick="window.location.href='goEditUserProfile.do?userId=${user.id}'">
+							Edit My Profile <i class="bi bi-tree-fill"></i>
+						</button>
+						<br>
+						<jsp:include page="parkVisitsAtAGlance.jsp" />
+						<br>
+						<button class="btn btn-primary mx-2" type="submit"
+							onclick="window.location.href='goCreateParkVisit.do'">
+							Add A Park Visit <i class="bi bi-person-walking"></i>
+						</button>
+						<button class="btn btn-success mx-2" type="submit"
+							onclick="window.location.href='listAllUserParkVisits.do?user=${loggedInUser.id}'">
+							View Detailed Park Visits <i class="bi bi-signpost-2-fill"></i>
+						</button>
+						<br> <br>
 					</div>
 				</div>
 			</div>

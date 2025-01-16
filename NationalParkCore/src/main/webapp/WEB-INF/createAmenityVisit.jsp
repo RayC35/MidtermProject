@@ -28,21 +28,9 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<form action="createParkVisit.do" method="POST">
-								<h2>Create A New Park Visit</h2>
+							<form action="createAmenityVisit.do" method="POST">
+								<h2>How Was Your Amenity Visit?</h2>
 								<br>
-								<h4>Title</h4>
-								<input type="text" name="title" required
-									style="text-align: center"><br> <br>
-								<h4>Remarks</h4>
-								<textarea></textarea>
-								<br> <br>
-								<h4>Start Date</h4>
-								<input type="text" name="firstName" required
-									style="text-align: center"><br> <br>
-								<h4>End Date</h4>
-								<input type="text" name="firstName" required
-									style="text-align: center"><br> <br>
 								<h4>Rating</h4>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
@@ -65,11 +53,14 @@
 										value="5"> <label class="form-check-label">5</label>
 								</div>
 								<br> <br>
-								<h4>Park Visit Image URL</h4>
-								<input type="text" name="imageURL" size="40"
+								<h4>Remarks</h4>
+								<textarea cols="70" rows="8"></textarea>
+								<br> <br>
+								<h4>Date Visited</h4>
+								<input type="date" name="dateVisited" required
 									style="text-align: center"><br> <br>
 								<button type="submit" class="btn btn-primary text-nowrap">
-									Create Park Visit</button>
+									Create Amenity Visit</button>
 							</form>
 							<br> <br>
 						</div>

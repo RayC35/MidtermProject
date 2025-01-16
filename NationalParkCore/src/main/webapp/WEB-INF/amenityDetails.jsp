@@ -20,21 +20,40 @@
 <body>
 	<jsp:include page="nav.jsp" />
 	<br>
-	<div class="container">
+	<div class="container" style="text-align: center;">
 		<div class="row">
-			<div class="col-md-12 mx-auto">
-				<div class="card mt-2">
-					<div class="card-body">
+			<div class="col-md-9 mx-auto">
+				<div class="card mt-4">
+					<div class="card-body text-center bg-light">
+						<h2>${amenity.name}</h2>
+						<br> <img class="amenityImage" width="50%"
+							src="${amenity.imageURL}"> <br>
+						<h3>Amenity Description:</h3>
 						<div class="container">
 							<div class="row">
-								<div class="col-sm">
-									<h2 style="text-align: centered">${amenity.name}</h2>
-									<p>Description: ${amenity.description}</p>
-									<p>Price index: ${amenity.costRange}</p>
-									<p><a href="${amenity.websiteURL}" target="_blank">Amenity Website</a></p>
+								<div class="col-md-11 mx-auto">
+									<div class="card mt-1">
+										<br>
+										<p>${amenity.description}</p>
+									</div>
 								</div>
 							</div>
 						</div>
+						<br>
+						<h4>Cost Range:</h4>
+						<c:if test="${amenity.costRange == 1}">
+							<p>$</p>
+						</c:if>
+						<c:if test="${amenity.costRange == 2}">
+							<p>$$</p>
+						</c:if>
+						<c:if test="${amenity.costRange == 3}">
+							<p>$$$</p>
+						</c:if>
+						<p>
+							<a href="${amenity.websiteURL}" target="_blank">Go To This
+								Amenity</a>
+						</p>
 					</div>
 				</div>
 			</div>

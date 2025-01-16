@@ -38,7 +38,7 @@ public class AmenityVisitDAOImpl implements AmenityVisitDAO {
 
 	@Override
 	public List<AmenityVisit> listAllAmenityVisitsByUserId(int userId) {
-		String jpql = "SELECT a FROM AmenityVisit a WHERE a.user.id = :id";
+		String jpql = "SELECT a FROM AmenityVisit a WHERE a.parkVisit.user.id = :id";
 		List<AmenityVisit> amenityVisitByUser = em.createQuery(jpql, AmenityVisit.class)
 													  .setParameter("id", userId).getResultList();
 		return amenityVisitByUser;
@@ -49,6 +49,17 @@ public class AmenityVisitDAOImpl implements AmenityVisitDAO {
 		amenityVisit.setEnabled(true);
 		em.persist(amenityVisit);
 		return amenityVisit;
+	}
+
+	@Override
+	public AmenityVisit editAmenityVisit(AmenityVisit amenityVisit, int amenityVisitId) {
+		AmenityVisit managedAmenityVisit = em.find(AmenityVisit.class, amenityVisitId);
+		managedAmenityVisit.setRemarks(amenityVisit.getRemarks());
+		managedAmenityVisit.setRating(amenityVisit.getRating());
+		managedAmenityVisit.setDateVisited(amenityVisit.getDateVisited());
+		managedAmenityVisit.setEnabled(amenityVisit.getEnabled());
+		em.persist(managedAmenityVisit);
+		return managedAmenityVisit;
 	}
 
 }

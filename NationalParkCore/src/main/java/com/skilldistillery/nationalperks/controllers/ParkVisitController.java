@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.nationalperks.data.ParkVisitDAO;
+import com.skilldistillery.nationalperks.entities.AmenityVisit;
 import com.skilldistillery.nationalperks.entities.ParkVisit;
 import com.skilldistillery.nationalperks.entities.User;
 
@@ -58,9 +59,33 @@ public class ParkVisitController {
 			session.setAttribute("parkVisit", newParkVisit);
 			return "allUserParkVisits";
 		} else {
-			
 			return "userProfile";
 		}
 	}
+	
+	
+	@GetMapping("goEditParkVisitDetails.do")
+	public String goEditParkVisitDetails(HttpSession session, @RequestParam("parkVisitId") int parkVisitToEditId) {
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
+		ParkVisit managedParkVisit = parkVisitDao.findParkVisitById(parkVisitToEditId);
+		if (loggedInUser != null) {
+			session.setAttribute("editedParkVisit", managedParkVisit);
+			return "editParkVisitDetails";
+		} else {
+			return "createParkVisit";
+		}
+	}
+
+	@PostMapping("editParkVisitDetails.do")
+	public String doEditParkVisitDetails(HttpSession session, ParkVisit updatedParkVisit) {
+		ParkVisit managedParkVisit = (ParkVisit) session.getAttribute("editedParkVisit");
+		if (managedParkVisit != null) {
+			updatedParkVisit = parkVisitDao.editParkVisit(updatedParkVisit, managedParkVisit.getId());
+			session.setAttribute("parkVisit", updatedParkVisit);
+			return "allUserParkVisits";
+		} else {
+			return "editParkVisitDetails";
+		}
+	}	
 
 }

@@ -29,8 +29,8 @@
 							<div class="row">
 								<div class="col-sm"></div>
 								<br> <br>
-								<h1>${amenity.name}&nbsp;Visit</h1>
-								<p>Posted On:&nbsp;${amenityVisit.createDate}</p>
+								<h1>${amenity.name}Visit</h1>
+								<p>Posted On: ${amenityVisit.createDate}</p>
 								<br> <img src="${amenity.imageURL}"> <br> <br>
 								<p>${amenity.description}</p>
 								<br>
@@ -45,9 +45,9 @@
 								<br>
 								<hr>
 								<br>
-								<h2>Date Visited:&nbsp;${amenityVisit.dateVisited}</h2>
+								<h2>Date Visited: ${amenityVisit.dateVisited}</h2>
 								<br>
-								<h2>Rating:&nbsp;${amenityVisit.rating}</h2>
+								<h2>Rating: ${amenityVisit.rating}</h2>
 								<div class="container">
 									<div class="row">
 										<div class="col-md-11 mx-auto">
@@ -58,7 +58,7 @@
 										</div>
 									</div>
 								</div>
-								<p>Last Updated:&nbsp;${amenityVisit.lastUpdate}</p>
+								<p>Last Updated: ${amenityVisit.lastUpdate}</p>
 								<br>
 								<h4>Amenity Website:</h4>
 								<p>
