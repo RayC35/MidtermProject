@@ -59,7 +59,6 @@ public class AmenityVisitController {
 			session.setAttribute("amenityVisit", newAmenityVisit);
 			return "amenityDetails";
 		} else {
-
 			return "createAmenityVisit";
 		}
 
