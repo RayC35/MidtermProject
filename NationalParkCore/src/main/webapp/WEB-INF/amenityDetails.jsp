@@ -41,6 +41,9 @@
 						</div>
 						<br>
 						<h4>Cost Range:</h4>
+						<c:if test="${amenity.costRange == 0}">
+							<p>FREE</p>
+						</c:if>
 						<c:if test="${amenity.costRange == 1}">
 							<p>$</p>
 						</c:if>
@@ -54,6 +57,14 @@
 							<a href="${amenity.websiteURL}" target="_blank">Go To This
 								Amenity</a>
 						</p>
+						<button class="btn btn-success mx-2" type="submit"
+							onclick="window.location.href='listAmenityVisitsByAmenity.do?amenity=${amenity.id}'">
+							View Amenity Visits <i class="bi bi-signpost-2-fill"></i>
+						</button>
+						<button class="btn btn-success" type="button"
+							onclick="history.back()">
+							Go Back <i class="bi bi-tree"></i>
+						</button>
 					</div>
 				</div>
 			</div>

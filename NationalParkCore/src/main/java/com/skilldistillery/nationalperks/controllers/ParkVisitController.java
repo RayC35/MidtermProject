@@ -36,6 +36,7 @@ public class ParkVisitController {
 		foundParkVisit = parkVisitDao.findParkVisitById(parkVisitId);
 		if (foundParkVisit != null) {
 			session.setAttribute("parkVisit", foundParkVisit);
+			session.setAttribute("parkVisitImages", foundParkVisit.getParkVisitImages());
 		} else {
 			return "allUserParkVisits";
 		}
@@ -69,6 +70,7 @@ public class ParkVisitController {
 		ParkVisit managedParkVisit = parkVisitDao.findParkVisitById(parkVisitToEditId);
 		if (loggedInUser != null) {
 			session.setAttribute("editedParkVisit", managedParkVisit);
+			session.setAttribute("parkVisitImages", managedParkVisit.getParkVisitImages());
 			return "editParkVisitDetails";
 		} else {
 			return "createParkVisit";
@@ -81,6 +83,7 @@ public class ParkVisitController {
 		if (managedParkVisit != null) {
 			updatedParkVisit = parkVisitDao.editParkVisit(updatedParkVisit, managedParkVisit.getId());
 			session.setAttribute("parkVisit", updatedParkVisit);
+			session.setAttribute("parkVisitImages", managedParkVisit.getParkVisitImages());
 			return "allUserParkVisits";
 		} else {
 			return "editParkVisitDetails";
@@ -88,10 +91,10 @@ public class ParkVisitController {
 	}	
 
 	@GetMapping("listParkVisitsByPark.do")
-	public String listParkVisitsByPark(Model model, @ RequestParam("parkId") int parkId) {
-		List<ParkVisit> parkVisitsByPark = parkVisitDao.listUserParkVisits(parkId);
+	public String listParkVisitsByPark(Model model, @ RequestParam("park") int parkId) {
+		List<ParkVisit> parkVisitsByPark = parkVisitDao.findParkVisitsByParkId(parkId);
 		model.addAttribute("parkVisitList", parkVisitsByPark);
-		return "allUserParkVisits";
+		return "listParkVisitsByPark";
 	}
 	
 }

@@ -29,7 +29,10 @@
 						<br> <br>
 						<h1>Welcome to ${park.name} National Park!</h1>
 						<br> <img src="${park.imageURL}"> <br> <br>
-						<h2>${park.name}- ${park.stateAbbreviation}</h2>
+						<h2>${park.name}&nbsp;-&nbsp;<c:if
+								test="${park.stateAbbreviation == 'UT'}">Utah</c:if>
+							<c:if test="${park.stateAbbreviation == 'CO'}">Colorado</c:if>
+						</h2>
 						<div class="container">
 							<div class="row">
 								<div class="col-md-11 mx-auto">
@@ -68,6 +71,14 @@
 								Edit Park <i class="bi bi-tree-fill"></i>
 							</button>
 						</c:if>
+						<button class="btn btn-success mx-2" type="submit"
+							onclick="window.location.href='listParkVisitsByPark.do?park=${park.id}'">
+							View Park Visits <i class="bi bi-signpost-2-fill"></i>
+						</button>
+						<button class="btn btn-success" type="button"
+							onclick="history.back()">
+							Go Back <i class="bi bi-tree"></i>
+						</button>
 						<br>
 					</div>
 				</div>

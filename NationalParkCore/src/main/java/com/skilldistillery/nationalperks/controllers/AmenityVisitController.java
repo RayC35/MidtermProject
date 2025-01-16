@@ -28,18 +28,18 @@ public class AmenityVisitController {
 		AmenityVisit foundAmenityVisit = null;
 		try {
 			foundAmenityVisit = amenityVisitDao.findAmenityVisitById(amenityVisitId);
-			model.addAttribute("amenity", foundAmenityVisit);
+			model.addAttribute("amenityVisit", foundAmenityVisit);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return "amenityVisitDetails";
 	}
 
-	@GetMapping("listAllAmenityVisitsByAmenityId.do")
-	public String listAllAmenityVisitsByAmenity(Model model, @RequestParam("amenityId") int amenityId) {
+	@GetMapping("listAmenityVisitsByAmenity.do")
+	public String listAmenityVisitsByAmenity(Model model, @RequestParam("amenity") int amenityId) {
 		List<AmenityVisit> allAmenityVisits = amenityVisitDao.listAllAmenityVisitsByAmenityId(amenityId);
-		model.addAttribute("amenityList", allAmenityVisits);
-		return "amenityDetails";
+		model.addAttribute("amenityVisitList", allAmenityVisits);
+		return "listAmenityVisitsByAmenity";
 	}
 
 	@GetMapping("goCreateAmenityVisit.do")

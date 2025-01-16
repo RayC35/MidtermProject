@@ -4,14 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.skilldistillery.nationalperks.entities.AmenityVisit;
-import com.skilldistillery.nationalperks.entities.Park;
 import com.skilldistillery.nationalperks.entities.ParkVisit;
-import com.skilldistillery.nationalperks.entities.User;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 
 @Transactional
@@ -64,7 +60,7 @@ public class ParkVisitDAOImpl implements ParkVisitDAO {
 	}
 
 	@Override
-	public List<ParkVisit> findParkVisitByParkId(int parkId) {
+	public List<ParkVisit> findParkVisitsByParkId(int parkId) {
 		String jpql = "SELECT p FROM ParkVisit p WHERE p.park.id = :id";
 		List<ParkVisit> parkVisitsByPark = em.createQuery(jpql, ParkVisit.class).setParameter("id", parkId)
 				.getResultList();

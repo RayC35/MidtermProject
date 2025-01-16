@@ -27,17 +27,17 @@
 				<div class="card mt-4">
 					<div>
 						<div class="card-body text-center bg-light">
-							<br> <br> 
-							
-							PARK NAME HERE!!! 
-							
-							<br>
+							<br> <br>
+							<h1>${parkVisit.park.name} National Park</h1>
+							<hr>
 							<br>
 							<h2>${parkVisit.title}</h2>
 							<p>
 								<strong>Posted On: </strong>${parkVisit.createDate}</p>
-							<img class="parkVisitImage" width="50%"
-								src="${parkVisit.imageURL}"> <br> <br>
+							<c:forEach var="visitImage" items="${parkVisitImages}">
+								<img class="parkVisitImage" width="50%"
+									src="${visitImage.imageURL}">${visitImage.description} </c:forEach>
+							<br> <br>
 							<h3>Park Visited:</h3>
 							<h4>${parkVisit.startDate}-${parkVisit.endDate}</h4>
 							<br>
@@ -80,8 +80,8 @@
 								</button>
 							</c:if>
 							<button class="btn btn-success mx-2" type="submit"
-								onclick="window.location.href='listAllUserParkVisits.do?userId=${loggedInUser.id}'">
-								Back To Park Visits <i class="bi bi-signpost-2-fill"></i>
+								onclick="history.back()">
+								Go Back <i class="bi bi-signpost-2-fill"></i>
 							</button>
 							<button class="btn btn-warning text-nowrap mx-2" type="submit"
 								onclick="window.location.href='goUserProfile.do'">
@@ -96,7 +96,9 @@
 									<div class="col-md-11 mx-auto">
 										<div class="card mt-1">
 											<br>
-											<p class="mx-4">${amenityVisit.remarks}</p>
+											<c:forEach var="visitRemarks" items="${parkVisitRemarks}">
+												<p class="mx-4">${amenityVisit.remarks}</p>
+											</c:forEach>
 										</div>
 									</div>
 								</div>
