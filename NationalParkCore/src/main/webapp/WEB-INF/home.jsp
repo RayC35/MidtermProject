@@ -27,6 +27,10 @@
 					<div class="card-body">
 						<div class="container">
 							<div class="row">
+								<h2 style="text-align: center">
+									<strong>Featured Parks:</strong>
+								</h2>
+								<br> <br> <br> <br>
 								<div class="col-sm">
 									<div class="col-sm" style="text-align: center">
 										<h5 style="text-align: center">
@@ -136,6 +140,63 @@
 									<span class="carousel-control-next-icon" aria-hidden="true"></span>
 									<span class="visually-hidden">Next</span>
 								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br> <br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 mx-auto">
+					<div class="card mt-2">
+						<div class="card-body">
+							<div class="container">
+								<div class="row">
+									<h2 style="text-align: center">
+										<strong>Stellar Reviews:</strong>
+									</h2>
+									<br> <br> <br>
+									<div class="col-sm">
+										<div class="col-sm" style="text-align: center">
+											<h5 style="text-align: center">
+												<strong>Zion:</strong>
+											</h5>
+											<p>
+												Insert Review Here:<br>
+												<button class="btn btn-success text-nowrap mx-2"
+													type="submit"
+													onclick="window.location.href='goParkDetails.do?parkId=9'">
+													See More Reviews!</button>
+												<br>
+										</div>
+									</div>
+									<div class="col-sm" style="text-align: center">
+										<h5 style="text-align: center">
+											<strong>Rocky Mountain</strong>
+										</h5>
+										<p>
+											Insert Review Here:<br>
+											<button class="btn btn-success text-nowrap mx-2"
+												type="submit"
+												onclick="window.location.href='goParkDetails.do?parkId=9'">
+												See More Reviews!</button>
+											<br>
+									</div>
+									<div class="col-sm" style="text-align: center">
+										<h5 style="text-align: center">
+											<strong>Mesa Verde</strong>
+										</h5>
+										<p>
+											Insert Review Here:<br>
+											<button class="btn btn-success text-nowrap mx-2"
+												type="submit"
+												onclick="window.location.href='goParkDetails.do?parkId=9'">
+												See More Reviews!</button>
+											<br>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

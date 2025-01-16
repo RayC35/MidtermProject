@@ -14,10 +14,10 @@
 		<ul class="navbar-nav w-100 mt-2 mt-lg-0">
 			<li class="nav-item active"><a class="nav-link" href="home.do">Home
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="listAllParks.do">Parks</a>
-			</li>
+			<li class="nav-item"><a class="nav-link" href="listAllParks.do">Explore
+					Parks</a></li>
 			<li class="nav-item"><a class="nav-link"
-				href="listAllAmenityVisitsByAmenityId.do">Amenities</a></li>
+				href="listAllAmenityVisitsByAmenityId.do">View Amenities</a></li>
 		</ul>
 		<c:choose>
 			<c:when
@@ -52,7 +52,7 @@
 					Log Out <i class="bi bi-signpost-2-fill"></i>
 				</button>
 				<form
-					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto">
+					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto w-25">
 					<input class="form-control mr-sm-2 form-inline" type="search"
 						placeholder="Search">
 					<button class="btn btn-outline-success mr-4" type="submit">Search</button>
@@ -68,7 +68,7 @@
 					Log In <i class="bi bi-signpost-2"></i>
 				</button>
 				<form
-					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto">
+					class="form-inline mx-2 d-flex align-items-center flex-nowrap ml-auto w-25">
 					<input class="form-control mr-sm-2 form-inline" type="search"
 						placeholder="Search">
 					<button class="btn btn-outline-success mr-4" type="submit">Search</button>
