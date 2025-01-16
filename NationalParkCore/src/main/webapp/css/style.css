@@ -38,6 +38,13 @@ form i {
 	width: 50%;
 }
 
+.amenityImage {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
 .carousel-inner img {
 	margin: auto;
 	width: 100%;
