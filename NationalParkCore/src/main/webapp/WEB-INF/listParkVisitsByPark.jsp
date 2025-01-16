@@ -35,6 +35,7 @@
 									<th>Start Date</th>
 									<th>End Date</th>
 									<th>Rating</th>
+									<th>Author</th>
 									<th>Last Update</th>
 								</tr>
 							</thead>
@@ -57,8 +58,19 @@
 												${parkVisit.title}</a></td>
 										<td>${parkVisit.startDate}</td>
 										<td>${parkVisit.endDate}</td>
-										<td>${parkVisit.rating}</td>
-										<td>${parkVisit.createDate}</td>
+										<td><c:if test="${parkVisit.rating == 1}">
+												<p style="color: orange;">★☆☆☆☆</p>
+											</c:if> <c:if test="${parkVisit.rating == 2}">
+												<p style="color: orange;">★★☆☆☆</p>
+											</c:if> <c:if test="${parkVisit.rating == 3}">
+												<p style="color: orange;">★★★☆☆</p>
+											</c:if> <c:if test="${parkVisit.rating == 4}">
+												<p style="color: orange;">★★★★☆</p>
+											</c:if> <c:if test="${parkVisit.rating == 5}">
+												<p style="color: orange;">★★★★★</p>
+											</c:if></td>
+										<td>${parkVisit.user.username}</td>
+										<td>${parkVisit.lastUpdate}</td>
 									</tr>
 								</c:forEach>
 							</tbody>

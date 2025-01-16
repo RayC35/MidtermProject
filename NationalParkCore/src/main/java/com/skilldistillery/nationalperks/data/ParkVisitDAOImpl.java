@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.nationalperks.entities.ParkVisit;
+import com.skilldistillery.nationalperks.entities.User;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -37,7 +38,9 @@ public class ParkVisitDAOImpl implements ParkVisitDAO {
 	}
 
 	@Override
-	public ParkVisit createParkVisit(ParkVisit parkVisit) {
+	public ParkVisit createParkVisit(ParkVisit parkVisit, int userId) {
+		User managedUser = em.find(User.class, userId);
+		parkVisit.setUser(managedUser);
 		parkVisit.setEnabled(true);
 		parkVisit.setPublished(true);
 		em.persist(parkVisit);
@@ -52,7 +55,7 @@ public class ParkVisitDAOImpl implements ParkVisitDAO {
 		managedParkVisit.setStartDate(parkVisit.getStartDate());
 		managedParkVisit.setEndDate(parkVisit.getEndDate());
 		managedParkVisit.setTitle(parkVisit.getTitle());
-		managedParkVisit.setImageURL(parkVisit.getImageURL());
+		managedParkVisit.setParkVisitImages(parkVisit.getParkVisitImages());
 		managedParkVisit.setPublished(parkVisit.getPublished());
 		managedParkVisit.setEnabled(parkVisit.getEnabled());
 		em.persist(managedParkVisit);

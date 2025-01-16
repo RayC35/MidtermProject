@@ -32,7 +32,7 @@
 								<h2>Create A New Park Visit</h2>
 								<br>
 								<h3>Park Visited</h3>
-								<select id="parkId" name="parkId" style="text-align: center;">
+								<select name="park.id" style="text-align: center;">
 									<option value="1">Rocky Mountain - Colorado</option>
 									<option value="2">Mesa Verde - Colorado</option>
 									<option value="3">Great Sand Dunes - Colorado</option>
@@ -43,31 +43,30 @@
 									<option value="7">Canyonlands - Utah</option>
 									<option value="8">Capitol Reef - Utah</option>
 									<option value="9">Zion - Utah</option>
-								</select><br>
-								<br>
+								</select><br> <br>
 								<h4>Title</h4>
 								<input type="text" name="title" required
 									style="text-align: center"><br> <br>
 								<h4>Rating</h4>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="1"> <label class="form-check-label">1</label>
+										value="1"> <label class="form-check-label">★☆☆☆☆</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="2"> <label class="form-check-label">2</label>
+										value="2"> <label class="form-check-label">★★☆☆☆</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="3"> <label class="form-check-label">3</label>
+										value="3"> <label class="form-check-label">★★★☆☆</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="4"> <label class="form-check-label">4</label>
+										value="4"> <label class="form-check-label">★★★★☆</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="5"> <label class="form-check-label">5</label>
+										value="5"> <label class="form-check-label">★★★★★</label>
 								</div>
 								<br> <br>
 								<h4>Remarks</h4>

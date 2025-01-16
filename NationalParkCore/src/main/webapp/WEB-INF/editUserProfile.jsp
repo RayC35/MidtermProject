@@ -53,6 +53,8 @@
 								<br> <br>
 								<button type="submit" class="btn btn-warning">Submit
 									Changes</button>
+								<button class="btn btn-success mx-2 text-nowrap" type="submit"
+									onclick="history.back()">Go Back</button>
 								<br>
 							</form>
 						</div>

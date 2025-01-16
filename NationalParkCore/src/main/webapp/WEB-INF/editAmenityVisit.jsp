@@ -28,7 +28,7 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br>
-							<h2>Edit Your Visit</h2>
+							<h2>Edit Your Amenity Visit</h2>
 							<br>
 							<form action="editAmenityVisit.do" method="POST"
 								onsubmit="return window.confirm('Confirm Edits?');">
@@ -40,7 +40,7 @@
 								<h3>Date Visited</h3>
 								<input type="date" name="dateVisited" required
 									style="text-align: center"><br> <br>
-								<h3>Rating: </h3>
+								<h3>Rating:</h3>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
 										value="1"> <label class="form-check-label">1</label>
@@ -64,13 +64,15 @@
 								<br> <br>
 								<h3>Remarks</h3>
 								<textarea cols="70" rows="8"></textarea>
-								
-								<h3>Last Updated: </h3>
+
+								<h3>Last Updated:</h3>
 								<input type="date" name="lastUpdated" required
 									style="text-align: center"><br> <br>
-								
+
 								<button type="submit" class="btn btn-warning">Submit
 									Changes</button>
+								<button class="btn btn-success mx-2 text-nowrap" type="submit"
+									onclick="history.back()">Go Back</button>
 								<br>
 							</form>
 						</div>

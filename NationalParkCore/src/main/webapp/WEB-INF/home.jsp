@@ -157,44 +157,90 @@
 									<h2 style="text-align: center">
 										<strong>Stellar Reviews:</strong>
 									</h2>
-									<br> <br> <br>
+									<br> <br> <br> <br>
 									<div class="col-sm">
 										<div class="col-sm" style="text-align: center">
 											<h5 style="text-align: center">
-												<strong>Zion:</strong>
+												<strong>Capitol Reef</strong>
 											</h5>
-											<p>
-												Insert Review Here:<br>
-												<button class="btn btn-success text-nowrap mx-2"
-													type="submit"
-													onclick="window.location.href='goParkDetails.do?parkId=9'">
-													See More Reviews!</button>
-												<br>
+											<p style="color: orange;">★★★★☆</p>
+											<figure class="text-center">
+												<blockquote class="blockquote">
+													<p>My friends and I visited the Capitol Reef National
+														Park from September 20-25, 2024, and it was an
+														unforgettable experience. The park's stunning red rock
+														landscapes and unique geological formations took our
+														breath away, and we enjoyed several of the hiking trails.
+														The Fruita Campground was the perfect base for our
+														adventures, and we were able to relax under the stars
+														after a day of exploring. Highly recommend for nature
+														lovers and families looking for a quieter park to visit!</p>
+												</blockquote>
+												<figcaption class="blockquote-footer">Larry
+													Kong, Hardcore National ParkCore-er</figcaption>
+											</figure>
+											<br>
+											<button class="btn btn-success text-nowrap mx-2"
+												type="submit"
+												onclick="window.location.href='parkDetails.do?parkId=8'">
+												Explore Capitol Reef!</button>
+											<br>
 										</div>
 									</div>
 									<div class="col-sm" style="text-align: center">
 										<h5 style="text-align: center">
 											<strong>Rocky Mountain</strong>
 										</h5>
-										<p>
-											Insert Review Here:<br>
-											<button class="btn btn-success text-nowrap mx-2"
-												type="submit"
-												onclick="window.location.href='goParkDetails.do?parkId=9'">
-												See More Reviews!</button>
-											<br>
+										<p style="color: orange;">★★★★★</p>
+										<figure class="text-center">
+											<blockquote class="blockquote">
+												<p>Rocky Mountain National Park is absolutely majestic!
+													A wonderful display of colorful meadows, evergreen forests,
+													alpine tundra far above the tree line, numerous superb
+													hiking trails, stunning clear mountain lakes, spectacular
+													drives, and up-close encounters with impressive wildlife!
+													We enjoyed every minute of the three days we spent
+													exploring RMNP. Yes, you do need a timed permit during the
+													Parks' busy season. If you do your homework, you are
+													prepared. The permits were easy to acquire if you got on
+													the website about a month in advance. No permit needed the
+													rest of the year, though (Oct 20th)!</p>
+											</blockquote>
+											<figcaption class="blockquote-footer">Steve
+												Striker, Expert Climber-crawler</figcaption>
+										</figure>
+										<br>
+										<button class="btn btn-success text-nowrap mx-2" type="submit"
+											onclick="window.location.href='parkDetails.do?parkId=1'">
+											Explore Rocky Mountain!</button>
+										<br>
 									</div>
 									<div class="col-sm" style="text-align: center">
 										<h5 style="text-align: center">
-											<strong>Mesa Verde</strong>
+											<strong>Zion</strong>
 										</h5>
-										<p>
-											Insert Review Here:<br>
-											<button class="btn btn-success text-nowrap mx-2"
-												type="submit"
-												onclick="window.location.href='goParkDetails.do?parkId=9'">
-												See More Reviews!</button>
-											<br>
+										<p style="color: orange;">★★★★★</p>
+										<figure class="text-center">
+											<blockquote class="blockquote">
+												<p>My friend and I spent three unforgettable days at
+													Zion National Park, and let's just say, the views were
+													almost as wild as the hikes themselves. We tackled Angels
+													Landing and The Narrows. The park’s shuttle system was a
+													lifesaver—perfect for when our legs were too tired from
+													hiking (and maybe other activities we enjoyed to enhance
+													the experience). Between the psychedelic rock formations
+													and the natural beauty, Zion left us both wondering if
+													maybe the rocks were speaking to us... or maybe it was just
+													the desert heat. Either way, can’t wait to go back!</p>
+											</blockquote>
+											<figcaption class="blockquote-footer">Buffy Hua,
+												Pro Mosquito-dodger</figcaption>
+										</figure>
+										<br>
+										<button class="btn btn-success text-nowrap mx-2" type="submit"
+											onclick="window.location.href='parkDetails.do?parkId=9'">
+											Explore Zion!</button>
+										<br>
 									</div>
 								</div>
 							</div>

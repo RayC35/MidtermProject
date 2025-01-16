@@ -58,7 +58,7 @@
 									</c:if>
 									<tr>
 										<td><a
-											href="<c:url value='parkVisitDetails.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
+											href="<c:url value='parkVisitDetails.do?parkVisitId=${parkVisit.id}'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
 												${parkVisit.title}</a></td>
 										<td>${parkVisit.startDate}</td>
 										<td>${parkVisit.endDate}</td>
@@ -68,20 +68,8 @@
 										<td>${parkVisit.published}</td>
 										<td>${parkVisit.enabled}</td>
 										<td><button class="btn btn-warning" type="submit"
-												onclick="window.location.href='goEditParkVisit.do?parkVisitId=${parkVisit.id}'">
+												onclick="window.location.href='goEditParkVisitDetails.do?parkVisitId=${parkVisit.id}'">
 												Edit</button></td>
-										<td><c:if test="${parkVisit.enabled == 'true'}">
-												<form action="adminDisableparkVisit.do" method="POST"
-													onsubmit="return window.confirm('Confirm Disable?');">
-													<div class="form-group">
-														<input type="hidden" class="form-control" id="id"
-															name="id" value="<c:out value='${parkVisit.id}' />">
-													</div>
-													<button type="submit" class="btn btn-danger">Disable</button>
-												</form>
-											</c:if> <c:if test="${parkVisit.enabled == 'false'}">
-												<p class="unable">Disabled</p>
-											</c:if></td>
 									</tr>
 								</c:forEach>
 							</tbody>
