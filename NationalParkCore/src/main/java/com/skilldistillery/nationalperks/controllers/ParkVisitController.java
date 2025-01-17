@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.skilldistillery.nationalperks.data.AmenityVisitDAO;
 import com.skilldistillery.nationalperks.data.ParkVisitDAO;
 import com.skilldistillery.nationalperks.entities.ParkVisit;
 import com.skilldistillery.nationalperks.entities.User;
@@ -20,7 +21,7 @@ public class ParkVisitController {
 
 	@Autowired
 	private ParkVisitDAO parkVisitDao;
-
+	
 	@GetMapping("listAllUserParkVisits.do")
 	public String listAllUserParkVisits(HttpSession session) {
 		User user = (User) session.getAttribute("loggedInUser");
@@ -41,6 +42,7 @@ public class ParkVisitController {
 		if (foundParkVisit != null) {
 			session.setAttribute("parkVisit", foundParkVisit);
 			session.setAttribute("parkVisitImages", foundParkVisit.getParkVisitImages());
+			session.setAttribute("amenityVisits", foundParkVisit.getAmenityVisits());
 		} else {
 			return "allUserParkVisits";
 		}

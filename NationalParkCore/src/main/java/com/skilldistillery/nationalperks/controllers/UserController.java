@@ -165,7 +165,8 @@ public class UserController {
 			session.setAttribute("adminFoundUser", adminUpdatedUser);
 			return "adminViewUserProfile";
 		} else {
-			return "adminEditUserProfile";
+			session.setAttribute("message", "Unable to edit user profile");
+			return "adminDashboard";
 		}
 	}
 
@@ -177,7 +178,8 @@ public class UserController {
 			session.setAttribute("adminFoundUser", adminDisabledUser);
 			return "allUsers";
 		} else {
-			return "adminEditUserProfile";
+			session.setAttribute("message", "Unable to disable user");
+			return "error";
 		}
 	}
 }

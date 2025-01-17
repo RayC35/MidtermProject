@@ -25,9 +25,14 @@
 			<div class="col-md-9 mx-auto">
 				<div class="card mt-4">
 					<div class="card-body text-center bg-light">
-						<h1>${amenity.park.name}&nbsp;National&nbsp;Park</h1>
+						<h1>
+							<a
+								href="<c:url value='parkDetails.do'><c:param name = 'parkId' value='${amenity.park.id}'/></c:url>">${amenity.park.name}&nbsp;National&nbsp;Park</a>
+						</h1>
 						<br>
-						<h2>${amenity.name}</h2>
+						<h2>
+							<a href="${amenity.websiteURL}" target="_blank">${amenity.name}</a>
+						</h2>
 						<br> <img class="amenityImage" width="50%"
 							src="${amenity.imageURL}"> <br>
 						<h3>Amenity Description:</h3>
@@ -58,14 +63,13 @@
 						<h4>Location (Click to Open In Maps):</h4>
 						<h2>
 							<a
-								href="https://www.google.com/maps/place/${amenityVisit.amenity.latitude},${amenityVisit.amenity.longitude}"
-								target="_blank">${amenityVisit.amenity.latitude},
-								${amenityVisit.amenity.longitude}</a>
+								href="https://www.google.com/maps/place/${amenity.latitude},${amenity.longitude}"
+								target="_blank">${amenity.latitude}, ${amenity.longitude}</a>
 						</h2>
 						<br>
 						<h4>Amenity Website:</h4>
 						<p>
-							<a href="${amenityVisit.amenity.websiteURL}" target="_blank">${amenityVisit.amenity.name}
+							<a href="${amenity.websiteURL}" target="_blank">${amenity.name}
 								Website</a>
 						</p>
 						<hr>
@@ -77,7 +81,7 @@
 							</button>
 						</c:if>
 						<button class="btn btn-primary mx-2" type="submit"
-							onclick="window.location.href='listAmenityVisitsByAmenity.do?amenity=${amenity.id}'">
+							onclick="window.location.href='listAmenityVisitsByAmenity.do?amenityId=${amenity.id}'">
 							View Amenity Visits <i class="bi bi-person-walking"></i>
 						</button>
 						<button class="btn btn-success mx-2" type="button"
