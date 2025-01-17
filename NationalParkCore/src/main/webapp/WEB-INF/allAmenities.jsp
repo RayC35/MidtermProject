@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <div class="container">
 	<div class="row">
-		<div class="col-md-11 mx-auto">
+		<div class="col-md-12 mx-auto">
 			<div class="card mt-4">
 				<div class="card-body">
 					<br> <br>
@@ -19,7 +19,6 @@
 								<th>Cost Range</th>
 								<th>Website</th>
 								<th>Enabled</th>
-								<th>Create Date</th>
 								<th>Last Update</th>
 							</tr>
 						</thead>
@@ -53,10 +52,15 @@
 										</c:if></td>
 									<td><a href="${amenity.websiteURL}" target="_blank">View
 											Website</a></td>
-									<td>${amenity.enabled}</td>
-									<td>${amenity.createDate}</td>
-									<td>${amenity.lastUpdate}</td>
-
+									<td style="text-align: center; vertical-align: middle;"><c:if
+											test="${amenity.enabled == true}">
+											<h2 style="color: green;">&#9745;</h2>
+										</c:if> <c:if test="${amenity.enabled == false}">
+											<h2 style="color: red;">x</h2>
+										</c:if></td>
+									<td><fmt:parseDate value="${amenity.lastUpdate}"
+											pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" /> <fmt:formatDate
+											value="${parsedDate}" pattern="MMM d, yyyy hh:mm a" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>

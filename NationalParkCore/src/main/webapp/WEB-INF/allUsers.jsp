@@ -5,7 +5,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-11 mx-auto">
+		<div class="col-md-12 mx-auto">
 			<div class="card mt-4">
 				<div class="card-body">
 					<br> <br>
@@ -45,7 +45,12 @@
 									<td><a
 										href="<c:url value='adminGoUserProfile.do'><c:param name='userId' value='${user.id}'/></c:url>">
 											${user.username}</a></td>
-									<td>${user.enabled}</td>
+									<td style="text-align: center; vertical-align: middle;"><c:if
+											test="${user.enabled == true}">
+											<h2 style="color: green;">&#9745;</h2>
+										</c:if> <c:if test="${user.enabled == false}">
+											<h2 style="color: red;">x</h2>
+										</c:if></td>
 									<td>${user.role}</td>
 									<td>${user.firstName}</td>
 									<td>${user.lastName}</td>
