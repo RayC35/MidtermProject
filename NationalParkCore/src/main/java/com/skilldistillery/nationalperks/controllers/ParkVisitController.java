@@ -70,9 +70,7 @@ public class ParkVisitController {
 			}
 		} else {
 			return "login";
-
 		}
-
 	}
 
 	@GetMapping("goEditParkVisitDetails.do")

@@ -61,7 +61,6 @@ public class AmenityVisitController {
 		} else {
 			return "createAmenityVisit";
 		}
-
 	}
 
 	@GetMapping("goEditAmityVisit.do")
@@ -88,5 +87,4 @@ public class AmenityVisitController {
 			return "createAmenityVisit";
 		}
 	}
-
 }
