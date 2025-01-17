@@ -59,8 +59,14 @@
 								<h4>Date Visited</h4>
 								<input type="date" name="dateVisited" required
 									style="text-align: center"><br> <br>
-								<button type="submit" class="btn btn-primary text-nowrap">
-									Create Amenity Visit</button>
+								<button class="btn btn-primary mx-2" type="submit"
+									onclick="window.location.href='goCreateAmenityVisit.do'">
+									Add An Amenity Visit <i class="bi bi-person-walking"></i>
+								</button>
+								<button class="btn btn-success" type="button"
+									onclick="history.back()">
+									Go Back <i class="bi bi-tree"></i>
+								</button>
 							</form>
 							<br> <br>
 						</div>

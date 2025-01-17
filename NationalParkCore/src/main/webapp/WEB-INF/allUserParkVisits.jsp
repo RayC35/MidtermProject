@@ -35,12 +35,10 @@
 									<th>Start Date</th>
 									<th>End Date</th>
 									<th>Rating</th>
-									<th>Create Date</th>
+									<th>Author</th>
 									<th>Last Update</th>
 									<th>Published</th>
-									<th>Enabled</th>
 									<th>Edit</th>
-									<th>Disable</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -62,11 +60,24 @@
 												${parkVisit.title}</a></td>
 										<td>${parkVisit.startDate}</td>
 										<td>${parkVisit.endDate}</td>
-										<td>${parkVisit.rating}</td>
-										<td>${parkVisit.createDate}</td>
+										<td><c:if test="${parkVisit.rating == 1}">
+												<p style="color: orange;">★☆☆☆☆</p>
+											</c:if> <c:if test="${parkVisit.rating == 2}">
+												<p style="color: orange;">★★☆☆☆</p>
+											</c:if> <c:if test="${parkVisit.rating == 3}">
+												<p style="color: orange;">★★★☆☆</p>
+											</c:if> <c:if test="${parkVisit.rating == 4}">
+												<p style="color: orange;">★★★★☆</p>
+											</c:if> <c:if test="${parkVisit.rating == 5}">
+												<p style="color: orange;">★★★★★</p>
+											</c:if></td>
+										<td>${parkVisit.user.username}</td>
 										<td>${parkVisit.lastUpdate}</td>
-										<td>${parkVisit.published}</td>
-										<td>${parkVisit.enabled}</td>
+										<td><c:if test="${parkVisit.published == true}">
+												<p style="color: green;">✓</p>
+											</c:if> <c:if test="${parkVisit.published == false}">
+												<p style="color: red;">x</p>
+											</c:if></td>
 										<td><button class="btn btn-warning" type="submit"
 												onclick="window.location.href='goEditParkVisitDetails.do?parkVisitId=${parkVisit.id}'">
 												Edit</button></td>
@@ -74,6 +85,13 @@
 								</c:forEach>
 							</tbody>
 						</table>
+						<br>
+						<div style="text-align: center;">
+							<button class="btn btn-success" type="button"
+								onclick="history.back()">
+								Go Back <i class="bi bi-tree"></i>
+							</button>
+						</div>
 						<br>
 					</div>
 				</div>

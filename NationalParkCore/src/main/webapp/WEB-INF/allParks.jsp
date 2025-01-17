@@ -38,7 +38,8 @@
 									<th>Website</th>
 									<th><c:if test="${loggedInUser.role == 'admin'}">Edit</c:if></th>
 								</tr>
-							</thead><tbody>
+							</thead>
+							<tbody>
 								<c:forEach var="park" items="${parkList}">
 									<c:if test="${empty name}">
 										<tr>
@@ -68,7 +69,14 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						<br> <br>
+						<br>
+						<div style="text-align: center;">
+							<button class="btn btn-success" type="button"
+								onclick="history.back()">
+								Go Back <i class="bi bi-tree"></i>
+							</button>
+						</div>
+						<br>
 					</div>
 				</div>
 			</div>

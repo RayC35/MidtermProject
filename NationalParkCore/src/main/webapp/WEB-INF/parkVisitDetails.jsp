@@ -28,7 +28,7 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<h1>${parkVisit.park.name} National Park</h1>
+							<h1>${parkVisit.park.name}NationalPark</h1>
 							<hr>
 							<br>
 							<h2>${parkVisit.title}</h2>
@@ -42,6 +42,9 @@
 							<h4>${parkVisit.startDate}-${parkVisit.endDate}</h4>
 							<br>
 							<hr>
+							<br>
+							<h3>Author:&nbsp;</h3>
+							<h4>${parkVisit.user.username}</h4>
 							<br>
 							<h3>Rating:</h3>
 							<h1>
@@ -81,11 +84,7 @@
 							</c:if>
 							<button class="btn btn-success mx-2" type="submit"
 								onclick="history.back()">
-								Go Back <i class="bi bi-signpost-2-fill"></i>
-							</button>
-							<button class="btn btn-warning text-nowrap mx-2" type="submit"
-								onclick="window.location.href='goUserProfile.do'">
-								My Account <i class="bi bi-tree-fill"></i>
+								Go Back <i class="bi bi-tree"></i>
 							</button>
 							<br> <br>
 							<hr>
@@ -103,6 +102,11 @@
 									</div>
 								</div>
 							</div>
+							<br>
+							<button class="btn btn-primary mx-2" type="submit"
+								onclick="window.location.href='goCreateAmenityVisit.do'">
+								Add An Amenity Visit <i class="bi bi-person-walking"></i>
+							</button>
 							<br>
 						</div>
 					</div>

@@ -104,6 +104,11 @@
 							</tbody>
 						</table>
 						<br>
+						<button class="btn btn-success" type="button"
+							onclick="history.back()">
+							Go Back <i class="bi bi-tree"></i>
+						</button>
+						<br>
 					</div>
 				</div>
 			</div>

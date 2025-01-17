@@ -32,7 +32,7 @@ public class AmenityVisitController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "amenityVisitDetails";
+		return "viewAmenityVisit";
 	}
 
 	@GetMapping("listAmenityVisitsByAmenity.do")

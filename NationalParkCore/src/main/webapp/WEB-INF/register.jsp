@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Error</title>
+<title>Register New Account</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -28,7 +28,8 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<form action="register.do" method="POST">
+							<form action="register.do" method="POST"
+								onsubmit="return window.confirm('Confirm Submission?');">
 								<h2>Register a New Account</h2>
 								<br>
 								<h4>Username</h4>
@@ -47,15 +48,21 @@
 								<input type="email" name="email" required size="30"
 									style="text-align: center"><br> <br>
 								<h4>Biography</h4>
-								<textarea cols="70" rows="8"></textarea>
+								<textarea name="biography" cols="70" rows="8"></textarea>
 								<br> <br>
 								<h4>Profile Image URL</h4>
 								<input type="text" name="imageURL" size="60"
 									style="text-align: center"><br> <br> <br>
-								<button type="submit" class="btn btn-success">Create
+								<button type="submit" class="btn btn-warning">Create
 									Account</button>
 							</form>
 							<br>
+							<div style="text-align: center;">
+								<button class="btn btn-success" type="button"
+									onclick="history.back()">
+									Go Back <i class="bi bi-tree"></i>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>

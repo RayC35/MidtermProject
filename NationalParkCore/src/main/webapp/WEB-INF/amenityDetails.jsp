@@ -25,6 +25,8 @@
 			<div class="col-md-9 mx-auto">
 				<div class="card mt-4">
 					<div class="card-body text-center bg-light">
+						<h1>${amenity.park.name}&nbsp;National&nbsp;Park</h1>
+						<br>
 						<h2>${amenity.name}</h2>
 						<br> <img class="amenityImage" width="50%"
 							src="${amenity.imageURL}"> <br>
@@ -57,14 +59,21 @@
 							<a href="${amenity.websiteURL}" target="_blank">Official
 								Amenity Website</a>
 						</p>
-						<button class="btn btn-success mx-2" type="submit"
+						<hr>
+						<br>
+						<button class="btn btn-primary mx-2" type="submit"
 							onclick="window.location.href='listAmenityVisitsByAmenity.do?amenity=${amenity.id}'">
-							View Amenity Visits <i class="bi bi-signpost-2-fill"></i>
+							View Amenity Visits <i class="bi bi-person-walking"></i>
 						</button>
-						<button class="btn btn-success" type="button"
+						<button class="btn btn-primary mx-2" type="submit"
+							onclick="window.location.href='goCreateAmenityVisit.do'">
+							Add An Amenity Visit <i class="bi bi-person-walking"></i>
+						</button>
+						<button class="btn btn-success mx-2" type="button"
 							onclick="history.back()">
 							Go Back <i class="bi bi-tree"></i>
 						</button>
+						<br> <br>
 					</div>
 				</div>
 			</div>

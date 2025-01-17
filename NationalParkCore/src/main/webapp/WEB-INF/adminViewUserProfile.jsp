@@ -61,6 +61,10 @@
 								Edit ${adminFoundUser.username}'s Profile <i
 									class="bi bi-signpost-2"></i>
 							</button>
+							<button class="btn btn-success mx-2" type="submit"
+								onclick="history.back()">
+								Go Back <i class="bi bi-signpost-2-fill"></i>
+							</button>
 							<br> <br>
 						</div>
 					</div>

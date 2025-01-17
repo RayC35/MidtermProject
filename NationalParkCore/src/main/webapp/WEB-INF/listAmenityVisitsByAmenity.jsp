@@ -68,7 +68,7 @@
 												<p style="color: orange;">★★★★★</p>
 											</c:if></td>
 										<td>${amenityVisit.remarks}</td>
-										<td>${user.username}</td>
+										<td>Fix</td>
 										<td>${amenityVisit.lastUpdate}</td>
 									</tr>
 								</c:forEach>

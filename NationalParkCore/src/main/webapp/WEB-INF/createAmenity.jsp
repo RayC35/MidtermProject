@@ -28,7 +28,8 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<form action="createAmenity.do" method="POST">
+							<form action="createAmenity.do" method="POST"
+								onsubmit="return window.confirm('Confirm Submission?');">
 								<h2>Create A New Park Amenity</h2>
 								<br>
 								<h4>Name</h4>
@@ -70,20 +71,25 @@
 								<button type="submit" class="btn btn-primary text-nowrap">
 									Create Park Amenity</button>
 							</form>
-							<br> <br>
+							<br>
+							<div style="text-align: center;">
+								<button class="btn btn-success" type="button"
+									onclick="history.back()">
+									Go Back <i class="bi bi-tree"></i>
+								</button>
+								<br>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<br>
-	<br>
-	<jsp:include page="footer.jsp" />
-	<br>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-		crossorigin="anonymous"></script>
+		<br> <br>
+		<jsp:include page="footer.jsp" />
+		<br>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
 </body>
 </html>
