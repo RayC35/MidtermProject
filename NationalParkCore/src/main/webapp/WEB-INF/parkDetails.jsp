@@ -66,7 +66,7 @@
 						<br>
 						<hr>
 						<c:if test="${loggedInUser.role == 'admin'}">
-							<button class="btn btn-warning text-nowrap mx-2" type="submit"
+							<button class="btn btn-success text-nowrap mx-2" type="submit"
 								onclick="window.location.href='goAdminEditParkDetails.do?parkId=${park.id}'">
 								Edit Park <i class="bi bi-tree-fill"></i>
 							</button>
