@@ -84,9 +84,9 @@
 												value="${parsedDate}" pattern="MMM d, yyyy hh:mm a" /></td>
 										<td style="text-align: center; vertical-align: middle;"><c:if
 												test="${parkVisit.published == true}">
-												<p style="color: green;">✓</p>
+												<h2 style="color: green;">&#9745;</h2>
 											</c:if> <c:if test="${parkVisit.published == false}">
-												<p style="color: red;">x</p>
+												<h2 style="color: red;">x</h2>
 											</c:if></td>
 										<td><button class="btn btn-warning" type="submit"
 												onclick="window.location.href='goEditParkVisitDetails.do?parkVisitId=${parkVisit.id}'">
