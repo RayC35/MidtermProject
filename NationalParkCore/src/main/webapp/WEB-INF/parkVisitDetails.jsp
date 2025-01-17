@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,18 +30,33 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<h1>${parkVisit.park.name}&nbsp;National&nbsp;Park</h1>
+							<h1>
+								<a href="parkDetails.do?parkId=${parkVisit.park.id}">${parkVisit.park.name}&nbsp;National&nbsp;Park</a>
+							</h1>
 							<hr>
 							<br>
 							<h2>${parkVisit.title}</h2>
 							<p>
-								<strong>Posted On:&nbsp;</strong>${parkVisit.createDate}</p>
+								<strong>Posted On:&nbsp;</strong>
+								<fmt:parseDate value="${parkVisit.createDate}"
+									pattern="yyyy-MM-dd" var="parsedDate" type="date" />
+								<fmt:formatDate value="${parsedDate}" var="newParsedDate"
+									type="date" pattern="MMM d, yyyy" />${newParsedDate}</p>
 							<c:forEach var="visitImage" items="${parkVisitImages}">
 								<img class="parkVisitImage" width="50%"
 									src="${visitImage.imageURL}">${visitImage.description} </c:forEach>
 							<br> <br>
-							<h3>Park Visited:</h3>
-							<h4>${parkVisit.startDate}-${parkVisit.endDate}</h4>
+							<h3>Dates Visited:</h3>
+							<h4>
+								<fmt:parseDate value="${parkVisit.startDate}"
+									pattern="yyyy-MM-dd" var="parsedDate" type="date" />
+								<fmt:formatDate value="${parsedDate}" var="newParsedDate"
+									type="date" pattern="MMM d, yyyy" />${newParsedDate}
+								-
+								<fmt:parseDate value="${parkVisit.endDate}" pattern="yyyy-MM-dd"
+									var="parsedDate" type="date" />
+								<fmt:formatDate value="${parsedDate}" var="newParsedDate"
+									type="date" pattern="MMM d, yyyy" />${newParsedDate}</h4>
 							<br>
 							<hr>
 							<br>
@@ -74,7 +91,13 @@
 									</div>
 								</div>
 							</div>
-							<p>Last Updated: ${parkVisit.lastUpdate}</p>
+							<p>
+								Last Updated:
+								<fmt:parseDate value="${parkVisit.lastUpdate}"
+									pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" />
+								<fmt:formatDate value="${parsedDate}"
+									pattern="MMM d, yyyy hh:mm a" />
+							</p>
 							<br>
 							<c:if test="${loggedInUser.id == parkVisit.user.id}">
 								<button class="btn btn-primary mx-2" type="submit"
@@ -91,25 +114,48 @@
 							<br>
 							<h3>Park Amenity Visits</h3>
 							<div class="container">
-								<div class="row">
-									<div class="col-md-11 mx-auto">
-										<div class="card mt-1">
-											<br>
-											<c:forEach var="visitRemarks" items="${parkVisitRemarks}">
-												<p class="mx-4">${amenityVisit.remarks}</p>
-											</c:forEach>
-										</div>
-									</div>
-								</div>
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Amenity</th>
+											<th>Rating</th>
+											<th>Author</th>
+											<th>Last Updated</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="amenityVisit" items="${amenityVisits}">
+											<tr>
+												<td>
+													<p class="mx-4">
+														<a
+															href="<c:url value='amenityVisitDetails.do'><c:param name='amenityVisitId' value='${amenityVisit.id}'/></c:url>">
+															${amenityVisit.amenity.name}</a>
+													</p>
+												<td><c:if test="${amenityVisit.rating == 1}">
+														<p style="color: orange;">★☆☆☆☆</p>
+													</c:if> <c:if test="${amenityVisit.rating == 2}">
+														<p style="color: orange;">★★☆☆☆</p>
+													</c:if> <c:if test="${amenityVisit.rating == 3}">
+														<p style="color: orange;">★★★☆☆</p>
+													</c:if> <c:if test="${amenityVisit.rating == 4}">
+														<p style="color: orange;">★★★★☆</p>
+													</c:if> <c:if test="${amenityVisit.rating == 5}">
+														<p style="color: orange;">★★★★★</p>
+													</c:if></td>
+												<td>${amenityVisit.parkVisit.user.username}</td>
+											<td><fmt:parseDate value="${amenityVisit.lastUpdate}"
+													pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" /> <fmt:formatDate
+													value="${parsedDate}" pattern="MMM d, yyyy hh:mm a" /></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
 							</div>
-							<br>
-							<button class="btn btn-primary mx-2" type="submit"
-								onclick="window.location.href='goCreateAmenityVisit.do'">
-								Add An Amenity Visit <i class="bi bi-person-walking"></i>
-							</button>
-							<br>
 						</div>
 					</div>
+					<br>
+					<br>
 				</div>
 			</div>
 		</div>

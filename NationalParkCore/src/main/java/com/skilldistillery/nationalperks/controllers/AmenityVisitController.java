@@ -34,7 +34,7 @@ public class AmenityVisitController {
 	}
 
 	@GetMapping("listAmenityVisitsByAmenity.do")
-	public String listAmenityVisitsByAmenity(Model model, @RequestParam("amenity") int amenityId) {
+	public String listAmenityVisitsByAmenity(Model model, @RequestParam("amenityId") int amenityId) {
 		List<AmenityVisit> allAmenityVisits = amenityVisitDao.listAllAmenityVisitsByAmenityId(amenityId);
 		model.addAttribute("amenityVisitList", allAmenityVisits);
 		return "listAmenityVisitsByAmenity";
@@ -55,6 +55,7 @@ public class AmenityVisitController {
 		AmenityVisit newAmenityVisit = amenityVisitDao.createAmenityVisit(createdAmenityVisit);
 		if (newAmenityVisit != null) {
 			session.setAttribute("amenityVisit", newAmenityVisit);
+			session.setAttribute("parkVisitId", newAmenityVisit.getParkVisit().getId());
 			return "amenityDetails";
 		} else {
 			return "createAmenityVisit";

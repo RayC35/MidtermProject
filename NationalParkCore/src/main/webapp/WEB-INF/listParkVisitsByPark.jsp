@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +34,7 @@
 							<thead>
 								<tr>
 									<th>Title</th>
-									<th>Start Date</th>
-									<th>End Date</th>
+									<th>Date(s) Visited</th>
 									<th>Rating</th>
 									<th>Author</th>
 									<th>Last Update</th>
@@ -56,8 +57,13 @@
 										<td><a
 											href="<c:url value='parkVisitDetails.do'><c:param name='parkVisitId' value='${parkVisit.id}'/></c:url>">
 												${parkVisit.title}</a></td>
-										<td>${parkVisit.startDate}</td>
-										<td>${parkVisit.endDate}</td>
+										<td><fmt:parseDate value="${parkVisit.startDate}"
+												pattern="yyyy-MM-dd" var="parsedDate" type="date" /> <fmt:formatDate
+												value="${parsedDate}" var="newParsedDate" type="date"
+												pattern="MMM d, yyyy" />${newParsedDate} - <fmt:parseDate value="${parkVisit.endDate}"
+												pattern="yyyy-MM-dd" var="parsedDate" type="date" /> <fmt:formatDate
+												value="${parsedDate}" var="newParsedDate" type="date"
+												pattern="MMM d, yyyy" />${newParsedDate}</td>
 										<td><c:if test="${parkVisit.rating == 1}">
 												<p style="color: orange;">★☆☆☆☆</p>
 											</c:if> <c:if test="${parkVisit.rating == 2}">
@@ -70,7 +76,9 @@
 												<p style="color: orange;">★★★★★</p>
 											</c:if></td>
 										<td>${parkVisit.user.username}</td>
-										<td>${parkVisit.lastUpdate}</td>
+										<td><fmt:parseDate value="${parkVisit.lastUpdate}"
+												pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" /> <fmt:formatDate
+												value="${parsedDate}" pattern="MMM d, yyyy hh:mm a" /></td>
 									</tr>
 								</c:forEach>
 							</tbody>

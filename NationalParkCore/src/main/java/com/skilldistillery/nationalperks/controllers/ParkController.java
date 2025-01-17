@@ -93,7 +93,8 @@ public class ParkController {
 			session.setAttribute("user", loggedInUser);
 			return "parkDetails";
 		} else {
-			return "adminEditParkDetails";
+			session.setAttribute("message", "Unable to edit park details.");
+			return "error";
 		}
 	}
 

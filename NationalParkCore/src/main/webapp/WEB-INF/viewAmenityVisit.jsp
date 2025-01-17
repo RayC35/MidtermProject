@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +29,9 @@
 				<div class="card mt-2">
 					<div class="card-body text-center bg-light">
 						<br> <br>
-						<h1>${amenityVisit.parkVisit.park.name}&nbsp;National&nbsp;Park</h1>
+						<h1>
+							<a href="parkDetails.do?parkId=${amenityVisit.parkVisit.park.id}">${amenityVisit.parkVisit.park.name}&nbsp;National&nbsp;Park</a>
+						</h1>
 						<hr>
 						<br>
 						<h1>Visit to the ${amenityVisit.amenity.name}</h1>
@@ -74,7 +78,11 @@
 						<hr>
 						<br>
 						<h3>Amenity Visited:</h3>
-						<h4>${amenityVisit.dateVisited}</h4>
+						<h4>
+							<fmt:parseDate value="${amenityVisit.dateVisited}"
+								pattern="yyyy-MM-dd" var="parsedDate" type="date" />
+							<fmt:formatDate value="${parsedDate}" var="newParsedDate"
+								type="date" pattern="MMM d, yyyy" />${newParsedDate}</h4>
 						<br>
 						<hr>
 						<br>
@@ -109,10 +117,19 @@
 								</div>
 							</div>
 						</div>
-						<p>Last Updated: ${amenityVisit.lastUpdate}</p>
+						<p>
+							Last Updated:
+							<fmt:parseDate value="${amenityVisit.lastUpdate}"
+								pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" />
+							<fmt:formatDate value="${parsedDate}"
+								pattern="MMM d, yyyy hh:mm a" />
+						</p>
 						<hr>
 						<br>
 						<c:if test="${loggedInUser.id == amenityVisit.parkVisit.user.id}">
+						<button class="btn btn-primary text-nowrap mx-2" type="submit"
+									onclick="window.location.href='goCreateAmenityVisit?amenityVisitId=${amenityVisit.id}.do'">
+									Create New Amenity Visit</button>
 							<button class="btn btn-primary mx-2" type="submit"
 								onclick="window.location.href='goEditAmenityVisit.do?amenityVisitId=${amenityVisit.id}'">
 								Edit Amenity Visit <i class="bi bi-person-walking"></i>

@@ -29,6 +29,7 @@
 						<div class="card-body text-center bg-light">
 							<br>
 							<h1>Error</h1>
+							<h2>${message}</h2>
 							<br> <img class="image" style="text-align: center"
 								src="images/error.jpg"><br> <br>
 							<button class="btn btn-success" type="button"

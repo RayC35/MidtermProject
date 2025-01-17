@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <div class="container">
 	<div class="row">
@@ -48,15 +49,19 @@
 									<td>${user.role}</td>
 									<td>${user.firstName}</td>
 									<td>${user.lastName}</td>
-									<td>${user.createDate}</td>
-									<td>${user.lastUpdate}</td>
+									<td><fmt:parseDate value="${user.createDate}"
+											pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" /> <fmt:formatDate
+											value="${parsedDate}" pattern="MMM d, yyyy hh:mm a" /></td>
+									<td><fmt:parseDate value="${user.lastUpdate}"
+											pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" /> <fmt:formatDate
+											value="${parsedDate}" pattern="MMM d, yyyy hh:mm a" /></td>
 									<td>${user.email}</td>
 									<td><button class="btn btn-warning" type="submit"
 											onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
 											Edit</button></td>
 									<td><c:if
 											test="${user.role == 'user' && user.enabled == 'true'}">
-											<form action="adminDisableUser.do" method="POST"
+											<form action="adminDisableUser.do?userId=${user.id}" method="POST"
 												onsubmit="return window.confirm('Confirm Disable?');">
 												<div class="form-group">
 													<input type="hidden" class="form-control" id="id" name="id"

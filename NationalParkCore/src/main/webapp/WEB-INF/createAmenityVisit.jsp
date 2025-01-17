@@ -61,8 +61,8 @@
 								<input type="date" name="dateVisited" required
 									style="text-align: center"><br> <br>
 								<button class="btn btn-primary text-nowrap mx-2" type="submit"
-									onclick="window.location.href='goCreateAmenityVisit.do'">
-									Create Amenity Visit</button>
+									onclick="window.location.href='createAmenityVisit.do'">
+									Submit Amenity Visit</button>
 							</form>
 							<br>
 							<div style="text-align: center;">
