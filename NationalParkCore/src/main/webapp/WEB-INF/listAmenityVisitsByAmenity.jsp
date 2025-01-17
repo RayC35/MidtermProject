@@ -41,7 +41,7 @@
 							</thead>
 							<tbody>
 								<c:forEach var="amenityVisit" items="${amenityVisitList}">
-									<c:if test="${empty id}">
+									<%-- <c:if test="${empty id}">
 										<tr>
 									</c:if>
 									<c:if test="${! empty id}">
@@ -51,7 +51,7 @@
 										<c:if test="${amenityVisit.id != id}">
 											<tr>
 										</c:if>
-									</c:if>
+									</c:if> --%>
 									<tr>
 										<td><a
 											href="<c:url value='amenityVisitDetails.do'><c:param name='amenityVisitId' value='${amenityVisit.id}'/></c:url>">
@@ -68,7 +68,7 @@
 												<p style="color: orange;">★★★★★</p>
 											</c:if></td>
 										<td>${amenityVisit.remarks}</td>
-										<td>Fix</td>
+										<td>${amenityVisit.parkVisit.user.username}</td>
 										<td>${amenityVisit.lastUpdate}</td>
 									</tr>
 								</c:forEach>

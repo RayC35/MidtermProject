@@ -32,42 +32,34 @@
 							<br>
 							<form action="editAmenityVisit.do" method="POST"
 								onsubmit="return window.confirm('Confirm Edits?');">
-								<img src="${amenityVisit.imageURL}"> <br> <br>
-								<h3>Amenity Visit Image</h3>
-								<input type="text" name="imageURL"
-									value="${amenityVisit.imageURL}" size="60"
-									style="text-align: center" /> <br> <br>
+								<input type="hidden" name="id" value="${amenityVisit.id}"> 
 								<h3>Date Visited</h3>
 								<input type="date" name="dateVisited" required
-									style="text-align: center"><br> <br>
+									style="text-align: center" value="${amenityVisit.dateVisited}"><br> <br>
 								<h3>Rating:</h3>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="1"> <label class="form-check-label">1</label>
+										value="1" <c:if test="${amenityVisit.rating == 1 }">Checked</c:if>><label class="form-check-label">1</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="2"> <label class="form-check-label">2</label>
+										value="2"<c:if test="${amenityVisit.rating == 2 }">Checked</c:if>><label class="form-check-label">2</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="3"> <label class="form-check-label">3</label>
+										value="3"<c:if test="${amenityVisit.rating == 3 }">Checked</c:if>> <label class="form-check-label">3</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="4"> <label class="form-check-label">4</label>
+										value="4"<c:if test="${amenityVisit.rating == 4 }">Checked</c:if>> <label class="form-check-label">4</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
-										value="5"> <label class="form-check-label">5</label>
+										value="5"<c:if test="${amenityVisit.rating == 5 }">Checked</c:if>> <label class="form-check-label">5</label>
 								</div>
 								<br> <br>
 								<h3>Remarks</h3>
-								<textarea cols="70" rows="8"></textarea>
-
-								<h3>Last Updated:</h3>
-								<input type="date" name="lastUpdated" required
-									style="text-align: center"><br> <br>
+								<textarea cols="70" rows="8" name="remarks">${amenityVisit.remarks}</textarea>
 
 								<button type="submit" class="btn btn-warning">Submit
 									Changes</button>

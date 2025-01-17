@@ -58,7 +58,7 @@ public class AmenityVisitDAOImpl implements AmenityVisitDAO {
 		managedAmenityVisit.setRating(amenityVisit.getRating());
 		managedAmenityVisit.setDateVisited(amenityVisit.getDateVisited());
 		managedAmenityVisit.setEnabled(amenityVisit.getEnabled());
-		em.persist(managedAmenityVisit);
+//		em.persist(managedAmenityVisit);
 		return managedAmenityVisit;
 	}
 

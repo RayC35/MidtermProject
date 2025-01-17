@@ -29,29 +29,30 @@
 							<div class="row">
 								<div class="col-sm"></div>
 								<br> <br>
-								<h1>${amenity.name}Visit</h1>
-								<p>Posted On: ${amenityVisit.createDate}</p>
-								<br> <img src="${amenity.imageURL}"> <br> <br>
-								<p>${amenity.description}</p>
+								<h1>${amenityVisit.amenity.name} Visit</h1>
+								<p>Posted By ${amenityVisit.parkVisit.user.username} on 
+								${amenityVisit.createDate}</p>
+								<br> <img src="${amenityVisit.amenity.imageURL}"> <br> <br>
+								<p>${amenityVisit.amenity.description}</p>
 								<br>
-								<c:if test="${amenity.costRange == 0}">
+								<c:if test="${amenityVisit.amenity.costRange == 0}">
 									<p>FREE</p>
 								</c:if>
-								<c:if test="${amenity.costRange == 1}">
+								<c:if test="${amenityVisit.amenity.costRange == 1}">
 									<p>$</p>
 								</c:if>
-								<c:if test="${amenity.costRange == 2}">
+								<c:if test="${amenityVisit.amenity.costRange == 2}">
 									<p>$$</p>
 								</c:if>
-								<c:if test="${amenity.costRange == 3}">
+								<c:if test="${amenityVisit.amenity.costRange == 3}">
 									<p>$$$</p>
 								</c:if>
 								<br>
 								<h4>Location (Click to Open In Maps):</h4>
 								<h2>
 									<a
-										href="https://www.google.com/maps/place/${amenity.latitude},${amenity.longitude}"
-										target="_blank">${amenity.latitude}, ${amenity.longitude}</a>
+										href="https://www.google.com/maps/place/${amenityVisit.amenity.latitude},${amenityVisit.amenity.longitude}"
+										target="_blank">${amenityVisit.amenity.latitude}, ${amenityVisit.amenity.longitude}</a>
 								</h2>
 								<br>
 								<hr>
@@ -73,15 +74,15 @@
 								<br>
 								<h4>Amenity Website:</h4>
 								<p>
-									<a href="${amenity.websiteURL}" target="_blank">${amenity.name}
+									<a href="${amenityVisit.amenity.websiteURL}" target="_blank">${amenityVisit.amenity.name}
 										Website</a>
 								</p>
 								<br> <br>
 								<hr>
 								<br> <br>
-								<c:if test="${loggedInUser.id == amenityVisit.user.id}">
-									<button class="btn btn-primary mx-2" type="submit"
-										onclick="window.location.href='goEditParkVisit.do'">
+								<c:if test="${loggedInUser.id == amenityVisit.parkVisit.user.id}">
+									<button class="btn btn-primary mx-2" type="submit" 
+										onclick="window.location.href='goEditAmenityVisit.do?amenityVisitId=${amenityVisit.id}'">
 										Edit Amenity Visit <i class="bi bi-person-walking"></i>
 									</button>
 								</c:if>
