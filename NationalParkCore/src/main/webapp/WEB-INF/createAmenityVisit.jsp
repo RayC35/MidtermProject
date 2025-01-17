@@ -29,7 +29,7 @@
 						<div class="card-body text-center bg-light">
 							<br> <br>
 							<form action="createAmenityVisit.do" method="POST">
-								<h2>How Was Your Amenity Visit?</h2>
+								<h2>How Was Your Visit?</h2>
 								<br>
 								<h4>Rating</h4>
 								<div class="form-check form-check-inline">
@@ -54,21 +54,24 @@
 								</div>
 								<br> <br>
 								<h4>Remarks</h4>
-								<textarea cols="70" rows="8"></textarea>
+								<textarea name="remarks" cols="70" rows="8"
+									style="text-align: center;"></textarea>
 								<br> <br>
 								<h4>Date Visited</h4>
 								<input type="date" name="dateVisited" required
 									style="text-align: center"><br> <br>
-								<button class="btn btn-primary mx-2" type="submit"
+								<button class="btn btn-primary text-nowrap mx-2" type="submit"
 									onclick="window.location.href='goCreateAmenityVisit.do'">
-									Add An Amenity Visit <i class="bi bi-person-walking"></i>
-								</button>
+									Create Amenity Visit</button>
+							</form>
+							<br>
+							<div style="text-align: center;">
 								<button class="btn btn-success" type="button"
 									onclick="history.back()">
 									Go Back <i class="bi bi-tree"></i>
 								</button>
-							</form>
-							<br> <br>
+							</div>
+							<br>
 						</div>
 					</div>
 				</div>

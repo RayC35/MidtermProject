@@ -70,8 +70,8 @@
 								</div>
 								<br> <br>
 								<h4>Remarks</h4>
-								<textarea cols="70" rows="8" style="text-align: center;"
-									name="remarks"></textarea>
+								<textarea name="remarks" cols="70" rows="8"
+									style="text-align: center;"></textarea>
 								<br> <br>
 								<h4>Start Date</h4>
 								<input type="date" name="startDate" required
@@ -80,15 +80,19 @@
 								<input type="date" name="endDate" required
 									style="text-align: center"><br> <br>
 								<h4>Park Visit Image URL</h4>
-								<input type="text" name="imageURL" size="40"
+								<input type="text" name="imageURL" size="60"
 									style="text-align: center"><br> <br>
 								<button type="submit" class="btn btn-primary text-nowrap">
-									Add Park Visit <i class="bi bi-person-walking"></i>
-								</button>
-								<button class="btn btn-success" type="button"
-									onclick="history.back()">Go Back</button>
+									Create Park Visit</button>
 							</form>
-							<br> <br>
+							<br>
+							<div style="text-align: center;">
+								<button class="btn btn-success" type="button"
+									onclick="history.back()">
+									Go Back <i class="bi bi-tree"></i>
+								</button>
+							</div>
+							<br>
 						</div>
 					</div>
 				</div>

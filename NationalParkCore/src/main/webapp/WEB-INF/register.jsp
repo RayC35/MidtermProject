@@ -52,7 +52,7 @@
 								<br> <br>
 								<h4>Profile Image URL</h4>
 								<input type="text" name="imageURL" size="60"
-									style="text-align: center"><br> <br> <br>
+									style="text-align: center"><br> <br>
 								<button type="submit" class="btn btn-warning">Create
 									Account</button>
 							</form>

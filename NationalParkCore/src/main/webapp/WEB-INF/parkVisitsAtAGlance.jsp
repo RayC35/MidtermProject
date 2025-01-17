@@ -6,7 +6,7 @@
 		<div class="col-md-11 mx-auto">
 			<div class="card mt-4">
 				<div class="card-body">
-					<h2 style="text-align: center;">Park Visits At A Glance</h2>
+					<h2 style="text-align: center;">Your Park Visits At A Glance</h2>
 					<br>
 					<table class="table table-hover">
 						<thead>

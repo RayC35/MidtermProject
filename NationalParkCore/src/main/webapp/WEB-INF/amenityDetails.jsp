@@ -55,19 +55,30 @@
 						<c:if test="${amenity.costRange == 3}">
 							<p>$$$</p>
 						</c:if>
+						<h4>Location (Click to Open In Maps):</h4>
+						<h2>
+							<a
+								href="https://www.google.com/maps/place/${amenityVisit.amenity.latitude},${amenityVisit.amenity.longitude}"
+								target="_blank">${amenityVisit.amenity.latitude},
+								${amenityVisit.amenity.longitude}</a>
+						</h2>
+						<br>
+						<h4>Amenity Website:</h4>
 						<p>
-							<a href="${amenity.websiteURL}" target="_blank">Official
-								Amenity Website</a>
+							<a href="${amenityVisit.amenity.websiteURL}" target="_blank">${amenityVisit.amenity.name}
+								Website</a>
 						</p>
 						<hr>
 						<br>
+						<c:if test="${not empty loggedInUser}">
+							<button class="btn btn-warning mx-2" type="submit"
+								onclick="window.location.href='goCreateAmenityVisit.do'">
+								Add An Amenity Visit <i class="bi bi-person-walking"></i>
+							</button>
+						</c:if>
 						<button class="btn btn-primary mx-2" type="submit"
 							onclick="window.location.href='listAmenityVisitsByAmenity.do?amenity=${amenity.id}'">
 							View Amenity Visits <i class="bi bi-person-walking"></i>
-						</button>
-						<button class="btn btn-primary mx-2" type="submit"
-							onclick="window.location.href='goCreateAmenityVisit.do'">
-							Add An Amenity Visit <i class="bi bi-person-walking"></i>
 						</button>
 						<button class="btn btn-success mx-2" type="button"
 							onclick="history.back()">

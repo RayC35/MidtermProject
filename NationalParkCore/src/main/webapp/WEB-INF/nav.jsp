@@ -26,7 +26,7 @@
 				</button>
 				<button class="btn btn-warning text-nowrap mx-2" type="submit"
 					onclick="window.location.href='goUserProfile.do'">
-					My Account <i class="bi bi-tree-fill"></i>
+					My Profile <i class="bi bi-tree-fill"></i>
 				</button>
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
 					onclick="window.location.href='logout.do'">
@@ -43,7 +43,7 @@
 				test="${not empty loggedInUser && loggedInUser.role == 'user'}">
 				<button class="btn btn-warning text-nowrap mx-2" type="submit"
 					onclick="window.location.href='goUserProfile.do'">
-					My Account <i class="bi bi-tree-fill"></i>
+					My Profile <i class="bi bi-tree-fill"></i>
 				</button>
 				<button class="btn btn-success text-nowrap mx-2" type="submit"
 					onclick="window.location.href='logout.do'">

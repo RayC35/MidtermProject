@@ -71,6 +71,12 @@
 								Edit Park <i class="bi bi-tree-fill"></i>
 							</button>
 						</c:if>
+						<c:if test="${not empty loggedInUser}">
+							<button class="btn btn-warning mx-2" type="submit"
+								onclick="window.location.href='goCreateParkVisit.do'">
+								Add A Park Visit <i class="bi bi-person-walking"></i>
+							</button>
+						</c:if>
 						<button class="btn btn-primary mx-2" type="submit"
 							onclick="window.location.href='listParkVisitsByPark.do?park=${park.id}'">
 							View Park Visits <i class="bi bi-person-walking"></i>

@@ -70,31 +70,31 @@
 									<input class="form-check-input" type="radio" name="rating"
 										value="1"
 										<c:if test="${parkVisit.rating == 1 }">Checked</c:if>>
-									<label class="form-check-label">1</label>
+									<label class="form-check-label">★☆☆☆☆</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
 										value="2"
 										<c:if test="${parkVisit.rating == 2 }">Checked</c:if>>
-									<label class="form-check-label">2</label>
+									<label class="form-check-label">★★☆☆☆</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
 										value="3"
 										<c:if test="${parkVisit.rating == 3 }">Checked</c:if>>
-									<label class="form-check-label">3</label>
+									<label class="form-check-label">★★★☆☆</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
 										value="4"
 										<c:if test="${parkVisit.rating == 4 }">Checked</c:if>>
-									<label class="form-check-label">4</label>
+									<label class="form-check-label">★★★★☆</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input class="form-check-input" type="radio" name="rating"
 										value="5"
 										<c:if test="${parkVisit.rating == 5 }">Checked</c:if>>
-									<label class="form-check-label">5</label>
+									<label class="form-check-label">★★★★★</label>
 								</div>
 								<br> <br>
 								<h4>Remarks</h4>
@@ -117,11 +117,17 @@
 								</c:forEach>
 								<br> <br>
 								<button type="submit" class="btn btn-primary text-nowrap">
-									Save Park Visit Edits</button>
+									Submit Changes</button>
 								<br>
 							</form>
-							<button class="btn btn-success mx-2 text-nowrap" type="submit"
-								onclick="history.back()">Go Back</button>
+							<br>
+							<div style="text-align: center;">
+								<button class="btn btn-success" type="button"
+									onclick="history.back()">
+									Go Back <i class="bi bi-tree"></i>
+								</button>
+							</div>
+							<br>
 						</div>
 					</div>
 				</div>

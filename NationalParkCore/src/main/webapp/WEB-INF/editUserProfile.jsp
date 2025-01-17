@@ -49,10 +49,11 @@
 								<input type="email" name="email" value="${loggedInUser.email}"
 									size="30" style="text-align: center" /> <br> <br>
 								<h4>Bio</h4>
-								<textarea cols="70" rows="8" name="biography">${loggedInUser.biography}</textarea>
+								<textarea name="biography" cols="70" rows="8"
+									style="text-align: center;">${loggedInUser.biography}</textarea>
 								<br> <br>
-								<button type="submit" class="btn btn-warning">Submit
-									Changes</button>
+								<button type="submit" class="btn btn-warning text-nowrap">
+									Submit Changes</button>
 								<br>
 							</form>
 							<br>

@@ -28,12 +28,12 @@
 					<div>
 						<div class="card-body text-center bg-light">
 							<br> <br>
-							<h1>${parkVisit.park.name}NationalPark</h1>
+							<h1>${parkVisit.park.name}&nbsp;National&nbsp;Park</h1>
 							<hr>
 							<br>
 							<h2>${parkVisit.title}</h2>
 							<p>
-								<strong>Posted On: </strong>${parkVisit.createDate}</p>
+								<strong>Posted On:&nbsp;</strong>${parkVisit.createDate}</p>
 							<c:forEach var="visitImage" items="${parkVisitImages}">
 								<img class="parkVisitImage" width="50%"
 									src="${visitImage.imageURL}">${visitImage.description} </c:forEach>
@@ -115,6 +115,8 @@
 		</div>
 	</div>
 	<br>
+	<br>
+	<jsp:include page="footer.jsp" />
 	<br>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

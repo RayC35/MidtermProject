@@ -26,7 +26,7 @@
 			<div class="col-md-13 mx-auto">
 				<div class="card mt-4">
 					<div class="card-body">
-						<h2 style="text-align: center;">All Park Visits</h2>
+						<h2 style="text-align: center;">Your Park Visits in Detail</h2>
 						<br>
 						<table class="table table-hover">
 							<thead>

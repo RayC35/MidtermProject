@@ -20,89 +20,116 @@
 <body>
 	<jsp:include page="nav.jsp" />
 	<br>
+	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 mx-auto">
+			<div class="col-md-9 mx-auto">
 				<div class="card mt-2">
-					<div class="card-body">
+					<div class="card-body text-center bg-light">
+						<br> <br>
+						<h1>${amenityVisit.parkVisit.park.name}&nbsp;National&nbsp;Park</h1>
+						<hr>
+						<br>
+						<h1>Visit to the ${amenityVisit.amenity.name}</h1>
+						<br> <img src="${amenityVisit.amenity.imageURL}"> <br>
+						<br>
+						<h2>Amenity Description:</h2>
 						<div class="container">
 							<div class="row">
-								<div class="col-sm"></div>
-								<br> <br>
-								<h1>${amenityVisit.amenity.name} Visit</h1>
-								<p>Posted By ${amenityVisit.parkVisit.user.username} on 
-								${amenityVisit.createDate}</p>
-								<br> <img src="${amenityVisit.amenity.imageURL}"> <br> <br>
-								<p>${amenityVisit.amenity.description}</p>
-								<br>
-								<c:if test="${amenityVisit.amenity.costRange == 0}">
-									<p>FREE</p>
-								</c:if>
-								<c:if test="${amenityVisit.amenity.costRange == 1}">
-									<p>$</p>
-								</c:if>
-								<c:if test="${amenityVisit.amenity.costRange == 2}">
-									<p>$$</p>
-								</c:if>
-								<c:if test="${amenityVisit.amenity.costRange == 3}">
-									<p>$$$</p>
-								</c:if>
-								<br>
-								<h4>Location (Click to Open In Maps):</h4>
-								<h2>
-									<a
-										href="https://www.google.com/maps/place/${amenityVisit.amenity.latitude},${amenityVisit.amenity.longitude}"
-										target="_blank">${amenityVisit.amenity.latitude}, ${amenityVisit.amenity.longitude}</a>
-								</h2>
-								<br>
-								<hr>
-								<br>
-								<h2>Date Visited: ${amenityVisit.dateVisited}</h2>
-								<br>
-								<h2>Rating: ${amenityVisit.rating}</h2>
-								<div class="container">
-									<div class="row">
-										<div class="col-md-11 mx-auto">
-											<div class="card mt-1">
-												<br>
-												<p class="mx-4">${amenityVisit.remarks}</p>
-											</div>
-										</div>
+								<div class="col-md-11 mx-auto">
+									<div class="card mt-1">
+										<br>
+										<p class="mx-4">${amenityVisit.amenity.description}</p>
 									</div>
 								</div>
-								<p>Last Updated: ${amenityVisit.lastUpdate}</p>
-								<br>
-								<h4>Amenity Website:</h4>
-								<p>
-									<a href="${amenityVisit.amenity.websiteURL}" target="_blank">${amenityVisit.amenity.name}
-										Website</a>
-								</p>
-								<br> <br>
-								<hr>
-								<br> <br>
-								<c:if test="${loggedInUser.id == amenityVisit.parkVisit.user.id}">
-									<button class="btn btn-primary mx-2" type="submit" 
-										onclick="window.location.href='goEditAmenityVisit.do?amenityVisitId=${amenityVisit.id}'">
-										Edit Amenity Visit <i class="bi bi-person-walking"></i>
-									</button>
-								</c:if>
-								<button class="btn btn-success mx-2" type="submit"
-									onclick="history.back()">
-									Go Back <i class="bi bi-signpost-2-fill"></i>
-								</button>
-								<button class="btn btn-warning text-nowrap mx-2" type="submit"
-									onclick="window.location.href='goUserProfile.do'">
-									My Account <i class="bi bi-tree-fill"></i>
-								</button>
-								<br> <br>
 							</div>
 						</div>
+						<br>
+						<h3>Cost Range:</h3>
+						<c:if test="${amenityVisit.amenity.costRange == 0}">
+							<p>FREE</p>
+						</c:if>
+						<c:if test="${amenityVisit.amenity.costRange == 1}">
+							<p>$</p>
+						</c:if>
+						<c:if test="${amenityVisit.amenity.costRange == 2}">
+							<p>$$</p>
+						</c:if>
+						<c:if test="${amenityVisit.amenity.costRange == 3}">
+							<p>$$$</p>
+						</c:if>
+						<h4>Location (Click to Open In Maps):</h4>
+						<h2>
+							<a
+								href="https://www.google.com/maps/place/${amenityVisit.amenity.latitude},${amenityVisit.amenity.longitude}"
+								target="_blank">${amenityVisit.amenity.latitude},
+								${amenityVisit.amenity.longitude}</a>
+						</h2>
+						<br>
+						<h4>Amenity Website:</h4>
+						<p>
+							<a href="${amenityVisit.amenity.websiteURL}" target="_blank">${amenityVisit.amenity.name}
+								Website</a>
+						</p>
+						<hr>
+						<br>
+						<h3>Amenity Visited:</h3>
+						<h4>${amenityVisit.dateVisited}</h4>
+						<br>
+						<hr>
+						<br>
+						<h3>Author:&nbsp;</h3>
+						<h4>${amenityVisit.parkVisit.user.username}</h4>
+						<br>
+						<h3>Rating:</h3>
+						<h1>
+							<c:if test="${amenityVisit.rating == 1}">
+								<p style="color: orange;">★☆☆☆☆</p>
+							</c:if>
+							<c:if test="${amenityVisit.rating == 2}">
+								<p style="color: orange;">★★☆☆☆</p>
+							</c:if>
+							<c:if test="${amenityVisit.rating == 3}">
+								<p style="color: orange;">★★★☆☆</p>
+							</c:if>
+							<c:if test="${amenityVisit.rating == 4}">
+								<p style="color: orange;">★★★★☆</p>
+							</c:if>
+							<c:if test="${amenityVisit.rating == 5}">
+								<p style="color: orange;">★★★★★</p>
+							</c:if>
+						</h1>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-11 mx-auto">
+									<div class="card mt-1">
+										<br>
+										<p class="mx-4">${amenityVisit.remarks}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p>Last Updated: ${amenityVisit.lastUpdate}</p>
+						<hr>
+						<br>
+						<c:if test="${loggedInUser.id == amenityVisit.parkVisit.user.id}">
+							<button class="btn btn-primary mx-2" type="submit"
+								onclick="window.location.href='goEditAmenityVisit.do?amenityVisitId=${amenityVisit.id}'">
+								Edit Amenity Visit <i class="bi bi-person-walking"></i>
+							</button>
+						</c:if>
+						<button class="btn btn-success mx-2" type="submit"
+							onclick="history.back()">
+							Go Back <i class="bi bi-tree"></i>
+						</button>
+						<br> <br>
 					</div>
 				</div>
 			</div>
 		</div>
-		<br> <br>
 	</div>
+	<br>
+	<br>
 	<jsp:include page="footer.jsp" />
 	<br>
 	<script
