@@ -35,7 +35,7 @@
 						<hr>
 						<br>
 						<h1>Visit to the ${amenityVisit.amenity.name}</h1>
-						<br> <img src="${amenityVisit.amenity.imageURL}"> <br>
+						<br> <img width="50%" src="${amenityVisit.amenity.imageURL}"> <br>
 						<br>
 						<h2>Amenity Description:</h2>
 						<div class="container">

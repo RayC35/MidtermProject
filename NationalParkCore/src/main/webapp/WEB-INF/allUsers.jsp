@@ -24,7 +24,7 @@
 								<th>Last Update</th>
 								<th>Email</th>
 								<th>Edit</th>
-								<th>Disable</th>
+								<!-- <th>Disable</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -59,7 +59,7 @@
 									<td><button class="btn btn-warning" type="submit"
 											onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
 											Edit</button></td>
-									<td><c:if
+									<%-- <td><c:if
 											test="${user.role == 'user' && user.enabled == 'true'}">
 											<form action="adminDisableUser.do?userId=${user.id}" method="POST"
 												onsubmit="return window.confirm('Confirm Disable?');">
@@ -75,7 +75,7 @@
 											<p class="unable">
 												<i class="bi bi-exclamation-octagon"></i>
 											</p>
-										</c:if></td>
+										</c:if></td> --%>
 								</tr>
 							</c:forEach>
 						</tbody>

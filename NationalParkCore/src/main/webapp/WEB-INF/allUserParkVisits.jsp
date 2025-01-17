@@ -82,7 +82,8 @@
 										<td><fmt:parseDate value="${parkVisit.lastUpdate}"
 												pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" /> <fmt:formatDate
 												value="${parsedDate}" pattern="MMM d, yyyy hh:mm a" /></td>
-										<td style="text-align: center; vertical-align: middle;"><c:if test="${parkVisit.published == true}">
+										<td style="text-align: center; vertical-align: middle;"><c:if
+												test="${parkVisit.published == true}">
 												<p style="color: green;">✓</p>
 											</c:if> <c:if test="${parkVisit.published == false}">
 												<p style="color: red;">x</p>
