@@ -5,7 +5,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-11 mx-auto">
+		<div class="col-md-12 mx-auto">
 			<div class="card mt-4">
 				<div class="card-body">
 					<br> <br>
@@ -24,7 +24,7 @@
 								<th>Last Update</th>
 								<th>Email</th>
 								<th>Edit</th>
-								<th>Disable</th>
+								<!-- <th>Disable</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -45,7 +45,12 @@
 									<td><a
 										href="<c:url value='adminGoUserProfile.do'><c:param name='userId' value='${user.id}'/></c:url>">
 											${user.username}</a></td>
-									<td>${user.enabled}</td>
+									<td style="text-align: center; vertical-align: middle;"><c:if
+											test="${user.enabled == true}">
+											<h2 style="color: green;">&#9745;</h2>
+										</c:if> <c:if test="${user.enabled == false}">
+											<h2 style="color: red;">x</h2>
+										</c:if></td>
 									<td>${user.role}</td>
 									<td>${user.firstName}</td>
 									<td>${user.lastName}</td>
@@ -59,7 +64,7 @@
 									<td><button class="btn btn-warning" type="submit"
 											onclick="window.location.href='goAdminEditUserProfile.do?userId=${user.id}'">
 											Edit</button></td>
-									<td><c:if
+									<%-- <td><c:if
 											test="${user.role == 'user' && user.enabled == 'true'}">
 											<form action="adminDisableUser.do?userId=${user.id}" method="POST"
 												onsubmit="return window.confirm('Confirm Disable?');">
@@ -75,7 +80,7 @@
 											<p class="unable">
 												<i class="bi bi-exclamation-octagon"></i>
 											</p>
-										</c:if></td>
+										</c:if></td> --%>
 								</tr>
 							</c:forEach>
 						</tbody>

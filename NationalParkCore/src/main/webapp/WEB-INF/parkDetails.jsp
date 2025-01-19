@@ -28,7 +28,7 @@
 					<div class="card-body" style="text-align: center">
 						<br> <br>
 						<h1>Welcome to ${park.name} National Park!</h1>
-						<br> <img src="${park.imageURL}"> <br> <br>
+						<br> <img width="50%" src="${park.imageURL}"> <br> <br>
 						<h2>${park.name}&nbsp;-&nbsp;<c:if
 								test="${park.stateAbbreviation == 'UT'}">Utah</c:if>
 							<c:if test="${park.stateAbbreviation == 'CO'}">Colorado</c:if>
