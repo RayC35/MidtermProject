@@ -57,3 +57,7 @@ form i {
 	margin-right: auto;
 	width: 50%;
 }
+
+p.reviews {
+	color: orange;
+}

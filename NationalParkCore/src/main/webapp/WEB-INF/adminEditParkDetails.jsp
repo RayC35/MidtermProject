@@ -74,9 +74,15 @@
 									style="text-align: center" /> <br> <br>
 								<button type="submit" class="btn btn-success text-nowrap">
 									Submit Changes</button>
-								<button class="btn btn-success mx-2" type="submit"
-									onclick="history.back()">Go Back</button>
 							</form>
+							<br>
+							<div style="text-align: center;">
+								<button class="btn btn-success" type="button"
+									onclick="history.back()">
+									Go Back <i class="bi bi-tree"></i>
+								</button>
+							</div>
+							<br>
 						</div>
 					</div>
 				</div>

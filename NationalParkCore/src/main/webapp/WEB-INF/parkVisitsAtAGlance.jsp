@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-11 mx-auto">
@@ -17,7 +16,7 @@
 								<th>Start Date</th>
 								<th>End Date</th>
 								<th>Rating</th>
-								<th>Create Date</th>
+								<th>Last Update</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -56,7 +55,7 @@
 										</c:if> <c:if test="${parkVisit.rating == 5}">
 											<p style="color: orange;">★★★★★</p>
 										</c:if></td>
-									<td><fmt:parseDate value="${parkVisit.createDate}"
+									<td><fmt:parseDate value="${parkVisit.lastUpdate}"
 											pattern="yyyy-MM-dd'T'HH:mm" var="parsedDate" /> <fmt:formatDate
 											value="${parsedDate}" pattern="MMM d, yyyy hh:mm a" /></td>
 								</tr>
