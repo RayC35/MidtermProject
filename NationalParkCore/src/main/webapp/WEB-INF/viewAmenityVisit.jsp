@@ -30,7 +30,8 @@
 					<div class="card-body text-center bg-light">
 						<br> <br>
 						<h1>
-							<a href="parkDetails.do?parkId=${amenityVisit.parkVisit.park.id}">${amenityVisit.parkVisit.park.name}&nbsp;National&nbsp;Park</a>
+							<a href="parkDetails.do?parkId=${amenityVisit.parkVisit.park.id}">
+							${amenityVisit.parkVisit.park.name}&nbsp;National&nbsp;Park</a>
 						</h1>
 						<hr>
 						<br>
